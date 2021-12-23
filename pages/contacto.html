@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winiksoft - Contacto</title>
+    <link rel="shortcut icon" href="../img/winikiconcircle.png">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/winikStyle.css">
+</head>
+<body>
+    <header class="header">
+        <div class="headerLogoSection">
+            <p class="headerLogoSection__p"><a href="../index.html"><img class="headerLogoSection__p__img" src="../img/winiklogo.png" alt="Winiksoft Logo"></a></p>
+        </div>
+        <div class="headerNavSection">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./quienessomos.html">Quienes somos</a></li>
+                <li><a href="./servicios.html">Servicios</a></li>
+                <li><a href="./productos.html">Productos</a>
+                    <ul>
+                        <li><a href="./productos.html#winscada">Winscada</a></li>
+                        <li><a href="./productos.html#winspatcher">Winspatcher</a></li>
+                        <li><a href="./productos.html#wintegration">Wintegration</a></li>
+                    </ul>
+                </li>
+                <li class="headerNavSection__li--selected"><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="principal">
+        <section class="sectionContacto" id="contacto">
+            <div class="sectionContactoParent">
+                <div class="sectionContactoChild" id="contactoLeft">
+                    <div class="sectionContactoChildWrapper">
+                        <h2>Contactanos</h2><br><br>
+                        <h4>Siempre estamos abiertos a escuchar problemáticas y debatir ideas en busca de soluciones. <br><br>
+                            Nos gustan los desafíos y el pensar juntos.</h4><br><br>
+                        <h3>¡Hablemos!</h3>
+                    </div>
+                </div>
+                <div class="sectionContactoChild" id="contactoRight">
+                    <div class="sectionContactoChildWrapper">
+                        <h2>Escribinos tu consulta</h2><br><br>
+                        <form action="../scripts/contacto.php" enctype="application/x-www-form-urlencoded" method="post" id="formulario">
+                            <label for="formnombre">Nombre y apellido</label><br>
+                            <input class ="sectionContactoChildinput" type="text" id="formnombre" name="formnombre" placeholder="Nombre y apellido" required><br>
+                            <label for="formemail">Email</label><br>
+                            <input class ="sectionContactoChildinput" type="email" id="formemail" name="formemail" placeholder="Email" required><br>
+                            <label for="formtelefono">Teléfono</label><br>
+                            <input class ="sectionContactoChildinput" type="tel" id="formtelefono" name="formtelefono" placeholder="Teléfono (código de área) + número" required><br>
+                            <label for="formempresa">Empresa</label><br>
+                            <input class ="sectionContactoChildinput" type="text" id="formempresa" name="formempresa" placeholder="Empresa" required><br>
+                            <fieldset>
+                                <legend>Tamaño de la empresa</legend>
+                                <select id="formtamempresa" name="formtamempresa">
+                                    <option value="1">1 a 10 empleados</option>
+                                    <option value="10">10 a 50 empleados</option>
+                                    <option value="50">50 a 250 empleados</option>
+                                    <option value="250">Más de 250 empleados</option>
+                                </select><br>
+                            </fieldset>
+                            <label for="formcargo">Cargo</label><br>
+                            <input class ="sectionContactoChildinput" type="text" id="formcargo" name="formcargo" placeholder="Cargo" required><br>
+                            <label for="formmensaje">Mensaje</label><br>
+                            <textarea class ="sectionContactoChildinput" name="formmensaje" id="formmensaje" cols="30" rows="5" placeholder="Escribe tu mensaje"></textarea><br>
+                            <fieldset>
+                                <legend>¿Cómo prefiere ser contactado?</legend>
+                                <label for="formsel1">Indistinto</label>
+                                <input type="radio" id="formsel1" name="formsel" value="I" checked><br>
+                                <label for="formsel2">Email</label>
+                                <input type="radio" id="formsel2" name="formsel" value="E"><br>
+                                <label for="formsel3">Teléfono</label>
+                                <input type="radio" id="formsel3" name="formsel" value="T"><br>
+                            </fieldset>
+                            <label for="formnewsletter">Deseo suscribirme al newsletter</label><br>
+                            <input class ="sectionContactoChildinput" type="checkbox" id="formnewsletter" name="formnewsletter" checked><br><br>
+                            <input class ="buttonWinik" type="submit" value="Enviar datos de contacto">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footerLogoSection">
+            <img class="footer__logo" src="../img/winikicon.png" alt="Winiksoft Logo">
+        </div>        
+        <div class="footerSocialSection">
+            <ul class="socialMediaList">
+                <li>
+                    <a target="_blank" href="http://linkedin.com/winiksoft/">
+                        <img alt="Instagram" src="../img/socialmediaicons/linkedin.png">
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://facebook.com/winiksoft/">
+                        <img alt="Instagram" src="../img/socialmediaicons/facebook.png">
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://youtube.com/winiksoft/">
+                        <img alt="Instagram" src="../img/socialmediaicons/youtube.png">
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://instagram.com/winiksoft/">
+                        <img alt="Instagram" src="../img/socialmediaicons/instagram.png">
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://api.whatsapp.com/send?phone=5493816091736">
+                        <img alt="Instagram" src="../img/socialmediaicons/whatsapp.png">
+                    </a>
+                </li>
+            </ul>
+        </div>        
+        <div class="footerInfoSection">
+            <div class="footerListSection">
+                <h3>Teléfonos:</h3>
+                <ul>
+                    <li>+54 9 381 6091736</li>
+                    <li>+54 9 381 4494075</li>
+                </ul>
+            </div>
+            <div class="footerListSection">
+                <h3>Nuestros sites:</h3>
+                <ul>
+                    <li>Yerba Buena - Tucumán</li>
+                    <li>Villa Elisa - La Plata</li>
+                </ul>
+            </div>
+            <div class="footerListSection">
+                <h3>Soporte a clientes:</h3>
+                <ul>
+                    <li><a href="mailto:support@winiksoft.com">support@winiksoft.com</a></li>
+                    <li><a href="https://winiksoft.atlassian.net/servicedesk/customer/portal/1" target="_blank">Service
+                            Desk</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>    
+</body>
+</html>
