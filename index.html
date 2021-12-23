@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Winiksoft Home Page</title>
     <link rel="shortcut icon" href="./img/winikiconcircle.png">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/winikStyle.css">
 </head>
@@ -46,8 +47,8 @@
         </section>
 
         <section class="sectionHeader sectionStands" id="pilares">
-            <h2>Nuestros pilares</h2>
-            <h3>Hacemos posible que nuestros clientes se muevan con rapidez y confianza desde la estrategia hasta la ejecución.</h3>
+            <h2 data-aos="fade-in" data-aos-duration="1500">Nuestros pilares</h2>
+            <h3 data-aos="fade-in" data-aos-duration="1500">Hacemos posible que nuestros clientes se muevan con rapidez y confianza desde la estrategia hasta la ejecución.</h3>
             <ul class="standList">
                 <li>
                     <article>
@@ -91,14 +92,14 @@
             </div>
         </section>
         <section class="sectionHeader sectionAsides" id="clientes">
-            <h2>Quienes nos conocen</h2>
-            <h3>Nuestros clientes saben que nuestro objetivo es “hacer que suceda”. Por ello trabajamos codo a codo con las empresas para resolver las dificultades.</h3>
+            <h2 data-aos="fade-in" data-aos-duration="1500">Quienes nos conocen</h2>
+            <h3 data-aos="fade-in" data-aos-duration="1500">Nuestros clientes saben que nuestro objetivo es “hacer que suceda”. Por ello trabajamos codo a codo con las empresas para resolver las dificultades.</h3>
             <div class="aside asideRight">
-                <div class="asideImage">
+                <div class="asideImage" data-aos="fade-right" data-aos-easing="ease-in-back" data-aos-duration="1500" data-aos-offset="0">
                     <div class="asideImageBackground" id="imageGasnor"></div>
                     <div class="asideImageTitle">Oficina virtual miGasnor</div>
                 </div>
-                <div class="asideStory">
+                <div class="asideStory" data-aos="fade-left" data-aos-easing="ease-in-back" data-aos-duration="1500" data-aos-offset="0">
                     <article class="asideArticle">
                         <img src="./img/customers/gasnor_referent.jpg" alt="Cliente Gasnor"><br>
                         <h4>Carlos Amin - CIO - Gasnor S.A.</h4>
@@ -110,11 +111,11 @@
                 </div>
             </div>
             <div class="aside asideLeft">
-                <div class="asideImage">
+                <div class="asideImage" data-aos="fade-left" data-aos-easing="ease-in-back" data-aos-duration="1500" data-aos-offset="0">
                     <div class="asideImageBackground" id="imageAlsa"></div>
                     <div class="asideImageTitle">Trazabilidad ganadera RFID</div>
                 </div>
-                <div class="asideStory">
+                <div class="asideStory" data-aos="fade-right" data-aos-easing="ease-in-back" data-aos-duration="1500" data-aos-offset="0">
                     <article class="asideArticle">
                         <img src="./img/customers/alsa_referent.jpg" alt="Cliente Alsa"><br>
                         <h4>Florencia Bulacio - Director - Argentilemon</h4>
@@ -186,6 +187,9 @@
             </div>
         </div>
     </footer>    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
-
 </html>

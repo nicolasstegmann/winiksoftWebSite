@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Winiksoft - Contacto</title>
     <link rel="shortcut icon" href="../img/winikiconcircle.png">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/winikStyle.css">
 </head>
@@ -42,14 +43,14 @@
             </div>
         </section>
         <section class="sectionHeader asidesSection" id="productos">
-            <h2>Nuestros productos</h2>
-            <h3 id="winscada">Winscada</h3>
+            <h2 data-aos="fade-in" data-aos-duration="1500">Nuestros productos</h2>
+            <h3 id="winscada" data-aos="fade-in" data-aos-duration="1500">Winscada</h3>
             <div class="aside asideRight">
-                <div class="asideImage">
+                <div class="asideImage" data-aos="fade-right" data-aos-easing="ease-in-back" data-aos-duration="1500" data-aos-offset="0">
                     <div class="asideImageBackground" id="imageScada"></div>
                     <div class="asideImageTitle">Control de procesos a distancia</div>
                 </div>
-                <div class="asideStory">
+                <div class="asideStory" data-aos="fade-left" data-aos-easing="ease-in-back" data-aos-duration="1500" data-aos-offset="0">
                     <article class="asideArticle">
                         <img src="../img/winscadalogo.png" alt="Logo Scada"><br>
                         <p>
@@ -60,13 +61,13 @@
                     </article>
                 </div>
             </div>
-            <h3 id="winspatcher">Winspatcher</h3>            
+            <h3 id="winspatcher" data-aos="fade-in" data-aos-duration="1500">Winspatcher</h3>            
             <div class="aside asideLeft">
-                <div class="asideImage">
+                <div class="asideImage" data-aos="fade-left" data-aos-easing="ease-in-back" data-aos-duration="1500" data-aos-offset="0">
                     <div class="asideImageBackground" id="imageSpatcher"></div>
                     <div class="asideImageTitle">Imputación y conciliación de cobranzas</div>
                 </div>
-                <div class="asideStory">
+                <div class="asideStory" data-aos="fade-right" data-aos-easing="ease-in-back" data-aos-duration="1500" data-aos-offset="0">
                     <article class="asideArticle">
                         <img src="../img/winspatcherlogo.png" alt="Logo Dispatcher"><br>
                         <p>
@@ -77,13 +78,13 @@
                     </article>
                 </div>
             </div>
-            <h3 id="wintegration">Wintegration</h3>
+            <h3 id="wintegration" data-aos="fade-in" data-aos-duration="1500">Wintegration</h3>
             <div class="aside asideRight">
-                <div class="asideImage">
+                <div class="asideImage" data-aos="fade-right" data-aos-easing="ease-in-back" data-aos-duration="1500" data-aos-offset="0">
                     <div class="asideImageBackground" id="imageIntegrations"></div>
                     <div class="asideImageTitle">Integración de sistemas legacy a REST APIs</div>
                 </div>
-                <div class="asideStory">
+                <div class="asideStory" data-aos="fade-left" data-aos-easing="ease-in-back" data-aos-duration="1500" data-aos-offset="0">
                     <article class="asideArticle">
                         <img src="../img/wintegrationlogo.png" alt="Logo Integration"><br>
                         <p>
@@ -161,4 +162,8 @@
             </div>
         </div>
     </footer> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </html>

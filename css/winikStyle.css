@@ -32,6 +32,7 @@ a{
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     grid-gap: 0px;
+    z-index: 1;
 }
 
 .headerLogoSection{
