@@ -368,9 +368,11 @@ padding: 0px 30px 0px 30px;
 }
 
 .asideArticle{
-    box-shadow:  10px 5px 5px silver;
+    box-shadow: 0px -1px 17px silver;
     width: 300px;
     margin: 50px;
+    border-radius: 9px;
+    padding: 32px;
 }
 
 .asideArticle img{
