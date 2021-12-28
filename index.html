@@ -7,75 +7,167 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Winiksoft Home Page</title>
     <link rel="shortcut icon" href="./img/winikiconcircle.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/1954f46bc1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/winikStyle.css">
 </head>
 
 <body>
-    <header class="header">
-        <div class="headerLogoSection">
-            <p class="headerLogoSection__p"><a href="#"><img class="headerLogoSection__p__img" src="./img/winiklogo.png" alt="Winiksoft Logo"></a></p>
-        </div>
-        <div class="headerNavSection">
-            <ul>
-                <li class="headerNavSection__li--selected"><a href="#">Home</a></li>
-                <li><a href="./pages/quienessomos.html">Quienes somos</a></li>
-                <li><a href="./pages/servicios.html">Servicios</a></li>
-                <li><a href="./pages/productos.html">Productos</a>
-                    <ul>
-                        <li><a href="./pages/productos.html#winscada">Winscada</a></li>
-                        <li><a href="./pages/productos.html#winspatcher">Winspatcher</a></li>
-                        <li><a href="./pages/productos.html#wintegration">Wintegration</a></li>
-                    </ul>
-                </li>
-                <li><a href="./pages/contacto.html">Contacto</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <main class="principal">
-        <section class="sectionImage" id="heroImg">
-            <div class="heroWinik">
-                <div class="heroWinikText">
-                    <p>En Winiksoft acompañamos a las empresas de servicios en el camino de mejorar y automatizar los procesos a través de la tecnología.</p>
-                </div>
-                <div class="buttonWinik">
-                    <a href="./pages/servicios.html">Conocé nuestros servicios</a>
-                </div>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark default-color fixed-top">
+            <a class="navbar-brand" href="#"><img src="./img/winiklogo.png" alt="Winiksoft Logo" height="50px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#winiksoftNavBar" aria-controls="winiksoftNavBar"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="winiksoftNavBar">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active px-3">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="./pages/quienessomos.html">Quienes somos</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="./pages/servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item px-3 dropdown">
+                        <a class="nav-link dropdown-toggle" id="winiksoftDropDowm" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Productos
+                        </a>
+                        <div class="dropdown-menu dropdown-default" aria-labelledby="winiksoftDropDowm">
+                            <a class="dropdown-item" href="./pages/productos.html">Todos</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="./pages/productos.html#winscada">Winscada</a>
+                            <a class="dropdown-item" href="./pages/productos.html#winspatcher">Winspatcher</a>
+                            <a class="dropdown-item" href="./pages/productos.html#wintegration">Wintegration</a>
+                        </div>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="./pages/contacto.html">Contacto</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto flex-row justify-content-between">
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="http://linkedin.com/winiksoft/"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="http://facebook.com/winiksoft/"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="http://youtube.com/winiksoft/"><i class="fa fa-youtube"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="http://instagram.com/winiksoft/"><i class="fa fa-instagram"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="https://api.whatsapp.com/send?phone=5493816091736"><i class="fa fa-whatsapp"></i></a>
+                    </li>
+                </ul>
             </div>
-        </section>
-
+        </nav>
+    </header>
+    <main class="principal">
+        <section class="carrouselWiniksoft">
+            <div id="carrouselWiniksoft" class="carousel slide" data-ride="carousel">
+                <!-- Indicadores -->
+                <ul class="carousel-indicators">
+                <li data-target="#carrouselWiniksoft" data-slide-to="0" class="active"></li>
+                <li data-target="#carrouselWiniksoft" data-slide-to="1" class=""></li>
+                <li data-target="#carrouselWiniksoft" data-slide-to="2" class=""></li>
+                </ul>
+                <!-- Slides -->
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="sectionImage" id="heroImg">
+                        <div class="heroWinik">
+                            <div class="heroWinikText">
+                                <p>En Winiksoft acompañamos a las empresas de servicios en el camino de mejorar y automatizar los
+                                    procesos a través de la tecnología.</p>
+                            </div>
+                            <div class="buttonWinik">
+                                <a href="./pages/servicios.html">Conocé nuestros servicios</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="sectionImage" id="heroImg2">
+                        <div class="heroWinik">
+                            <div class="heroWinikText">
+                                <p>Los clientes y consumidores ya han trasladado su presencia y la conversación al entorno digital, y las empresas tienen que escucharles e interactuar con ellos.</p>
+                            </div>
+                            <div class="buttonWinik">
+                                <a href="./pages/servicios.html">Conocé nuestros servicios</a>
+                            </div>
+                        </div>
+                    </div>                  
+                </div>
+                <div class="carousel-item">
+                    <div class="sectionImage" id="heroImg3">
+                        <div class="heroWinik">
+                            <div class="heroWinikText">
+                                <p>La transformación digital no llega de la noche a la mañana. Hay que cambiar la comunicación con clientes y proveedores y la forma de pensar y actuar.<br>El mundo que viene todavía no tiene dueños.</p>
+                            </div>
+                            <div class="buttonWinik">
+                                <a href="./pages/servicios.html">Conocé nuestros servicios</a>
+                            </div>
+                        </div>
+                    </div>                  
+                </div>
+                </div>
+                <!-- Controles -->
+                <a class="carousel-control-prev" href="#carrouselWiniksoft" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#carrouselWiniksoft" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </section> 
         <section class="sectionHeader sectionStands" id="pilares">
             <h2 data-aos="fade-in" data-aos-duration="1500">Nuestros pilares</h2>
-            <h3 data-aos="fade-in" data-aos-duration="1500">Hacemos posible que nuestros clientes se muevan con rapidez y confianza desde la estrategia hasta la ejecución.</h3>
+            <h3 data-aos="fade-in" data-aos-duration="1500">Hacemos posible que nuestros clientes se muevan con rapidez
+                y confianza desde la estrategia hasta la ejecución.</h3>
             <ul class="standList">
                 <li>
                     <article>
                         <img src="./img/icons/mobile.png" alt="Mobile">
                         <h4>Tecnología al servicio del negocio</h4>
-                        <p>Nuestras recomendaciones se integran a los Sistemas Legacy y otros Existentes en la organización, buscando tomar lo mejor de cada tecnología y otorgando a los mismos un alto nivel de flexibilidad para mantenerse al día con los desafíos que enfrenta el mundo empresarial moderno.</p>
+                        <p>Nuestras recomendaciones se integran a los Sistemas Legacy y otros Existentes en la
+                            organización, buscando tomar lo mejor de cada tecnología y otorgando a los mismos un alto
+                            nivel de flexibilidad para mantenerse al día con los desafíos que enfrenta el mundo
+                            empresarial moderno.</p>
                     </article>
                 </li>
                 <li>
                     <article>
                         <img src="./img/icons/cycle.png" alt="Cycle">
                         <h4>Implementaciones ágiles</h4>
-                        <p>Planificamos el alcance y ejecución de los proyectos en ciclos de corta duración de manera de entregar resultados al negocio de forma iterativa e incremental como producto Mínimo Viable (MVP).</p>
+                        <p>Planificamos el alcance y ejecución de los proyectos en ciclos de corta duración de manera de
+                            entregar resultados al negocio de forma iterativa e incremental como producto Mínimo Viable
+                            (MVP).</p>
                     </article>
                 </li>
                 <li>
                     <article>
                         <img src="./img/icons/progress.png" alt="Progress">
                         <h4>Resultados concretos</h4>
-                        <p>Definimos, construimos y monitoreamos las métricas de éxito para garantizar los resultados esperados.</p>
+                        <p>Definimos, construimos y monitoreamos las métricas de éxito para garantizar los resultados
+                            esperados.</p>
                     </article>
                 </li>
                 <li>
                     <article>
                         <img src="./img/icons/partnership.png" alt="Partnership">
                         <h4>Comunidad de partners</h4>
-                        <p>Nuestro equipo se mantiene actualizado y fomenta el intercambio con partners especializados evaluando de forma continua plataformas específicas para procesos de negocio particulares.</p>
+                        <p>Nuestro equipo se mantiene actualizado y fomenta el intercambio con partners especializados
+                            evaluando de forma continua plataformas específicas para procesos de negocio particulares.
+                        </p>
                     </article>
                 </li>
             </ul>
@@ -84,7 +176,9 @@
         <section class="sectionImage" id="equipoImg">
             <div class="heroWinik">
                 <div class="heroWinikText">
-                    <p>Winiksoft es un lugar para desarrollarse profesionalmente, volcando la experiencia y creatividad a diario. Trabajando con un grupo de profesionales con un sólido recorrido en la industria de IT y gerenciamiento de empresas, con los cuales compartir y capitalizar conocimiento.<br>
+                    <p>Winiksoft es un lugar para desarrollarse profesionalmente, volcando la experiencia y creatividad
+                        a diario. Trabajando con un grupo de profesionales con un sólido recorrido en la industria de IT
+                        y gerenciamiento de empresas, con los cuales compartir y capitalizar conocimiento.<br>
                 </div>
                 <div class="buttonWinik">
                     <a href="./pages/quienessomos.html">Conocé nuestro equipo</a>
@@ -93,103 +187,107 @@
         </section>
         <section class="sectionHeader sectionAsides" id="clientes">
             <h2 data-aos="fade-in" data-aos-duration="1500">Quienes nos conocen</h2>
-            <h3 data-aos="fade-in" data-aos-duration="1500">Nuestros clientes saben que nuestro objetivo es “hacer que suceda”. Por ello trabajamos codo a codo con las empresas para resolver las dificultades.</h3>
+            <h3 data-aos="fade-in" data-aos-duration="1500">Nuestros clientes saben que nuestro objetivo es “hacer que
+                suceda”. Por ello trabajamos codo a codo con las empresas para resolver las dificultades.</h3>
             <div class="aside asideRight">
-                <div class="asideImage" data-aos="fade-right" data-aos-easing="ease-in-back" data-aos-duration="1500" data-aos-offset="0">
+                <div class="asideImage" data-aos="fade-right" data-aos-easing="ease-in-back" data-aos-duration="1500"
+                    data-aos-offset="0">
                     <div class="asideImageBackground" id="imageGasnor"></div>
                     <div class="asideImageTitle">Oficina virtual miGasnor</div>
                 </div>
-                <div class="asideStory" data-aos="fade-left" data-aos-easing="ease-in-back" data-aos-duration="1500" data-aos-offset="0">
+                <div class="asideStory" data-aos="fade-left" data-aos-easing="ease-in-back" data-aos-duration="1500"
+                    data-aos-offset="0">
                     <article class="asideArticle">
                         <img src="./img/customers/gasnor_referent.jpg" alt="Cliente Gasnor"><br>
                         <h4>Carlos Amin - CIO - Gasnor S.A.</h4>
                         <p>
-                            "Con Winiksoft como nuestro aliado estratégico en el proceso de digitalización de clientes, no solo hemos logrado alcanzar nuestras metas y objetivos sino que hemos transformado por completo la mentalidad de toda la empresa, con la tecnología como soporte principal de cualquiera de nuestros procesos."<br>
-                            <a href="https://www.gasnor.com" target="blank"><img src="./img/customers/gasnor_logo.png" alt="Logo cliente Gasnor"></a>
+                            "Con Winiksoft como nuestro aliado estratégico en el proceso de digitalización de clientes,
+                            no solo hemos logrado alcanzar nuestras metas y objetivos sino que hemos transformado por
+                            completo la mentalidad de toda la empresa, con la tecnología como soporte principal de
+                            cualquiera de nuestros procesos."<br>
+                            <a href="https://www.gasnor.com" target="blank"><img src="./img/customers/gasnor_logo.png"
+                                    alt="Logo cliente Gasnor"></a>
                         </p>
                     </article>
                 </div>
             </div>
             <div class="aside asideLeft">
-                <div class="asideImage" data-aos="fade-left" data-aos-easing="ease-in-back" data-aos-duration="1500" data-aos-offset="0">
+                <div class="asideImage" data-aos="fade-left" data-aos-easing="ease-in-back" data-aos-duration="1500"
+                    data-aos-offset="0">
                     <div class="asideImageBackground" id="imageAlsa"></div>
                     <div class="asideImageTitle">Trazabilidad ganadera RFID</div>
                 </div>
-                <div class="asideStory" data-aos="fade-right" data-aos-easing="ease-in-back" data-aos-duration="1500" data-aos-offset="0">
+                <div class="asideStory" data-aos="fade-right" data-aos-easing="ease-in-back" data-aos-duration="1500"
+                    data-aos-offset="0">
                     <article class="asideArticle">
                         <img src="./img/customers/alsa_referent.jpg" alt="Cliente Alsa"><br>
                         <h4>Florencia Bulacio - Director - Argentilemon</h4>
                         <p>
-                            "Destaco el compromiso y profesionalismo de Winiksoft. Hemos trabajado en los últimos 2 años a la par, innovando con diferentes tecnologías móviles para el control de asistencia en fincas, tanto del personal propio como de contratistas de cosecha y labores, con el objetivo de cuidar los derechos de los trabajadores y la eliminación del trabajo infantil."<br>
-                            <a href="https://www.argentilemon.com" target="blank"><img src="./img/customers/alsa_logo.png" alt="Logo cliente Alsa"></a>
+                            "Destaco el compromiso y profesionalismo de Winiksoft. Hemos trabajado en los últimos 2 años
+                            a la par, innovando con diferentes tecnologías móviles para el control de asistencia en
+                            fincas, tanto del personal propio como de contratistas de cosecha y labores, con el objetivo
+                            de cuidar los derechos de los trabajadores y la eliminación del trabajo infantil."<br>
+                            <a href="https://www.argentilemon.com" target="blank"><img
+                                    src="./img/customers/alsa_logo.png" alt="Logo cliente Alsa"></a>
                         </p>
                     </article>
                 </div>
             </div>
-        </section> 
+        </section>
     </main>
-    <footer class="footer">
-        <div class="footerLogoSection">
-            <img class="footer__logo" src="./img/winikicon.png" alt="Winiksoft Logo">
-        </div>        
-        <div class="footerSocialSection">
-            <ul class="socialMediaList">
-                <li>
-                    <a target="_blank" href="http://linkedin.com/winiksoft/">
-                        <img alt="Instagram" src="./img/socialmediaicons/linkedin.png">
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="http://facebook.com/winiksoft/">
-                        <img alt="Instagram" src="./img/socialmediaicons/facebook.png">
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="http://youtube.com/winiksoft/">
-                        <img alt="Instagram" src="./img/socialmediaicons/youtube.png">
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="http://instagram.com/winiksoft/">
-                        <img alt="Instagram" src="./img/socialmediaicons/instagram.png">
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://api.whatsapp.com/send?phone=5493816091736">
-                        <img alt="Instagram" src="./img/socialmediaicons/whatsapp.png">
-                    </a>
-                </li>
-            </ul>
-        </div>        
-        <div class="footerInfoSection">
-            <div class="footerListSection">
-                <h3>Teléfonos:</h3>
-                <ul>
-                    <li>+54 9 381 6091736</li>
-                    <li>+54 9 381 4494075</li>
-                </ul>
-            </div>
-            <div class="footerListSection">
-                <h3>Nuestros sites:</h3>
-                <ul>
-                    <li>Yerba Buena - Tucumán</li>
-                    <li>Villa Elisa - La Plata</li>
-                </ul>
-            </div>
-            <div class="footerListSection">
-                <h3>Soporte a clientes:</h3>
-                <ul>
-                    <li><a href="mailto:support@winiksoft.com">support@winiksoft.com</a></li>
-                    <li><a href="https://winiksoft.atlassian.net/servicedesk/customer/portal/1" target="_blank">Service
-                            Desk</a>
-                    </li>
-                </ul>
+    <footer class="footerWinik">
+        <section class="dividerBotton">
+            <div class="dividerBottonImage">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+                </svg>
+            </div>        
+        </section>
+        <div class="container-fluid">
+            <div class="footerWinikContent row text-center">
+                <div class="footerWinikImg col-md-12 col-lg-3">
+                    <img src="./img/winikicon.png" alt="Winiksoft Logo">
+                </div>
+                <div class="footerWinikInfoList col-md-4 col-lg-3 item">
+                    <h3>Teléfonos:</h3>
+                    <ul>
+                        <li>+54 9 381 6091736</li>
+                        <li>+54 9 381 4494075</li>
+                    </ul>
+                </div>
+                <div class="footerWinikInfoList col-md-4 col-lg-3 item">
+                    <h3>Nuestros sites:</h3>
+                    <ul>
+                        <li>Yerba Buena - Tucumán</li>
+                        <li>Villa Elisa - La Plata</li>
+                    </ul>
+                </div>
+                <div class="footerWinikInfoList col-md-4 col-lg-3 item">
+                    <h3>Soporte a clientes:</h3>
+                    <ul>
+                        <li><a href="mailto:support@winiksoft.com">support@winiksoft.com</a></li>
+                        <li><a href="https://winiksoft.atlassian.net/servicedesk/customer/portal/1" target="_blank">Service
+                                Desk</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </footer>    
+    </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
     </script>
 </body>
 </html>

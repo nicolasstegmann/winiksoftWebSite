@@ -1,147 +1,233 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Winiksoft - Contacto</title>
     <link rel="shortcut icon" href="../img/winikiconcircle.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/1954f46bc1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/winikStyle.css">
 </head>
+
 <body>
-    <header class="header">
-        <div class="headerLogoSection">
-            <p class="headerLogoSection__p"><a href="../index.html"><img class="headerLogoSection__p__img" src="../img/winiklogo.png" alt="Winiksoft Logo"></a></p>
-        </div>
-        <div class="headerNavSection">
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="./quienessomos.html">Quienes somos</a></li>
-                <li><a href="./servicios.html">Servicios</a></li>
-                <li><a href="./productos.html">Productos</a>
-                    <ul>
-                        <li><a href="./productos.html#winscada">Winscada</a></li>
-                        <li><a href="./productos.html#winspatcher">Winspatcher</a></li>
-                        <li><a href="./productos.html#wintegration">Wintegration</a></li>
-                    </ul>
-                </li>
-                <li class="headerNavSection__li--selected"><a href="#">Contacto</a></li>
-            </ul>
-        </div>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark default-color fixed-top">
+            <a class="navbar-brand" href="../index.html"><img src="../img/winiklogo.png" alt="Winiksoft Logo"
+                    height="50px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#winiksoftNavBar"
+                aria-controls="winiksoftNavBar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="winiksoftNavBar">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="./quienessomos.html">Quienes somos</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="./servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item px-3 dropdown">
+                        <a class="nav-link dropdown-toggle" id="winiksoftDropDowm" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Productos
+                        </a>
+                        <div class="dropdown-menu dropdown-default" aria-labelledby="winiksoftDropDowm">
+                            <a class="dropdown-item" href="./productos.html">Todos</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="./productos.html#winscada">Winscada</a>
+                            <a class="dropdown-item" href="./productos.html#winspatcher">Winspatcher</a>
+                            <a class="dropdown-item" href="./productos.html#wintegration">Wintegration</a>
+                        </div>
+                    </li>
+                    <li class="nav-item active px-3">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto flex-row justify-content-between">
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="http://linkedin.com/winiksoft/"><i
+                                class="fa fa-linkedin"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="http://facebook.com/winiksoft/"><i
+                                class="fa fa-facebook"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="http://youtube.com/winiksoft/"><i
+                                class="fa fa-youtube"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="http://instagram.com/winiksoft/"><i
+                                class="fa fa-instagram"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="https://api.whatsapp.com/send?phone=5493816091736"><i
+                                class="fa fa-whatsapp"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <main class="principal">
         <section class="sectionContacto" id="contacto">
-            <div class="sectionContactoParent">
-                <div class="sectionContactoChild" id="contactoLeft">
-                    <div class="sectionContactoChildWrapper">
-                        <h2>Contactanos</h2><br><br>
-                        <h4>Siempre estamos abiertos a escuchar problemáticas y debatir ideas en busca de soluciones. <br><br>
-                            Nos gustan los desafíos y el pensar juntos.</h4><br><br>
-                        <h3>¡Hablemos!</h3>
+            <div class="container-fluid">
+                <div class="row sectionContactoParent">
+                    <div class="col-md-12 col-lg-4 sectionContactoChild dividerLeft" id="contactoLeft">
+                        <div class="jumbotron text-left">
+                            <img src="../img/icons/email.png" height="50px" alt="e-mail">
+                            <h1 class="display-4">Contactanos</h1>
+                            <p class="lead">Siempre estamos abiertos a escuchar problemáticas y debatir ideas en busca
+                                de soluciones. <br><br>
+                                Nos gustan los desafíos y el pensar juntos.</p>
+                            <hr class="my-4">
+                            <a class="btn btn-primary btn-lg" href="#" role="button">¡Hablemos!</a>
+                        </div>
                     </div>
-                </div>
-                <div class="sectionContactoChild" id="contactoRight">
-                    <div class="sectionContactoChildWrapper">
-                        <h2>Escribinos tu consulta</h2><br><br>
-                        <form action="../scripts/contacto.php" enctype="application/x-www-form-urlencoded" method="post" id="formulario">
-                            <label for="formnombre">Nombre y apellido</label><br>
-                            <input class ="sectionContactoChildinput" type="text" id="formnombre" name="formnombre" placeholder="Nombre y apellido" required><br>
-                            <label for="formemail">Email</label><br>
-                            <input class ="sectionContactoChildinput" type="email" id="formemail" name="formemail" placeholder="Email" required><br>
-                            <label for="formtelefono">Teléfono</label><br>
-                            <input class ="sectionContactoChildinput" type="tel" id="formtelefono" name="formtelefono" placeholder="Teléfono (código de área) + número" required><br>
-                            <label for="formempresa">Empresa</label><br>
-                            <input class ="sectionContactoChildinput" type="text" id="formempresa" name="formempresa" placeholder="Empresa" required><br>
-                            <fieldset>
-                                <legend>Tamaño de la empresa</legend>
-                                <select id="formtamempresa" name="formtamempresa">
-                                    <option value="1">1 a 10 empleados</option>
-                                    <option value="10">10 a 50 empleados</option>
-                                    <option value="50">50 a 250 empleados</option>
-                                    <option value="250">Más de 250 empleados</option>
-                                </select><br>
-                            </fieldset>
-                            <label for="formcargo">Cargo</label><br>
-                            <input class ="sectionContactoChildinput" type="text" id="formcargo" name="formcargo" placeholder="Cargo" required><br>
-                            <label for="formmensaje">Mensaje</label><br>
-                            <textarea class ="sectionContactoChildinput" name="formmensaje" id="formmensaje" cols="30" rows="5" placeholder="Escribe tu mensaje"></textarea><br>
-                            <fieldset>
-                                <legend>¿Cómo prefiere ser contactado?</legend>
-                                <label for="formsel1">Indistinto</label>
-                                <input type="radio" id="formsel1" name="formsel" value="I" checked><br>
-                                <label for="formsel2">Email</label>
-                                <input type="radio" id="formsel2" name="formsel" value="E"><br>
-                                <label for="formsel3">Teléfono</label>
-                                <input type="radio" id="formsel3" name="formsel" value="T"><br>
-                            </fieldset>
-                            <label for="formnewsletter">Deseo suscribirme al newsletter</label><br>
-                            <input class ="sectionContactoChildinput" type="checkbox" id="formnewsletter" name="formnewsletter" checked><br><br>
-                            <input class ="buttonWinik" type="submit" value="Enviar datos de contacto">
+                    <div class="col-md-12 col-lg-8 text-left d-flex sectionContactoChild" id="contactoRight">
+                        <form class="needs-validation flex-fill align-self-center" action="../scripts/contacto.php" id="formulario">
+                            <div class="form-group row">
+                                <label for="formNombre" class="col-lg-3 col-form-label">Nombre y apellido</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="formNombre"
+                                        placeholder="Nombre y apellido" required>
+                                    <div class="valid-feedback">OK</div>
+                                    <div class="invalid-feedback">Campo obligatorio</div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formEmail" class="col-lg-3 col-form-label">E-mail</label>
+                                <div class="col-lg-9">
+                                    <input type="email" class="form-control" id="formEmail" aria-describedby="emailHelp"
+                                        placeholder="E-mail" required>
+                                    <small id="emailHelp" class="form-text">No compartiremos con nadie tu
+                                        dirección de e-mail.</small>
+                                    <div class="valid-feedback">OK</div>
+                                    <div class="invalid-feedback">Campo obligatorio</div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formTelefono" class="col-lg-3 col-form-label">Teléfono</label>
+                                <div class="col-lg-9">
+                                    <input type="tel" class="form-control" id="formTelefono" aria-describedby="telHelp"
+                                        placeholder="Teléfono" required>
+                                    <small id="telHelp" class="form-text">No compartiremos con nadie tu
+                                        teléfono.</small>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formMedioContacto" class="col-lg-3 col-form-label">¿Como preferís que te
+                                    contactemos?</label>
+                                <div class="col-lg-9">
+                                    <select class="form-control" id="formMedioContacto">
+                                        <option selected>Elije...</option>
+                                        <option value="indistinto">Indistinto</option>
+                                        <option value="email">E-mail</option>
+                                        <option value="telefono">Teléfono</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formEmpresa" class="col-lg-3 col-form-label">Empresa</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="formEmpresa" placeholder="Empresa" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formTamEmpresa" class="col-lg-3 col-form-label">Tamaño de la empresa</label>
+                                <div class="col-lg-9">
+                                    <select class="form-control" id="formTamEmpresa" required>
+                                        <option selected>Elije...</option>
+                                        <option value="1">1 a 10 empleados</option>
+                                        <option value="10">10 a 50 empleados</option>
+                                        <option value="50">50 a 250 empleados</option>
+                                        <option value="250">Más de 250 empleados</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formCargo" class="col-lg-3 col-form-label">Cargo</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="formCargo" placeholder="Cargo" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formMensaje" class="col-lg-3 col-form-label">Mensaje</label>
+                                <div class="col-lg-9">
+                                    <textarea class="form-control" id="formMensaje" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="formNewsletter" checked>
+                                <label class="form-check-label" for="formNewsletter">Deseo suscribirme al
+                                    newsletter</label>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <button type="submit" class="btn btn-primary">Enviar</button>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <footer class="footer">
-        <div class="footerLogoSection">
-            <img class="footer__logo" src="../img/winikicon.png" alt="Winiksoft Logo">
-        </div>        
-        <div class="footerSocialSection">
-            <ul class="socialMediaList">
-                <li>
-                    <a target="_blank" href="http://linkedin.com/winiksoft/">
-                        <img alt="Instagram" src="../img/socialmediaicons/linkedin.png">
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="http://facebook.com/winiksoft/">
-                        <img alt="Instagram" src="../img/socialmediaicons/facebook.png">
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="http://youtube.com/winiksoft/">
-                        <img alt="Instagram" src="../img/socialmediaicons/youtube.png">
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="http://instagram.com/winiksoft/">
-                        <img alt="Instagram" src="../img/socialmediaicons/instagram.png">
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://api.whatsapp.com/send?phone=5493816091736">
-                        <img alt="Instagram" src="../img/socialmediaicons/whatsapp.png">
-                    </a>
-                </li>
-            </ul>
-        </div>        
-        <div class="footerInfoSection">
-            <div class="footerListSection">
-                <h3>Teléfonos:</h3>
-                <ul>
-                    <li>+54 9 381 6091736</li>
-                    <li>+54 9 381 4494075</li>
-                </ul>
-            </div>
-            <div class="footerListSection">
-                <h3>Nuestros sites:</h3>
-                <ul>
-                    <li>Yerba Buena - Tucumán</li>
-                    <li>Villa Elisa - La Plata</li>
-                </ul>
-            </div>
-            <div class="footerListSection">
-                <h3>Soporte a clientes:</h3>
-                <ul>
-                    <li><a href="mailto:support@winiksoft.com">support@winiksoft.com</a></li>
-                    <li><a href="https://winiksoft.atlassian.net/servicedesk/customer/portal/1" target="_blank">Service
-                            Desk</a>
-                    </li>
-                </ul>
+    <footer class="footerWinik">
+        <section class="dividerBotton">
+            <div class="dividerBottonImage">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+                </svg>
+            </div>        
+        </section>        
+        <div class="container-fluid">
+            <div class="footerWinikContent row text-center">
+                <div class="footerWinikImg col-md-12 col-lg-3">
+                    <img src="../img/winikicon.png" alt="Winiksoft Logo">
+                </div>
+                <div class="footerWinikInfoList col-md-4 col-lg-3 item">
+                    <h3>Teléfonos:</h3>
+                    <ul>
+                        <li>+54 9 381 6091736</li>
+                        <li>+54 9 381 4494075</li>
+                    </ul>
+                </div>
+                <div class="footerWinikInfoList col-md-4 col-lg-3 item">
+                    <h3>Nuestros sites:</h3>
+                    <ul>
+                        <li>Yerba Buena - Tucumán</li>
+                        <li>Villa Elisa - La Plata</li>
+                    </ul>
+                </div>
+                <div class="footerWinikInfoList col-md-4 col-lg-3 item">
+                    <h3>Soporte a clientes:</h3>
+                    <ul>
+                        <li><a href="mailto:support@winiksoft.com">support@winiksoft.com</a></li>
+                        <li><a href="https://winiksoft.atlassian.net/servicedesk/customer/portal/1"
+                                target="_blank">Service
+                                Desk</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </footer>    
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>
