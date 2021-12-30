@@ -21,6 +21,10 @@ a {
     text-decoration: none;
 }
 
+h2, h3{
+    margin: 0;
+}
+
 .dividerBotton {
     position: relative;
 }
