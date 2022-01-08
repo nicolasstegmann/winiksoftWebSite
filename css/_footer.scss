@@ -1,0 +1,33 @@
+/*Footer*/
+.footerWinik {
+    padding: 10px 0;
+    background-color: winikStyle.$c-winiksoftMain;
+    color: winikStyle.$c-winiksoftWhite;
+
+    img {
+        width: 50px;
+        height: auto;
+        margin: 25px;
+    }
+
+    h3 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    ul {
+        padding: 0;
+        list-style: none;
+        line-height: 1.6;
+        font-size: 14px;
+        margin-bottom: 10px;
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+}
+
