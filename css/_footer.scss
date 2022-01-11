@@ -1,12 +1,11 @@
 /*Footer*/
 .footerWinik {
     padding: 10px 0;
-    background-color: winikStyle.$c-winiksoftMain;
-    color: winikStyle.$c-winiksoftWhite;
+    background-color: winikStyleGuide.$c-winiksoftMain;
+    color: winikStyleGuide.$c-winiksoftWhite;
 
     img {
-        width: 50px;
-        height: auto;
+        @include dimension(50px, auto);
         margin: 25px;
     }
 

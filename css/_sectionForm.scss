@@ -1,0 +1,37 @@
+//Formularios
+.dividerLeft {
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+        content: "";
+        font-family: "shape divider from ShapeDividers.com";
+        position: absolute;
+        z-index: -1;
+        pointer-events: none;
+        background-repeat: no-repeat;
+        bottom: -0.1vw;
+        left: -0.1vw;
+        right: -0.1vw;
+        top: -0.1vw;
+        background-size: 162px 123%;
+        background-position: 100% 50%;
+        background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 77.25 381" preserveAspectRatio="none"><g fill="%239ee5ff"><path d="M68.78 381L34.92 0h42.33v381z"/><path d="M43.38 381L17.98 0h59.27v381z" opacity=".33"/><path d="M17.98 381L0 0h77.25v381z" opacity=".33"/></g></svg>');
+    }
+}
+
+.sectionContacto {
+    margin-top: 70px;
+}
+
+.sectionContactoChild {
+    &#contactoLeft {
+        color: winikStyleGuide.$c-winiksoftLetterDark;
+    }
+
+    &#contactoRight {
+        background-color: winikStyleGuide.$c-winiksoftLight;
+        padding: 50px;
+        color: winikStyleGuide.$c-winiksoftLetterDark;
+    }
+}

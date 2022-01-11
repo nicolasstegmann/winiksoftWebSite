@@ -1,16 +1,16 @@
 /* HEADER */
 .navbar {
-    background-color: winikStyle.$c-winiksoftMain;
+    background-color: winikStyleGuide.$c-winiksoftMain;
 }
 
 .navbar-nav {
     font-size: 16px;
 
     li .dropdown-menu {
-        background-color: winikStyle.$c-winiksoftMain;
+        background-color: winikStyleGuide.$c-winiksoftMain;
 
         a {
-            color: winikStyle.$c-winiksoftLetterLight;
+            color: winikStyleGuide.$c-winiksoftLetterLight;
         }
     }
 }
@@ -20,15 +20,10 @@
     position: absolute;
     top: 0;
     left: -100px;
-    width: 70px;
-    height: 100%;
+    @include dimension(70px, 100%);
     background: rgba(255, 255, 255, 0.3);
     transform: skewX(-30deg);
-    animation-name: slide;
-    animation-duration: 30s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0.3s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    $slideMap: (name: slide, duration: 30s, iteration: infinite, timing: ease-in-out, delay: 0.3s, direction: alternate);
+    @include animation($slideMap...);
     background: linear-gradient(to right, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.13) 77%, rgba(255, 255, 255, 0.5) 92%, rgba(255, 255, 255, 0) 100%);
 }

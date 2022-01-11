@@ -1,0 +1,127 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: winikStyleGuide.$t-winiksoftMain;
+    overflow-x: hidden;
+    @include dimension(100vw);
+}
+
+a {
+    text-decoration: none;
+}
+
+h2,
+h3 {
+    margin: 0;
+}
+
+.dividerBotton {
+    position: relative;
+}
+
+.dividerBottonImage {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @include dimension(100%);    
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+
+    svg {
+        position: relative;
+        display: block;
+        @include dimension(calc(160% + 1.3px), 63px);
+        transform: rotateY(180deg);
+    }
+
+    .shape-fill {
+        fill: winikStyleGuide.$c-winiksoftMain;
+    }
+}
+
+.principal {
+    @include dimension(100%);
+    text-align: center;
+}
+
+.heroWinik {
+    grid-column: 1/2;
+    padding-bottom: 150px;
+    background-color: winikStyleGuide.$c-heroTransparence;
+    display: flex;
+    @include dimension(100%);
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.buttonWinik {
+    border: 1px solid winikStyleGuide.$c-winikButton;
+    @include dimension(fit-content);
+    padding: 10px 30px 10px 30px;
+    background-color: winikStyleGuide.$c-winikButton;
+    text-transform: uppercase;
+    font-family: winikStyleGuide.$t-winiksoftSecond;
+    font-size: 26px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 1s;
+    z-index: 1;
+
+    a {
+        color: winikStyleGuide.$c-totalWhite;
+        text-decoration: none;
+    }
+
+    &:hover {
+        $buttonGrowMap: (name: buttonGrow, duration: 0.5s, iteration:1, fillMode: forwards);
+        @include animation($buttonGrowMap...);
+    }
+
+    &:active {
+        $buttonShineMap: (name: buttonShine, duration: 0.2s, iteration:1);
+        @include animation($buttonShineMap...);
+    }
+}
+
+.callToAction {
+    display: flex;
+    justify-content: center;
+}
+
+.sectionHeader {
+    overflow: hidden;
+
+    h2 {
+        background-color: winikStyleGuide.$c-winiksoftPower;
+        font-size: 36px;
+        font-weight: bold;
+        color: winikStyleGuide.$c-winiksoftLetterLight;
+        line-height: 80px;
+        padding: 20px;
+    }
+
+    h3 {
+        background-color: winikStyleGuide.$c-winiksoftWhite;
+        font-size: 24px;
+        font-weight: bold;
+        font-style: italic;
+        color: winikStyleGuide.$c-winiksoftMain;
+        line-height: 40px;
+        padding: 20px;
+    }
+}
+
+.jumbotron {
+    background-color: inherit;
+    color: inherit;
+}

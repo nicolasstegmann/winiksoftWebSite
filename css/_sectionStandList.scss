@@ -1,0 +1,55 @@
+//Secciones de listas de articulos
+.standList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 20px;
+    padding: 20px;
+    list-style: none;
+}
+
+.sectionStands {
+    article {
+        @include dimension(300px);
+        margin: 50px;
+    }
+
+    img {
+        @include dimension(30%, auto);        
+        width: 30%;
+        height: auto;
+    }
+
+    h4 {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+.standsSectionBullet {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        padding-left: 16px;
+
+        &::before {
+            content: "•";
+            padding-right: 8px;
+            color: winikStyleGuide.$c-winiksoftPower;
+        }
+    }
+}
+
+.picSection img {
+    @include dimension(300px, 300px);
+    box-shadow: 0px -1px 17px silver;
+    margin-bottom: 50px;
+    border-radius: 9px;
+}

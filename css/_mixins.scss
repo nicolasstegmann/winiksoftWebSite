@@ -1,0 +1,19 @@
+// MIXINS
+@mixin animation ($name, $duration, $iteration, $fillMode: none, $timing: linear, $delay: 0, $direction: normal) {
+    animation: {
+        name: $name;
+        duration: $duration;
+        iteration-count: $iteration; 
+        fill-mode: $fillMode;
+        timing-function: $timing;
+        delay: $delay;
+        direction: $direction;
+    }
+}
+
+@mixin dimension ($width, $height: null) {
+    width: $width;
+    @if ($height) {
+        height: $height;
+    }
+}

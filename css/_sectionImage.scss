@@ -1,0 +1,27 @@
+/*Secciones imágenes*/
+.sectionImage {
+    border: 1px solid transparent;
+    background-attachment: fixed;
+    @extend %winikCoverImages;    
+    @include dimension(100%, auto);
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+
+    $images: ("heroImg": "digitalTransformation", "heroImg2": "digitalTransformation2", "heroImg3": "digitalTransformation3", "equipoImg": "teamWork", "quienesSomosImg": "quienesSomos", "serviciosImg": "servicios", "productosImg": "productos");
+
+    @each $name, $image in $images {
+        &##{$name} {
+            background-image: url("../img/#{$image}.jpg");    
+        }
+    }
+
+    p {
+        font-size: 36px;
+        text-align: left;
+        font-family: winikStyleGuide.$t-winiksoftSecond;
+        color: winikStyleGuide.$c-winiksoftWhite;
+        font-weight: bold;
+        padding: 200px 30px 30px 30px;
+    }
+}

@@ -1,0 +1,44 @@
+@keyframes buttonGrow {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+        box-shadow: 0 1px 5px winikStyleGuide.$c-winiksoftWhite;
+    }
+}
+
+@keyframes slide {
+    0% {
+        left: -100;
+        top: 0;
+    }
+
+    50% {
+        left: 120px;
+        top: 0px;
+    }
+
+    100% {
+        left: 290px;
+        top: 0;
+    }
+}
+
+@keyframes buttonShine {
+    10% {
+        opacity: 1;
+        top: -30%;
+        left: -30%;
+        transition-property: left, top, opacity;
+        transition-duration: 0.7s, 0.7s, 0.15s;
+        transition-timing-function: ease;
+    }
+
+    100% {
+        opacity: 0;
+        top: -30%;
+        left: -30%;
+        transition-property: left, top, opacity;
+    }
+}

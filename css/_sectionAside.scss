@@ -1,0 +1,90 @@
+//Secciones de artículos al lado de fotos
+.aside {
+    @include dimension(100%, auto);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    justify-content: center;
+}
+
+.asideImage {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    @include dimension(100%, 300px);
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.asideImageBackground {
+
+    $images: ("Gasnor": "gasnor_case", "Alsa": "alsa_case", "Scada": "winscadaimg", "Spatcher": "winspatcherimg", "Integrations": "winspatcherimg");
+
+    @each $name, $image in $images {
+        $path: '../img';
+        &#image#{$name} {
+            @if $name == 'Gasnor' or $name == 'Alsa' {
+                $path: $path + "/customers"
+            }
+            background-image: url("#{$path}/#{$image}.jpg");    
+        }
+    }
+
+    grid-area: 1/1/9/9;
+    @extend %winikCoverImages;
+    filter: brightness(50%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    z-index: -1;
+}
+
+.asideImageTitle {
+    background: transparent;
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding: 5px;
+    filter: brightness(100%);
+    color: winikStyleGuide.$c-winiksoftWhite;
+    border: winikStyleGuide.$c-winiksoftWhite 3px solid;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: -1;
+    grid-column: 6/8;
+    grid-row: 3/5;
+    align-self: center;
+    justify-self: center;
+}
+
+.asideStory {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.asideArticle {
+    box-shadow: 0px -1px 17px silver;
+    @include dimension(300px);
+    margin: 50px;
+    border-radius: 9px;
+    padding: 32px;
+
+    img {
+        @include dimension(30%, auto);
+        border-radius: 20px;
+    }
+
+    h4 {
+        font-weight: bolder;
+    }
+
+    h4,
+    p {
+        font-size: 16px;
+    }
+
+    a img {
+        @include dimension(20%);
+    }
+}

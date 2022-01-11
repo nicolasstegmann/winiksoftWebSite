@@ -1,0 +1,53 @@
+
+//Media queries
+@media only screen and (min-width: 800px) {
+    .sectionImage {
+        grid-template-columns: 40% 60%;
+        padding: 0px 40px 150px 40px;
+    }
+
+    .heroWinik {
+        grid-column: 2/3;
+        padding-bottom: 150px;
+    }
+
+    .sectionImage p {
+        font-size: 48px;
+    }
+
+    .aside {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .asideImage {
+        grid-row: 1/2;
+        height: 100%;
+    }
+
+    .asideStory {
+        grid-row: 1/2;
+    }
+
+    .aside {
+        &.asideRight {
+            .asideImage {
+                grid-column: 1/2;
+            }
+
+            .asideStory {
+                grid-column: 2/3;
+            }
+        }
+
+        &.asideLeft {
+            .asideImage {
+                grid-column: 2/3;
+            }
+
+            .asideStory {
+                grid-column: 1/2;
+            }
+        }
+    }
+}

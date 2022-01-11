@@ -1,5 +1,11 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@200&display=swap");
+.asideImageBackground, .sectionImage {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 /* HEADER */
 .navbar {
   background-color: #4DC8F5;
@@ -28,12 +34,14 @@
           animation-name: slide;
   -webkit-animation-duration: 30s;
           animation-duration: 30s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+          animation-fill-mode: none;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
   -webkit-animation-delay: 0.3s;
           animation-delay: 0.3s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
           animation-direction: alternate;
   background: linear-gradient(to right, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.13) 77%, rgba(255, 255, 255, 0.5) 92%, rgba(255, 255, 255, 0) 100%);
@@ -68,7 +76,6 @@
   text-decoration: none;
 }
 
-/* GENERAL */
 * {
   margin: 0px;
   padding: 0px;
@@ -118,20 +125,109 @@ h3 {
   fill: #4DC8F5;
 }
 
-/*Principal*/
 .principal {
   width: 100%;
   text-align: center;
 }
 
+.heroWinik {
+  grid-column: 1/2;
+  padding-bottom: 150px;
+  background-color: #354a5488;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.buttonWinik {
+  border: 1px solid #354A54;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 30px 10px 30px;
+  background-color: #354A54;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  font-size: 26px;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 1s;
+  z-index: 1;
+}
+.buttonWinik a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.buttonWinik:hover {
+  -webkit-animation-name: buttonGrow;
+          animation-name: buttonGrow;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+}
+.buttonWinik:active {
+  -webkit-animation-name: buttonShine;
+          animation-name: buttonShine;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: none;
+          animation-fill-mode: none;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+}
+
+.callToAction {
+  display: flex;
+  justify-content: center;
+}
+
+.sectionHeader {
+  overflow: hidden;
+}
+.sectionHeader h2 {
+  background-color: #00A4EA;
+  font-size: 36px;
+  font-weight: bold;
+  color: #BFEBFB;
+  line-height: 80px;
+  padding: 20px;
+}
+.sectionHeader h3 {
+  background-color: #EEFCFF;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: italic;
+  color: #4DC8F5;
+  line-height: 40px;
+  padding: 20px;
+}
+
+.jumbotron {
+  background-color: inherit;
+  color: inherit;
+}
+
 /*Secciones imágenes*/
 .sectionImage {
   border: 1px solid transparent;
-  background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  /* padding: 0px 40px 150px 40px;     */
   width: 100%;
   height: auto;
   display: grid;
@@ -159,18 +255,6 @@ h3 {
 .sectionImage#productosImg {
   background-image: url("../img/productos.jpg");
 }
-
-.heroWinik {
-  grid-column: 1/2;
-  padding-bottom: 150px;
-  background-color: #354a5488;
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-}
-
 .sectionImage p {
   font-size: 36px;
   text-align: left;
@@ -180,65 +264,6 @@ h3 {
   padding: 200px 30px 30px 30px;
 }
 
-.buttonWinik {
-  border: 1px solid #354A54;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 10px 30px 10px 30px;
-  background-color: #354A54;
-  text-transform: uppercase;
-  font-family: "Raleway", sans-serif;
-  font-size: 26px;
-  border-radius: 50px;
-  font-weight: bold;
-  transition: all 1s;
-  z-index: 1;
-}
-.buttonWinik a {
-  color: #FFFFFF;
-  text-decoration: none;
-}
-.buttonWinik:hover {
-  transform: scale(1.1);
-}
-.buttonWinik:active {
-  -webkit-animation-name: shine;
-          animation-name: shine;
-  -webkit-animation-duration: 0.2s;
-          animation-duration: 0.2s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-}
-
-.callToAction {
-  display: flex;
-  justify-content: center;
-}
-
-/*Secciones con título*/
-.sectionHeader {
-  overflow: hidden;
-}
-.sectionHeader h2 {
-  background-color: #00A4EA;
-  font-size: 36px;
-  font-weight: bold;
-  color: #BFEBFB;
-  line-height: 80px;
-  padding: 20px;
-}
-.sectionHeader h3 {
-  background-color: #EEFCFF;
-  font-size: 24px;
-  font-weight: bold;
-  font-style: italic;
-  color: #4DC8F5;
-  line-height: 40px;
-  padding: 20px;
-}
-
-/*Secciones de listas*/
 .standList {
   display: flex;
   flex-wrap: wrap;
@@ -254,6 +279,8 @@ h3 {
   margin: 50px;
 }
 .sectionStands img {
+  width: 30%;
+  height: auto;
   width: 30%;
   height: auto;
 }
@@ -287,7 +314,6 @@ h3 {
   border-radius: 9px;
 }
 
-/*Secciones de artículos al lado de fotos*/
 .aside {
   width: 100%;
   height: auto;
@@ -309,9 +335,6 @@ h3 {
 
 .asideImageBackground {
   grid-area: 1/1/9/9;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   filter: brightness(50%);
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
           clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
@@ -330,7 +353,7 @@ h3 {
   background-image: url("../img/winspatcherimg.jpg");
 }
 .asideImageBackground#imageIntegrations {
-  background-image: url("../img/wintegrationimg.jpg");
+  background-image: url("../img/winspatcherimg.jpg");
 }
 
 .asideImageTitle {
@@ -338,7 +361,6 @@ h3 {
   font-size: 20px;
   letter-spacing: 2px;
   padding: 5px;
-  /* margin-right: 35px; */
   filter: brightness(100%);
   color: #EEFCFF;
   border: #EEFCFF 3px solid;
@@ -372,6 +394,9 @@ h3 {
   height: auto;
   border-radius: 20px;
 }
+.asideArticle h4 {
+  font-weight: bolder;
+}
 .asideArticle h4,
 .asideArticle p {
   font-size: 16px;
@@ -380,7 +405,6 @@ h3 {
   width: 20%;
 }
 
-/*Formularios*/
 .dividerLeft {
   overflow: hidden;
   position: relative;
@@ -414,12 +438,85 @@ h3 {
   color: #455A64;
 }
 
-.jumbotron {
-  background-color: inherit;
-  color: inherit;
+@-webkit-keyframes buttonGrow {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+    box-shadow: 0 1px 5px #EEFCFF;
+  }
 }
 
-/*Media queries*/
+@keyframes buttonGrow {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+    box-shadow: 0 1px 5px #EEFCFF;
+  }
+}
+@-webkit-keyframes slide {
+  0% {
+    left: -100;
+    top: 0;
+  }
+  50% {
+    left: 120px;
+    top: 0px;
+  }
+  100% {
+    left: 290px;
+    top: 0;
+  }
+}
+@keyframes slide {
+  0% {
+    left: -100;
+    top: 0;
+  }
+  50% {
+    left: 120px;
+    top: 0px;
+  }
+  100% {
+    left: 290px;
+    top: 0;
+  }
+}
+@-webkit-keyframes buttonShine {
+  10% {
+    opacity: 1;
+    top: -30%;
+    left: -30%;
+    transition-property: left, top, opacity;
+    transition-duration: 0.7s, 0.7s, 0.15s;
+    transition-timing-function: ease;
+  }
+  100% {
+    opacity: 0;
+    top: -30%;
+    left: -30%;
+    transition-property: left, top, opacity;
+  }
+}
+@keyframes buttonShine {
+  10% {
+    opacity: 1;
+    top: -30%;
+    left: -30%;
+    transition-property: left, top, opacity;
+    transition-duration: 0.7s, 0.7s, 0.15s;
+    transition-timing-function: ease;
+  }
+  100% {
+    opacity: 0;
+    top: -30%;
+    left: -30%;
+    transition-property: left, top, opacity;
+  }
+}
 @media only screen and (min-width: 800px) {
   .sectionImage {
     grid-template-columns: 40% 60%;
@@ -460,65 +557,5 @@ h3 {
   }
   .aside.asideLeft .asideStory {
     grid-column: 1/2;
-  }
-}
-@-webkit-keyframes slide {
-  0% {
-    left: -100;
-    top: 0;
-  }
-  50% {
-    left: 120px;
-    top: 0px;
-  }
-  100% {
-    left: 290px;
-    top: 0;
-  }
-}
-@keyframes slide {
-  0% {
-    left: -100;
-    top: 0;
-  }
-  50% {
-    left: 120px;
-    top: 0px;
-  }
-  100% {
-    left: 290px;
-    top: 0;
-  }
-}
-@-webkit-keyframes shine {
-  10% {
-    opacity: 1;
-    top: -30%;
-    left: -30%;
-    transition-property: left, top, opacity;
-    transition-duration: 0.7s, 0.7s, 0.15s;
-    transition-timing-function: ease;
-  }
-  100% {
-    opacity: 0;
-    top: -30%;
-    left: -30%;
-    transition-property: left, top, opacity;
-  }
-}
-@keyframes shine {
-  10% {
-    opacity: 1;
-    top: -30%;
-    left: -30%;
-    transition-property: left, top, opacity;
-    transition-duration: 0.7s, 0.7s, 0.15s;
-    transition-timing-function: ease;
-  }
-  100% {
-    opacity: 0;
-    top: -30%;
-    left: -30%;
-    transition-property: left, top, opacity;
   }
 }/*# sourceMappingURL=winikStyle.css.map */
