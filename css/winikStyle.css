@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@200&family=Ubuntu&display=swap");
 .asideImageBackground, .sectionImage {
   background-repeat: no-repeat;
   background-size: cover;
@@ -87,7 +87,7 @@ html {
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Ubuntu", sans-serif;
   overflow-x: hidden;
   width: 100vw;
 }
@@ -147,9 +147,10 @@ h3 {
   width: -moz-fit-content;
   width: fit-content;
   padding: 10px 30px 10px 30px;
-  background-color: #354A54;
+  background-image: linear-gradient(to left, #455A64 50%, #354A54 50%);
+  background-size: 200% 100%;
   text-transform: uppercase;
-  font-family: "Raleway", sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 26px;
   border-radius: 50px;
   font-weight: bold;
@@ -224,10 +225,35 @@ h3 {
   color: inherit;
 }
 
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #BFEBFB;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 /*Secciones imágenes*/
 .sectionImage {
   border: 1px solid transparent;
   background-attachment: fixed;
+  min-height: 100vh;
   width: 100%;
   height: auto;
   display: grid;
@@ -261,7 +287,7 @@ h3 {
   font-family: "Raleway", sans-serif;
   color: #EEFCFF;
   font-weight: bold;
-  padding: 200px 30px 30px 30px;
+  padding: 150px 30px 30px 30px;
 }
 
 .standList {
@@ -429,6 +455,11 @@ h3 {
   margin-top: 70px;
 }
 
+.sectionContactoChild {
+  min-height: 82vh;
+  width: auto;
+  height: auto;
+}
 .sectionContactoChild#contactoLeft {
   color: #455A64;
 }
@@ -441,9 +472,13 @@ h3 {
 @-webkit-keyframes buttonGrow {
   from {
     transform: scale(1);
+    background-size: 200% 100%;
+    border: 1px solid #354A54;
   }
   to {
     transform: scale(1.1);
+    background-position: -100% 0;
+    border: 1px solid #455A64;
     box-shadow: 0 1px 5px #EEFCFF;
   }
 }
@@ -451,9 +486,13 @@ h3 {
 @keyframes buttonGrow {
   from {
     transform: scale(1);
+    background-size: 200% 100%;
+    border: 1px solid #354A54;
   }
   to {
     transform: scale(1.1);
+    background-position: -100% 0;
+    border: 1px solid #455A64;
     box-shadow: 0 1px 5px #EEFCFF;
   }
 }

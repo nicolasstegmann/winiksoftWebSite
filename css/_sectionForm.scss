@@ -25,6 +25,8 @@
 }
 
 .sectionContactoChild {
+    min-height: 82vh;
+    @include dimension(auto, auto);
     &#contactoLeft {
         color: winikStyleGuide.$c-winiksoftLetterDark;
     }

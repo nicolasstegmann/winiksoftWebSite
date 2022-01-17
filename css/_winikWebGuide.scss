@@ -10,6 +10,8 @@ $c-totalWhite: #FFFFFF;
 $c-winiksoftWhite: #EEFCFF;
 
 // TYPOGRAPHY
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@200&display=swap");
-$t-winiksoftMain: "Lato", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@200&family=Ubuntu&display=swap");
+
+$t-winiksoftMain: "Ubuntu", sans-serif;
 $t-winiksoftSecond: "Raleway", sans-serif;
+$t-winiksoftThird: "Lato", sans-serif;

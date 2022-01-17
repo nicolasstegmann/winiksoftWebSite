@@ -2,7 +2,8 @@
 .sectionImage {
     border: 1px solid transparent;
     background-attachment: fixed;
-    @extend %winikCoverImages;    
+    @extend %winikCoverImages;
+    min-height: 100vh;
     @include dimension(100%, auto);
     display: grid;
     grid-template-columns: 1fr;
@@ -10,8 +11,8 @@
 
     $images: ("heroImg": "digitalTransformation", "heroImg2": "digitalTransformation2", "heroImg3": "digitalTransformation3", "equipoImg": "teamWork", "quienesSomosImg": "quienesSomos", "serviciosImg": "servicios", "productosImg": "productos");
 
-    @each $name, $image in $images {
-        &##{$name} {
+    @each $id, $image in $images {
+        &##{$id} {
             background-image: url("../img/#{$image}.jpg");    
         }
     }
@@ -22,6 +23,6 @@
         font-family: winikStyleGuide.$t-winiksoftSecond;
         color: winikStyleGuide.$c-winiksoftWhite;
         font-weight: bold;
-        padding: 200px 30px 30px 30px;
+        padding: 150px 30px 30px 30px;
     }
 }
