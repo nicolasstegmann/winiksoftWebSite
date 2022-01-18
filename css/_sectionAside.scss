@@ -18,7 +18,7 @@
 
 .asideImageBackground {
 
-    $images: ("Gasnor": "gasnor_case", "Alsa": "alsa_case", "Scada": "winscadaimg", "Spatcher": "winspatcherimg", "Integrations": "winspatcherimg");
+    $images: ("Gasnor": "gasnor_case", "Alsa": "alsa_case", "Scada": "winscadaimg", "Spatcher": "winspatcherimg", "Integrations": "wintegrationimg");
 
     @each $name, $image in $images {
         $path: '../img';
