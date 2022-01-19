@@ -18,15 +18,18 @@
 
 .asideImageBackground {
 
-    $images: ("Gasnor": "gasnor_case", "Alsa": "alsa_case", "Scada": "winscadaimg", "Spatcher": "winspatcherimg", "Integrations": "wintegrationimg");
+    $images: ("Gasnor": "gasnor_case", "Alsa": "alsa_case", "Scada": "winscadaimg", "Spatcher": "winspatcherimg", "Integrations": "wintegrationimg", "Jiraconn": "jiraconnimg");
 
-    @each $name, $image in $images {
+    @each $name,
+    $image in $images {
         $path: '../img';
+
         &#image#{$name} {
-            @if $name == 'Gasnor' or $name == 'Alsa' {
+            @if $name=='Gasnor'or $name=='Alsa' {
                 $path: $path + "/customers"
             }
-            background-image: url("#{$path}/#{$image}.jpg");    
+
+            background-image: url("#{$path}/#{$image}.jpg");
         }
     }
 
@@ -35,6 +38,38 @@
     filter: brightness(50%);
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
     z-index: -1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include dimension(300px, 100%);
+
+        $images: ("Gasnor": "gasnor_case", "Alsa": "alsa_case", "Scada": "winscadaimg", "Spatcher": "winspatcherimg", "Integrations": "wintegrationimg", "Jiraconn": "jiraconnimg");
+
+        @each $name,
+        $image in $images {
+            $path: '../img';
+
+            &#image#{$name} {
+                @if $name=='Gasnor'or $name=='Alsa' {
+                    $path: $path + "/customers"
+                }
+
+                background-image: url("#{$path}/#{$image}.jpg");
+            }
+        }
+
+        @extend %winikCoverImages;
+
+        box-shadow: 20px 0 100px winikStyleGuide.$c-heroTransparence, -20px 0 100px winikStyleGuide.$c-heroTransparence;
+        background-size: 110%;
+
+        $lightBarMap: (name: lightBar, duration: 15s, iteration: infinite, timing: ease-in-out, delay: 1s);
+        @include animation($lightBarMap...);
+    }
 }
 
 .asideImageTitle {

@@ -46,3 +46,15 @@
         transition-property: left, top, opacity;
     }
 }
+
+@keyframes lightBar {
+
+    0%,
+    100% {
+        left: 0px;
+    }
+
+    50% {
+        left: calc(100% - 300px);
+    }
+}

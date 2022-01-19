@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@200&family=Ubuntu&display=swap");
-.asideImageBackground, .sectionImage {
+.asideImageBackground::before, .asideImageBackground, .sectionImage {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -381,6 +381,51 @@ h3 {
 .asideImageBackground#imageIntegrations {
   background-image: url("../img/wintegrationimg.jpg");
 }
+.asideImageBackground#imageJiraconn {
+  background-image: url("../img/jiraconnimg.jpg");
+}
+.asideImageBackground::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  box-shadow: 20px 0 100px #354a5488, -20px 0 100px #354a5488;
+  background-size: 110%;
+  -webkit-animation-name: lightBar;
+          animation-name: lightBar;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+          animation-fill-mode: none;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+}
+.asideImageBackground::before#imageGasnor {
+  background-image: url("../img/customers/gasnor_case.jpg");
+}
+.asideImageBackground::before#imageAlsa {
+  background-image: url("../img/customers/alsa_case.jpg");
+}
+.asideImageBackground::before#imageScada {
+  background-image: url("../img/winscadaimg.jpg");
+}
+.asideImageBackground::before#imageSpatcher {
+  background-image: url("../img/winspatcherimg.jpg");
+}
+.asideImageBackground::before#imageIntegrations {
+  background-image: url("../img/wintegrationimg.jpg");
+}
+.asideImageBackground::before#imageJiraconn {
+  background-image: url("../img/jiraconnimg.jpg");
+}
 
 .asideImageTitle {
   background: transparent;
@@ -554,6 +599,22 @@ h3 {
     top: -30%;
     left: -30%;
     transition-property: left, top, opacity;
+  }
+}
+@-webkit-keyframes lightBar {
+  0%, 100% {
+    left: 0px;
+  }
+  50% {
+    left: calc(100% - 300px);
+  }
+}
+@keyframes lightBar {
+  0%, 100% {
+    left: 0px;
+  }
+  50% {
+    left: calc(100% - 300px);
   }
 }
 @media only screen and (min-width: 800px) {
