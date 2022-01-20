@@ -51,7 +51,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            @include dimension(100%, 100%);
+            @include dimension(300px, 100%);
             box-shadow: 20px 0 100px winikStyleGuide.$c-heroTransparence, -20px 0 100px winikStyleGuide.$c-heroTransparence;
             background-size: 110%;
             $lightBarMap: (name: lightBar, duration: (random(30) + 5)+s, iteration: infinite, timing: ease-in-out, delay: 1s);
