@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@200&family=Ubuntu&display=swap");
-.asideImageBackground::before, .asideImageBackground, .sectionImage {
+.asideImageBackground, .sectionImage {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -389,19 +389,19 @@ h3 {
 .asideImageBackground#imageJiraconn {
   background-image: url("../img/jiraconnimg.jpg");
 }
-.asideImageBackground::before {
+.asideImageBackground#imageGasnor::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 300px;
+  width: 100%;
   height: 100%;
   box-shadow: 20px 0 100px #354a5488, -20px 0 100px #354a5488;
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 15s;
-          animation-duration: 15s;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -413,23 +413,125 @@ h3 {
   -webkit-animation-direction: normal;
           animation-direction: normal;
 }
-.asideImageBackground::before#imageGasnor {
-  background-image: url("../img/customers/gasnor_case.jpg");
+.asideImageBackground#imageAlsa::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 20px 0 100px #354a5488, -20px 0 100px #354a5488;
+  background-size: 110%;
+  -webkit-animation-name: lightBar;
+          animation-name: lightBar;
+  -webkit-animation-duration: 9s;
+          animation-duration: 9s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+          animation-fill-mode: none;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
 }
-.asideImageBackground::before#imageAlsa {
-  background-image: url("../img/customers/alsa_case.jpg");
+.asideImageBackground#imageScada::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 20px 0 100px #354a5488, -20px 0 100px #354a5488;
+  background-size: 110%;
+  -webkit-animation-name: lightBar;
+          animation-name: lightBar;
+  -webkit-animation-duration: 27s;
+          animation-duration: 27s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+          animation-fill-mode: none;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
 }
-.asideImageBackground::before#imageScada {
-  background-image: url("../img/winscadaimg.jpg");
+.asideImageBackground#imageSpatcher::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 20px 0 100px #354a5488, -20px 0 100px #354a5488;
+  background-size: 110%;
+  -webkit-animation-name: lightBar;
+          animation-name: lightBar;
+  -webkit-animation-duration: 23s;
+          animation-duration: 23s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+          animation-fill-mode: none;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
 }
-.asideImageBackground::before#imageSpatcher {
-  background-image: url("../img/winspatcherimg.jpg");
+.asideImageBackground#imageIntegrations::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 20px 0 100px #354a5488, -20px 0 100px #354a5488;
+  background-size: 110%;
+  -webkit-animation-name: lightBar;
+          animation-name: lightBar;
+  -webkit-animation-duration: 32s;
+          animation-duration: 32s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+          animation-fill-mode: none;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
 }
-.asideImageBackground::before#imageIntegrations {
-  background-image: url("../img/wintegrationimg.jpg");
-}
-.asideImageBackground::before#imageJiraconn {
-  background-image: url("../img/jiraconnimg.jpg");
+.asideImageBackground#imageJiraconn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 20px 0 100px #354a5488, -20px 0 100px #354a5488;
+  background-size: 110%;
+  -webkit-animation-name: lightBar;
+          animation-name: lightBar;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+          animation-fill-mode: none;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
 }
 
 .asideImageTitle {
