@@ -18,11 +18,19 @@
     }
 
     p {
-        font-size: 36px;
+        font-size: winikStyleGuide.$ts-winikXXL;
         text-align: left;
         font-family: winikStyleGuide.$t-winiksoftSecond;
         color: winikStyleGuide.$c-winiksoftWhite;
         font-weight: bold;
         padding: 150px 30px 30px 30px;
+
+        &::first-letter{
+            font-size: winikStyleGuide.$ts-winikXXL + 30;
+            font-weight: bolder;
+            letter-spacing: 5px;
+        }
+
     }
+
 }

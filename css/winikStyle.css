@@ -212,7 +212,7 @@ h3 {
 }
 .sectionHeader h3 {
   background-color: #EEFCFF;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
   font-style: italic;
   color: #4DC8F5;
@@ -288,6 +288,11 @@ h3 {
   color: #EEFCFF;
   font-weight: bold;
   padding: 150px 30px 30px 30px;
+}
+.sectionImage p::first-letter {
+  font-size: 66px;
+  font-weight: bolder;
+  letter-spacing: 5px;
 }
 
 .standList {
@@ -630,6 +635,9 @@ h3 {
 
   .sectionImage p {
     font-size: 48px;
+  }
+  .sectionImage p::first-letter {
+    font-size: 78px;
   }
 
   .aside {

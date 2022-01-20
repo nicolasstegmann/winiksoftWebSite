@@ -74,14 +74,14 @@
 
 .asideImageTitle {
     background: transparent;
-    font-size: 20px;
+    font-size: winikStyleGuide.$ts-winikL;
     letter-spacing: 2px;
     padding: 5px;
     filter: brightness(100%);
     color: winikStyleGuide.$c-winiksoftWhite;
     border: winikStyleGuide.$c-winiksoftWhite 3px solid;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: winikStyleGuide.$ts-winikXS;
     font-weight: bold;
     z-index: -1;
     grid-column: 6/8;
@@ -116,7 +116,7 @@
 
     h4,
     p {
-        font-size: 16px;
+        font-size: winikStyleGuide.$ts-winikM;
     }
 
     a img {

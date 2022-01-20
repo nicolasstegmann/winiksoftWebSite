@@ -12,7 +12,14 @@
     }
 
     .sectionImage p {
-        font-size: 48px;
+        $hugeXXL: winikStyleGuide.$ts-winikXXL + 12;
+        font-size: $hugeXXL;
+
+        &::first-letter{
+            font-size: $hugeXXL + 30;
+        }
+
+
     }
 
     .aside {

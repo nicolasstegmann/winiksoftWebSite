@@ -72,7 +72,7 @@ h3 {
     background-size: 200% 100%;
     text-transform: uppercase;
     font-family: winikStyleGuide.$t-winiksoftThird;
-    font-size: 26px;
+    font-size: winikStyleGuide.$ts-winikXL;
     border-radius: 50px;
     font-weight: bold;
     transition: all 1s;
@@ -104,7 +104,7 @@ h3 {
 
     h2 {
         background-color: winikStyleGuide.$c-winiksoftPower;
-        font-size: 36px;
+        font-size: winikStyleGuide.$ts-winikXXL;
         font-weight: bold;
         color: winikStyleGuide.$c-winiksoftLetterLight;
         line-height: 80px;
@@ -113,7 +113,7 @@ h3 {
 
     h3 {
         background-color: winikStyleGuide.$c-winiksoftWhite;
-        font-size: 24px;
+        font-size: winikStyleGuide.$ts-winikXL;
         font-weight: bold;
         font-style: italic;
         color: winikStyleGuide.$c-winiksoftMain;
