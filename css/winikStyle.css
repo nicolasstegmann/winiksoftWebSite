@@ -151,7 +151,7 @@ h3 {
   background-size: 200% 100%;
   text-transform: uppercase;
   font-family: "Lato", sans-serif;
-  font-size: 26px;
+  font-size: 20px;
   border-radius: 50px;
   font-weight: bold;
   transition: all 1s;
@@ -343,6 +343,31 @@ h3 {
   box-shadow: 0px -1px 17px silver;
   margin-bottom: 50px;
   border-radius: 9px;
+  opacity: 1;
+  display: block;
+  transition: 0.5s ease;
+}
+.picSection .imgHoverContainer {
+  position: relative;
+}
+.picSection .imgHoverContainer:hover img {
+  opacity: 0.5;
+}
+.picSection .imgHoverContainer:hover .imgHover {
+  opacity: 1;
+}
+.picSection .imgHover {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.picSection .imgHoverText {
+  font-size: 86px;
+  padding: 16px 32px;
 }
 
 .aside {
@@ -400,8 +425,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 21s;
-          animation-duration: 21s;
+  -webkit-animation-duration: 31s;
+          animation-duration: 31s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -424,8 +449,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 21s;
-          animation-duration: 21s;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -448,8 +473,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 28s;
-          animation-duration: 28s;
+  -webkit-animation-duration: 14s;
+          animation-duration: 14s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -472,8 +497,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 20s;
-          animation-duration: 20s;
+  -webkit-animation-duration: 25s;
+          animation-duration: 25s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -496,8 +521,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 17s;
-          animation-duration: 17s;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -520,8 +545,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 12s;
-          animation-duration: 12s;
+  -webkit-animation-duration: 14s;
+          animation-duration: 14s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
