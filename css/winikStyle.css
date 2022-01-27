@@ -425,8 +425,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 31s;
-          animation-duration: 31s;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -449,8 +449,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 8s;
-          animation-duration: 8s;
+  -webkit-animation-duration: 9s;
+          animation-duration: 9s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -473,8 +473,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 14s;
-          animation-duration: 14s;
+  -webkit-animation-duration: 34s;
+          animation-duration: 34s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -497,8 +497,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 25s;
-          animation-duration: 25s;
+  -webkit-animation-duration: 33s;
+          animation-duration: 33s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -521,8 +521,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 7s;
-          animation-duration: 7s;
+  -webkit-animation-duration: 27s;
+          animation-duration: 27s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -545,8 +545,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 14s;
-          animation-duration: 14s;
+  -webkit-animation-duration: 29s;
+          animation-duration: 29s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -644,6 +644,57 @@ h3 {
   background-color: #9EE5FF;
   padding: 50px;
   color: #455A64;
+}
+
+.php-email-form .error-message {
+  display: none;
+  color: #EEFCFF;
+  background: #FD7488;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.php-email-form .sent-message {
+  display: none;
+  color: #EEFCFF;
+  background: #31B56E;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.php-email-form .loading {
+  display: none;
+  background: transparent;
+  text-align: center;
+  padding: 15px;
+}
+
+.php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #00A4EA;
+  border-top-color: transparent;
+  -webkit-animation-name: animate-loading;
+          animation-name: animate-loading;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+          animation-fill-mode: none;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
 }
 
 @-webkit-keyframes buttonGrow {
@@ -747,6 +798,22 @@ h3 {
   }
   50% {
     left: calc(100% - 300px);
+  }
+}
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 @media only screen and (min-width: 800px) {

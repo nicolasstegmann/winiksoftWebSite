@@ -121,7 +121,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-lg-6 text-left d-flex sectionContactoChild" id="contactoRight">
-                        <form class="needs-validation flex-fill align-self-center" action="../scripts/contacto.php" id="formulario">
+                        <form class="needs-validation flex-fill align-self-center php-email-form" action="../scripts/recruiting.php" method="post" id="formulario">
                             <div class="form-group row">
                                 <label for="formNombre" class="col-lg-3 col-form-label">Nombre y apellido</label>
                                 <div class="col-lg-9">
@@ -148,6 +148,11 @@
                                 <div class="invalid-feedback">Debe adjuntar un archivo</div>
                             </div>
                             <br><br>
+                            <div class="my-3 d-flex justify-content-end">
+                                <div class="loading">Enviando...</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Tu mensaje ha sido enviado. Muchas gracias por contactarse con Winiksoft.</div>
+                            </div>
                             <div class="d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary">Enviar</button>
                             </div>
@@ -205,6 +210,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
         integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
     </script>
+    <script src="../scripts/sendMail.js"></script>
 </body>
 
 </html>

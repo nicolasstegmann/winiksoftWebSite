@@ -37,3 +37,41 @@
         color: winikStyleGuide.$c-winiksoftLetterDark;
     }
 }
+
+.php-email-form .error-message {
+    display: none;
+    color: winikStyleGuide.$c-winiksoftWhite;;
+    background: winikStyleGuide.$c-winiksoftError;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.php-email-form .sent-message {
+    display: none;
+    color: winikStyleGuide.$c-winiksoftWhite;
+    background: winikStyleGuide.$c-winiksoftSuccess;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.php-email-form .loading {
+    display: none;
+    background: transparent;
+    text-align: center;
+    padding: 15px;
+}
+
+.php-email-form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    @include dimension(24px, 24px);
+    margin: 0 10px -6px 0;
+    border: 3px solid  winikStyleGuide.$c-winiksoftPower;
+    border-top-color: transparent;
+    $loading: (name: animate-loading, duration: 1s, iteration: infinite, timing: linear);
+    @include animation($loading...);
+}
