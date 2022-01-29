@@ -249,6 +249,11 @@ h3 {
   transform-origin: bottom left;
 }
 
+.hover-grow-animation:hover {
+  transform: scale(1.5);
+  transition: transform 0.5s ease-out;
+}
+
 /*Secciones imágenes*/
 .sectionImage {
   border: 1px solid transparent;
@@ -425,8 +430,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 7s;
-          animation-duration: 7s;
+  -webkit-animation-duration: 16s;
+          animation-duration: 16s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -449,8 +454,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 9s;
-          animation-duration: 9s;
+  -webkit-animation-duration: 12s;
+          animation-duration: 12s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -473,8 +478,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 34s;
-          animation-duration: 34s;
+  -webkit-animation-duration: 17s;
+          animation-duration: 17s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -497,8 +502,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 33s;
-          animation-duration: 33s;
+  -webkit-animation-duration: 13s;
+          animation-duration: 13s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -521,8 +526,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 27s;
-          animation-duration: 27s;
+  -webkit-animation-duration: 21s;
+          animation-duration: 21s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -545,8 +550,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 29s;
-          animation-duration: 29s;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
