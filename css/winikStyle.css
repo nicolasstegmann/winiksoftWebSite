@@ -397,8 +397,6 @@ h3 {
 .asideImageBackground {
   grid-area: 1/1/9/9;
   filter: brightness(50%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
   z-index: -1;
 }
 .asideImageBackground#imageGasnor {
@@ -430,8 +428,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 16s;
-          animation-duration: 16s;
+  -webkit-animation-duration: 13s;
+          animation-duration: 13s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -454,8 +452,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 12s;
-          animation-duration: 12s;
+  -webkit-animation-duration: 11s;
+          animation-duration: 11s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -478,8 +476,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 17s;
-          animation-duration: 17s;
+  -webkit-animation-duration: 24s;
+          animation-duration: 24s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -502,8 +500,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 13s;
-          animation-duration: 13s;
+  -webkit-animation-duration: 25s;
+          animation-duration: 25s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -526,8 +524,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 21s;
-          animation-duration: 21s;
+  -webkit-animation-duration: 18s;
+          animation-duration: 18s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -550,8 +548,8 @@ h3 {
   background-size: 110%;
   -webkit-animation-name: lightBar;
           animation-name: lightBar;
-  -webkit-animation-duration: 15s;
-          animation-duration: 15s;
+  -webkit-animation-duration: 25s;
+          animation-duration: 25s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
@@ -562,6 +560,16 @@ h3 {
           animation-delay: 1s;
   -webkit-animation-direction: normal;
           animation-direction: normal;
+}
+
+.asideLeft .asideImageBackground {
+  -webkit-clip-path: polygon(14% 0, 100% 0, 100% 100%, 14% 100%, 0% 50%);
+          clip-path: polygon(14% 0, 100% 0, 100% 100%, 14% 100%, 0% 50%);
+}
+
+.asideRight .asideImageBackground {
+  -webkit-clip-path: polygon(0% 0%, 86% 0, 100% 50%, 86% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 86% 0, 100% 50%, 86% 100%, 0% 100%);
 }
 
 .asideImageTitle {
