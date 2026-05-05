@@ -136,7 +136,6 @@ h3 {
 
 .buttonWinik {
   border: 1px solid #354A54;
-  width: -moz-fit-content;
   width: fit-content;
   padding: 10px 30px 10px 30px;
   background-image: linear-gradient(to left, #455A64 50%, #354A54 50%);
@@ -322,7 +321,9 @@ h3 {
 
 .picSection img {
   width: 300px;
-  height: 300px;
+  height: 380px;
+  object-fit: cover;
+  object-position: center top;
   box-shadow: 0px -1px 17px silver;
   margin-bottom: 50px;
   border-radius: 9px;
@@ -332,6 +333,7 @@ h3 {
 }
 .picSection .imgHoverContainer {
   position: relative;
+  width: 300px;
 }
 .picSection .imgHoverContainer:hover img {
   opacity: 0.5;
@@ -372,11 +374,6 @@ h3 {
   grid-template-columns: repeat(8, 1fr);
 }
 
-.asideImageBackground {
-  grid-area: 1/1/9/9;
-  filter: brightness(50%);
-  z-index: -1;
-}
 .asideImageBackground#imageGasnor {
   background-image: url("../img/customers/gasnor_case.jpg");
 }
@@ -395,6 +392,11 @@ h3 {
 .asideImageBackground#imageJiraconn {
   background-image: url("../img/jiraconnimg.jpg");
 }
+.asideImageBackground {
+  grid-area: 1/1/9/9;
+  filter: brightness(50%);
+  z-index: -1;
+}
 .asideImageBackground#imageGasnor::before {
   content: "";
   position: absolute;
@@ -405,7 +407,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 15s;
+  animation-duration: 20s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -422,7 +424,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 13s;
+  animation-duration: 26s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -439,7 +441,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 13s;
+  animation-duration: 25s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -456,7 +458,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 17s;
+  animation-duration: 29s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -473,7 +475,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 34s;
+  animation-duration: 23s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -490,7 +492,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 24s;
+  animation-duration: 22s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -499,13 +501,11 @@ h3 {
 }
 
 .asideLeft .asideImageBackground {
-  -webkit-clip-path: polygon(14% 0, 100% 0, 100% 100%, 14% 100%, 0% 50%);
-          clip-path: polygon(14% 0, 100% 0, 100% 100%, 14% 100%, 0% 50%);
+  clip-path: polygon(14% 0, 100% 0, 100% 100%, 14% 100%, 0% 50%);
 }
 
 .asideRight .asideImageBackground {
-  -webkit-clip-path: polygon(0% 0%, 86% 0, 100% 50%, 86% 100%, 0% 100%);
-          clip-path: polygon(0% 0%, 86% 0, 100% 50%, 86% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 86% 0, 100% 50%, 86% 100%, 0% 100%);
 }
 
 .asideImageTitle {
@@ -758,8 +758,7 @@ h3 {
   max-height: 100px;
   padding: 0 50px;
   box-sizing: border-box;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   animation: fade-in 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
   filter: grayscale(100%);
   transition: filter 0.3s ease, background-color 0.3s ease;
@@ -809,4 +808,6 @@ h3 {
   100% {
     opacity: 1;
   }
-}/*# sourceMappingURL=winikStyle.css.map */
+}
+
+/*# sourceMappingURL=winikStyle.css.map */
