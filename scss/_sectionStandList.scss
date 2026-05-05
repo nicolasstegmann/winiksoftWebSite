@@ -31,25 +31,126 @@
     }
 }
 
+.teamGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 40px 20px;
+    list-style: none;
+    max-width: 750px;
+    margin: 0 auto;
+
+    li article {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        background: winikStyleGuide.$c-totalWhite;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: left;
+    }
+
+    li article {
+        .teamCardHeader { order: 1; }
+        .teamCardBody   { order: 3; }
+
+        .imgHoverContainer {
+            order: 2;
+            position: relative;
+            width: 220px;
+            height: 260px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+
+            &:hover {
+                img { opacity: 0.5; }
+                .imgHover { opacity: 1; }
+            }
+
+            img {
+                width: 220px;
+                height: 260px;
+                object-fit: cover;
+                object-position: center top;
+                border-radius: 0;
+                box-shadow: none;
+                margin-bottom: 0;
+                display: block;
+                opacity: 1;
+                transition: 0.5s ease;
+            }
+
+            .imgHover {
+                transition: .5s ease;
+                opacity: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+            }
+
+            .imgHoverText {
+                font-size: winikStyleGuide.$ts-winikHuge;
+                padding: 16px 32px;
+            }
+        }
+    }
+}
+
+.teamCardHeader {
+    padding: 24px 24px 12px;
+
+    h4 {
+        font-size: winikStyleGuide.$ts-winikL;
+        font-weight: bold;
+        color: winikStyleGuide.$c-winiksoftLetterDark;
+        margin-bottom: 4px;
+    }
+
+    .teamCardRole {
+        font-size: winikStyleGuide.$ts-winikS;
+        font-weight: bold;
+        color: winikStyleGuide.$c-winiksoftPower;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin: 0;
+    }
+}
+
+.teamCardBody {
+    padding: 12px 24px 24px;
+}
+
 .standsSectionBullet {
     list-style: none;
     padding: 0;
     margin: 0;
 
     li {
-        padding-left: 16px;
+        display: flex;
+        align-items: flex-start;
+        padding-left: 0;
 
         &::before {
             content: "•";
             padding-right: 8px;
+            flex-shrink: 0;
             color: winikStyleGuide.$c-winiksoftPower;
         }
+
+        p { margin: 0; }
     }
 }
 
 .picSection {
     img {
-        @include dimension(300px, 300px);
+        @include dimension(300px, 380px);
+        object-fit: cover;
+        object-position: center top;
         box-shadow: 0px -1px 17px silver;
         margin-bottom: 50px;
         border-radius: 9px;
@@ -60,11 +161,12 @@
 
     .imgHoverContainer {
         position: relative;
+        width: 300px;
         &:hover {
             img {
                 opacity: 0.5;
             }
-    
+
             .imgHover {
                 opacity: 1;
             }
