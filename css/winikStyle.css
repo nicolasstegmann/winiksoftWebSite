@@ -305,18 +305,113 @@ h3 {
   font-size: 16px;
 }
 
+.teamGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  padding: 40px 20px;
+  list-style: none;
+  max-width: 750px;
+  margin: 0 auto;
+}
+.teamGrid li article {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: left;
+}
+.teamGrid li article .teamCardHeader {
+  order: 1;
+}
+.teamGrid li article .teamCardBody {
+  order: 3;
+}
+.teamGrid li article .imgHoverContainer {
+  order: 2;
+  position: relative;
+  width: 220px;
+  height: 260px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.teamGrid li article .imgHoverContainer:hover img {
+  opacity: 0.5;
+}
+.teamGrid li article .imgHoverContainer:hover .imgHover {
+  opacity: 1;
+}
+.teamGrid li article .imgHoverContainer img {
+  width: 220px;
+  height: 260px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 0;
+  display: block;
+  opacity: 1;
+  transition: 0.5s ease;
+}
+.teamGrid li article .imgHoverContainer .imgHover {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.teamGrid li article .imgHoverContainer .imgHoverText {
+  font-size: 86px;
+  padding: 16px 32px;
+}
+
+.teamCardHeader {
+  padding: 24px 24px 12px;
+}
+.teamCardHeader h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #455A64;
+  margin-bottom: 4px;
+}
+.teamCardHeader .teamCardRole {
+  font-size: 14px;
+  font-weight: bold;
+  color: #00A4EA;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.teamCardBody {
+  padding: 12px 24px 24px;
+}
+
 .standsSectionBullet {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 .standsSectionBullet li {
-  padding-left: 16px;
+  display: flex;
+  align-items: flex-start;
+  padding-left: 0;
 }
 .standsSectionBullet li::before {
   content: "•";
   padding-right: 8px;
+  flex-shrink: 0;
   color: #00A4EA;
+}
+.standsSectionBullet li p {
+  margin: 0;
 }
 
 .picSection img {
@@ -407,7 +502,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 20s;
+  animation-duration: 8s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -424,7 +519,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 26s;
+  animation-duration: 11s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -441,7 +536,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 25s;
+  animation-duration: 22s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -458,7 +553,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 29s;
+  animation-duration: 6s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -475,7 +570,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 23s;
+  animation-duration: 16s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -492,7 +587,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 22s;
+  animation-duration: 13s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -699,6 +794,36 @@ h3 {
   }
 }
 @media only screen and (min-width: 800px) {
+  .teamGrid li article {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  .teamGrid li article .teamCardHeader {
+    grid-column: 2;
+    grid-row: 1;
+    order: unset;
+    padding: 24px 24px 12px;
+  }
+  .teamGrid li article .teamCardBody {
+    grid-column: 2;
+    grid-row: 2;
+    order: unset;
+  }
+  .teamGrid li article .imgHoverContainer {
+    grid-column: 1;
+    grid-row: 1/3;
+    order: unset;
+    width: 220px;
+    height: 100%;
+    min-height: 280px;
+    margin: 0;
+  }
+  .teamGrid li article .imgHoverContainer img {
+    width: 220px;
+    height: 100%;
+    min-height: 280px;
+  }
   .sectionImage {
     grid-template-columns: 40% 60%;
     padding: 0px 40px 150px 40px;
