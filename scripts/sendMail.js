@@ -1,88 +1,57 @@
-/**
-* PHP Email Form Validation - v3.2
-* URL: https://bootstrapmade.com/php-email-form/
-* Author: BootstrapMade.com
-*/
 (function () {
   "use strict";
 
-  let forms = document.querySelectorAll('.php-email-form');
+  // ── EmailJS credentials ──────────────────────────────────────────────────
+  const EMAILJS_PUBLIC_KEY  = "JLY_ts8i9XgQgfyHO";   // Account > API Keys
+  const EMAILJS_SERVICE_ID  = "winiksoft";   // Email Services
+  const EMAILJS_TEMPLATE_ID = "contacto_web_winiksoft";  // Email Templates
+  // ─────────────────────────────────────────────────────────────────────────
 
-  forms.forEach( function(e) {
-    e.addEventListener('submit', function(event) {
-      event.preventDefault();
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
-      let thisForm = this;
+  const form      = document.getElementById("formulario");
+  const loading   = form.querySelector(".loading");
+  const errorMsg  = form.querySelector(".error-message");
+  const sentMsg   = form.querySelector(".sent-message");
 
-      let action = thisForm.getAttribute('action');
-      let recaptcha = thisForm.getAttribute('data-recaptcha-site-key');
-      
-      if( ! action ) {
-        displayError(thisForm, 'The form action property is not set!')
-        return;
-      }
-      thisForm.querySelector('.loading').classList.add('d-block');
-      thisForm.querySelector('.error-message').classList.remove('d-block');
-      thisForm.querySelector('.sent-message').classList.remove('d-block');
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-      let formData = new FormData( thisForm );
+    if (!form.checkValidity()) {
+      form.classList.add("was-validated");
+      return;
+    }
 
-      if ( recaptcha ) {
-        if(typeof grecaptcha !== "undefined" ) {
-          grecaptcha.ready(function() {
-            try {
-              grecaptcha.execute(recaptcha, {action: 'php_email_form_submit'})
-              .then(token => {
-                formData.set('recaptcha-response', token);
-                php_email_form_submit(thisForm, action, formData);
-              })
-            } catch(error) {
-              displayError(thisForm, error)
-            }
-          });
-        } else {
-          displayError(thisForm, 'The reCaptcha javascript API url is not loaded!')
-        }
-      } else {
-        php_email_form_submit(thisForm, action, formData);
-      }
-    });
+    loading.classList.add("d-block");
+    errorMsg.classList.remove("d-block");
+    sentMsg.classList.remove("d-block");
+
+    const newsletter = form.querySelector("#formNewsletter");
+
+    const templateParams = {
+      nombre:         form.nombre.value,
+      email:          form.email.value,
+      telefono:       form.telefono.value,
+      medioContacto:  form.medioContacto.value,
+      empresa:        form.empresa.value,
+      tamEmpresa:     form.tamEmpresa.value,
+      cargo:          form.cargo.value,
+      mensaje:        form.mensaje.value,
+      newsletter:     newsletter.checked ? "Sí" : "No",
+    };
+
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+      .then(function () {
+        loading.classList.remove("d-block");
+        sentMsg.classList.add("d-block");
+        form.reset();
+        form.classList.remove("was-validated");
+      })
+      .catch(function (error) {
+        loading.classList.remove("d-block");
+        errorMsg.innerHTML = "Error al enviar el mensaje. Por favor intentá nuevamente.";
+        errorMsg.classList.add("d-block");
+        console.error("EmailJS error:", error);
+      });
   });
-
-  function php_email_form_submit(thisForm, action, formData) {
-    fetch(action, {
-      method: 'POST',
-      body: formData,
-      headers: {'X-Requested-With': 'XMLHttpRequest'}
-    })
-    .then(response => {
-      if( response.ok ) {
-        return response.text()
-      } else {
-        throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
-      }
-    })
-    .then(data => {
-      thisForm.querySelector('.loading').classList.remove('d-block');
-      if (data.trim() == 'OK') {
-        thisForm.querySelector('.sent-message').classList.add('d-block');
-        thisForm.reset(); 
-      } else {
-        throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
-      }
-    })
-    .catch((error) => {
-      displayError(thisForm, error);
-    });
-  }
-
-  function displayError(thisForm, error) {
-    // thisForm.querySelector('.loading').classList.remove('d-block');
-    // thisForm.querySelector('.error-message').innerHTML = error;
-    // thisForm.querySelector('.error-message').classList.add('d-block');
-    thisForm.querySelector('.loading').classList.remove('d-block');
-    thisForm.querySelector('.sent-message').classList.add('d-block');
-    thisForm.reset(); 
-  }
-
 })();
