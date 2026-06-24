@@ -116,11 +116,11 @@
                         </div>
                     </div>
                     <div class="col-12 col-lg-6 text-left d-flex sectionContactoChild" id="contactoRight">
-                        <form class="needs-validation flex-fill align-self-center php-email-form" action="../scripts/recruiting.php" method="post" id="formulario">
+                        <form class="needs-validation flex-fill align-self-center php-email-form" id="formularioRecruiting">
                             <div class="form-group row">
                                 <label for="formNombre" class="col-lg-3 col-form-label">Nombre y apellido</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="formNombre"
+                                    <input type="text" class="form-control" id="formNombre" name="nombre"
                                         placeholder="Nombre y apellido" required>
                                     <div class="valid-feedback">OK</div>
                                     <div class="invalid-feedback">Campo obligatorio</div>
@@ -129,20 +129,24 @@
                             <div class="form-group row">
                                 <label for="formEmail" class="col-lg-3 col-form-label">E-mail</label>
                                 <div class="col-lg-9">
-                                    <input type="email" class="form-control" id="formEmail" aria-describedby="emailHelp"
+                                    <input type="email" class="form-control" id="formEmail" name="email" aria-describedby="emailHelp"
                                         placeholder="E-mail" required>
-                                    <small id="emailHelp" class="form-text">No compartiremos con nadie tu
-                                        dirección de e-mail.</small>
+                                    <small id="emailHelp" class="form-text">No compartiremos con nadie tu dirección de e-mail.</small>
                                     <div class="valid-feedback">OK</div>
                                     <div class="invalid-feedback">Campo obligatorio</div>
                                 </div>
                             </div>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-                                <label class="custom-file-label" for="validatedCustomFile">Adjunta tu CV...</label>
-                                <div class="invalid-feedback">Debe adjuntar un archivo</div>
+                            <div class="form-group row">
+                                <label for="formLinkedin" class="col-lg-3 col-form-label">LinkedIn / CV</label>
+                                <div class="col-lg-9">
+                                    <input type="url" class="form-control" id="formLinkedin" name="linkedin"
+                                        placeholder="https://www.linkedin.com/in/tu-perfil" required>
+                                    <small class="form-text"><strong>Preferentemente compartí la URL de tu perfil de LinkedIn.</strong> También podés pegar un link a tu CV en Google Drive o Dropbox.</small>
+                                    <div class="valid-feedback">OK</div>
+                                    <div class="invalid-feedback">Campo obligatorio</div>
+                                </div>
                             </div>
-                            <br><br>
+                            <br>
                             <div class="my-3 d-flex justify-content-end">
                                 <div class="loading">Enviando...</div>
                                 <div class="error-message"></div>
@@ -205,7 +209,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
         integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
     </script>
-    <script src="../scripts/sendMail.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="../scripts/sendMailRecruiting.js"></script>
 </body>
 
 </html>
