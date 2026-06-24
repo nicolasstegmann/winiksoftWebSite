@@ -89,11 +89,11 @@
                         </div>
                     </div>
                     <div class="col-12 col-lg-8 text-left d-flex sectionContactoChild" id="contactoRight">
-                        <form class="needs-validation flex-fill align-self-center php-email-form" action="../scripts/contacto.php" method="post" id="formulario">
+                        <form class="needs-validation flex-fill align-self-center php-email-form" id="formulario">
                             <div class="form-group row">
                                 <label for="formNombre" class="col-lg-3 col-form-label">Nombre y apellido</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="formNombre"
+                                    <input type="text" class="form-control" id="formNombre" name="nombre"
                                         placeholder="Nombre y apellido" required>
                                     <div class="valid-feedback">OK</div>
                                     <div class="invalid-feedback">Campo obligatorio</div>
@@ -102,7 +102,7 @@
                             <div class="form-group row">
                                 <label for="formEmail" class="col-lg-3 col-form-label">E-mail</label>
                                 <div class="col-lg-9">
-                                    <input type="email" class="form-control" id="formEmail" aria-describedby="emailHelp"
+                                    <input type="email" class="form-control" id="formEmail" name="email" aria-describedby="emailHelp"
                                         placeholder="E-mail" required>
                                     <small id="emailHelp" class="form-text">No compartiremos con nadie tu
                                         dirección de e-mail.</small>
@@ -113,7 +113,7 @@
                             <div class="form-group row">
                                 <label for="formTelefono" class="col-lg-3 col-form-label">Teléfono</label>
                                 <div class="col-lg-9">
-                                    <input type="tel" class="form-control" id="formTelefono" aria-describedby="telHelp"
+                                    <input type="tel" class="form-control" id="formTelefono" name="telefono" aria-describedby="telHelp"
                                         placeholder="Teléfono" required>
                                     <small id="telHelp" class="form-text">No compartiremos con nadie tu
                                         teléfono.</small>
@@ -123,7 +123,7 @@
                                 <label for="formMedioContacto" class="col-lg-3 col-form-label">¿Como preferís que te
                                     contactemos?</label>
                                 <div class="col-lg-9">
-                                    <select class="form-control" id="formMedioContacto">
+                                    <select class="form-control" id="formMedioContacto" name="medioContacto">
                                         <option selected>Elije...</option>
                                         <option value="indistinto">Indistinto</option>
                                         <option value="email">E-mail</option>
@@ -134,13 +134,13 @@
                             <div class="form-group row">
                                 <label for="formEmpresa" class="col-lg-3 col-form-label">Empresa</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="formEmpresa" placeholder="Empresa" required>
+                                    <input type="text" class="form-control" id="formEmpresa" name="empresa" placeholder="Empresa" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="formTamEmpresa" class="col-lg-3 col-form-label">Tamaño de la empresa</label>
                                 <div class="col-lg-9">
-                                    <select class="form-control" id="formTamEmpresa" required>
+                                    <select class="form-control" id="formTamEmpresa" name="tamEmpresa" required>
                                         <option selected>Elije...</option>
                                         <option value="1">1 a 10 empleados</option>
                                         <option value="10">10 a 50 empleados</option>
@@ -152,17 +152,17 @@
                             <div class="form-group row">
                                 <label for="formCargo" class="col-lg-3 col-form-label">Cargo</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="formCargo" placeholder="Cargo" required>
+                                    <input type="text" class="form-control" id="formCargo" name="cargo" placeholder="Cargo" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="formMensaje" class="col-lg-3 col-form-label">Mensaje</label>
                                 <div class="col-lg-9">
-                                    <textarea class="form-control" id="formMensaje" rows="3"></textarea>
+                                    <textarea class="form-control" id="formMensaje" name="mensaje" rows="3"></textarea>
                                 </div>
                             </div>
                             <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input" id="formNewsletter" checked>
+                                <input type="checkbox" class="form-check-input" id="formNewsletter" name="newsletter" value="Sí" checked>
                                 <label class="form-check-label" for="formNewsletter">Deseo suscribirme al
                                     newsletter</label>
                             </div>
@@ -228,6 +228,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
         integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="../scripts/sendMail.js"></script>
 </body>
 
