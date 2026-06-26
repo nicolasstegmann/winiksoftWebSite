@@ -107,29 +107,24 @@ h3 {
 
 .sectionHeader {
     overflow: hidden;
-    border-radius: 0 0 28px 28px;
-    box-shadow: 0 8px 24px rgba(0, 164, 234, 0.12);
 
     h2 {
-        background: linear-gradient(135deg, winikStyleGuide.$c-winiksoftPower 0%, #0080b8 100%);
-        font-size: clamp(22px, 4vw, 36px);
+        background-color: winikStyleGuide.$c-winiksoftPower;
+        font-size: winikStyleGuide.$ts-winikXXL;
         font-weight: bold;
         color: winikStyleGuide.$c-winiksoftLetterLight;
-        line-height: 1.2;
-        padding: clamp(16px, 3vw, 24px) 24px;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
+        line-height: 80px;
+        padding: 20px;
     }
 
     h3 {
         background-color: winikStyleGuide.$c-winiksoftWhite;
-        font-size: clamp(16px, 2.5vw, 24px);
-        font-weight: 500;
-        font-style: normal;
+        font-size: winikStyleGuide.$ts-winikXL;
+        font-weight: bold;
+        font-style: italic;
         color: winikStyleGuide.$c-winiksoftMain;
-        line-height: 1.4;
-        padding: clamp(12px, 2vw, 18px) 24px;
-        letter-spacing: 0.5px;
+        line-height: 40px;
+        padding: 20px;
     }
 }
 

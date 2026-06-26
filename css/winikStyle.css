@@ -172,28 +172,23 @@ h3 {
 
 .sectionHeader {
   overflow: hidden;
-  border-radius: 0 0 28px 28px;
-  box-shadow: 0 8px 24px rgba(0, 164, 234, 0.12);
 }
 .sectionHeader h2 {
-  background: linear-gradient(135deg, #00A4EA 0%, #0080b8 100%);
-  font-size: clamp(22px, 4vw, 36px);
+  background-color: #00A4EA;
+  font-size: 36px;
   font-weight: bold;
   color: #BFEBFB;
-  line-height: 1.2;
-  padding: clamp(16px, 3vw, 24px) 24px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+  line-height: 80px;
+  padding: 20px;
 }
 .sectionHeader h3 {
   background-color: #EEFCFF;
-  font-size: clamp(16px, 2.5vw, 24px);
-  font-weight: 500;
-  font-style: normal;
+  font-size: 26px;
+  font-weight: bold;
+  font-style: italic;
   color: #4DC8F5;
-  line-height: 1.4;
-  padding: clamp(12px, 2vw, 18px) 24px;
-  letter-spacing: 0.5px;
+  line-height: 40px;
+  padding: 20px;
 }
 
 .jumbotron {
@@ -508,7 +503,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 29s;
+  animation-duration: 11s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -525,7 +520,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 15s;
+  animation-duration: 19s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -542,7 +537,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 18s;
+  animation-duration: 31s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -559,7 +554,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 33s;
+  animation-duration: 14s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -576,7 +571,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 10s;
+  animation-duration: 23s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -593,7 +588,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 21s;
+  animation-duration: 30s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
