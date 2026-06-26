@@ -8,10 +8,26 @@
 
 /* HEADER */
 .navbar {
+  position: relative;
+  background: transparent;
+  padding-bottom: 22px;
+}
+.navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: linear-gradient(135deg, #4DC8F5 0%, #00A4EA 100%);
-  box-shadow: 0 4px 20px rgba(0, 164, 234, 0.25);
-  border-radius: 0 0 20px 20px;
-  transition: box-shadow 0.3s ease;
+  clip-path: polygon(0 0, 100% 0, 100% 48%, 0 100%);
+  z-index: -1;
+  filter: drop-shadow(0 6px 18px rgba(0, 164, 234, 0.32));
+}
+.navbar .navbar-collapse {
+  background: linear-gradient(135deg, #4DC8F5 0%, #00A4EA 100%);
+  padding: 8px 0 12px;
+  border-radius: 0 0 10px 10px;
 }
 
 .navbar-nav {
@@ -511,7 +527,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 35s;
+  animation-duration: 33s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -528,7 +544,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 9s;
+  animation-duration: 19s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -545,7 +561,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 6s;
+  animation-duration: 31s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -562,7 +578,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 12s;
+  animation-duration: 16s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -579,7 +595,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 6s;
+  animation-duration: 17s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -596,7 +612,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 13s;
+  animation-duration: 16s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -687,7 +703,7 @@ h3 {
 }
 
 .sectionContacto {
-  margin-top: 70px;
+  margin-top: 92px;
 }
 
 .sectionContactoChild {
