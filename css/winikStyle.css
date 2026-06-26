@@ -8,7 +8,9 @@
 
 /* HEADER */
 .navbar {
-  background-color: #4DC8F5;
+  background: linear-gradient(135deg, #4DC8F5 0%, #00A4EA 100%);
+  box-shadow: 0 2px 16px rgba(0, 164, 234, 0.22);
+  transition: box-shadow 0.3s ease;
 }
 
 .navbar-nav {
@@ -43,7 +45,7 @@
 /*Footer*/
 .footerWinik {
   padding: 10px 0;
-  background-color: #4DC8F5;
+  background: linear-gradient(160deg, #4DC8F5 0%, #00A4EA 100%);
   color: #EEFCFF;
 }
 .footerWinik img {
@@ -83,6 +85,7 @@ body {
   font-family: "Ubuntu", sans-serif;
   overflow-x: hidden;
   width: 100vw;
+  line-height: 1.6;
 }
 
 a {
@@ -126,7 +129,7 @@ h3 {
 .heroWinik {
   grid-column: 1/2;
   padding-bottom: 150px;
-  background-color: rgba(53, 74, 84, 0.5333333333);
+  background: linear-gradient(135deg, rgba(53, 74, 84, 0.65) 0%, rgba(0, 164, 234, 0.3) 100%);
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -137,7 +140,7 @@ h3 {
 .buttonWinik {
   border: 1px solid #354A54;
   width: fit-content;
-  padding: 10px 30px 10px 30px;
+  padding: 10px 30px;
   background-image: linear-gradient(to left, #455A64 50%, #354A54 50%);
   background-size: 200% 100%;
   text-transform: uppercase;
@@ -145,7 +148,8 @@ h3 {
   font-size: 20px;
   border-radius: 50px;
   font-weight: bold;
-  transition: all 1s;
+  transition: background-position 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 15px rgba(53, 74, 84, 0.25);
   z-index: 1;
 }
 .buttonWinik a {
@@ -153,22 +157,13 @@ h3 {
   text-decoration: none;
 }
 .buttonWinik:hover {
-  animation-name: buttonGrow;
-  animation-duration: 0.5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear;
-  animation-delay: 0;
-  animation-direction: normal;
+  background-position: -100% 0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(53, 74, 84, 0.4);
 }
 .buttonWinik:active {
-  animation-name: buttonShine;
-  animation-duration: 0.2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: none;
-  animation-timing-function: linear;
-  animation-delay: 0;
-  animation-direction: normal;
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(53, 74, 84, 0.3);
 }
 
 .callToAction {
@@ -180,21 +175,24 @@ h3 {
   overflow: hidden;
 }
 .sectionHeader h2 {
-  background-color: #00A4EA;
-  font-size: 36px;
+  background: linear-gradient(135deg, #00A4EA 0%, #0080b8 100%);
+  font-size: clamp(22px, 4vw, 36px);
   font-weight: bold;
   color: #BFEBFB;
-  line-height: 80px;
-  padding: 20px;
+  line-height: 1.2;
+  padding: clamp(16px, 3vw, 24px) 24px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 .sectionHeader h3 {
   background-color: #EEFCFF;
-  font-size: 26px;
-  font-weight: bold;
-  font-style: italic;
+  font-size: clamp(16px, 2.5vw, 24px);
+  font-weight: 500;
+  font-style: normal;
   color: #4DC8F5;
-  line-height: 40px;
-  padding: 20px;
+  line-height: 1.4;
+  padding: clamp(12px, 2vw, 18px) 24px;
+  letter-spacing: 0.5px;
 }
 
 .jumbotron {
@@ -264,15 +262,17 @@ h3 {
   background-image: url("../img/productos.jpg");
 }
 .sectionImage p {
-  font-size: 36px;
+  font-size: clamp(28px, 4vw, 36px);
   text-align: left;
   font-family: "Raleway", sans-serif;
   color: #EEFCFF;
   font-weight: bold;
-  padding: 150px 30px 30px 30px;
+  padding: clamp(100px, 15vw, 150px) 30px 30px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  letter-spacing: 1px;
 }
 .sectionImage p::first-letter {
-  font-size: 66px;
+  font-size: clamp(48px, 7vw, 66px);
   font-weight: bolder;
   letter-spacing: 5px;
 }
@@ -321,9 +321,14 @@ h3 {
   margin: 0;
   background: #FFFFFF;
   border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04);
   overflow: hidden;
   text-align: left;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.teamGrid li article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 164, 234, 0.14), 0 4px 12px rgba(0, 0, 0, 0.07);
 }
 .teamGrid li article .teamCardHeader {
   order: 1;
@@ -502,7 +507,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 8s;
+  animation-duration: 31s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -519,7 +524,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 11s;
+  animation-duration: 27s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -536,7 +541,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 22s;
+  animation-duration: 14s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -553,7 +558,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 6s;
+  animation-duration: 28s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -570,7 +575,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 16s;
+  animation-duration: 20s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -587,7 +592,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 13s;
+  animation-duration: 6s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -630,11 +635,16 @@ h3 {
 }
 
 .asideArticle {
-  box-shadow: 0px -1px 17px silver;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04);
   width: 300px;
   margin: 50px;
-  border-radius: 9px;
+  border-radius: 12px;
   padding: 32px;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.asideArticle:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0, 164, 234, 0.13), 0 4px 12px rgba(0, 0, 0, 0.07);
 }
 .asideArticle img {
   width: 30%;
@@ -685,9 +695,16 @@ h3 {
   color: #455A64;
 }
 .sectionContactoChild#contactoRight {
-  background-color: #9EE5FF;
+  background: linear-gradient(160deg, #9EE5FF 0%, #c5f0ff 100%);
   padding: 50px;
   color: #455A64;
+}
+.sectionContactoChild#contactoRight .form-control {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.sectionContactoChild#contactoRight .form-control:focus {
+  border-color: #00A4EA;
+  box-shadow: 0 0 0 0.2rem rgba(0, 164, 234, 0.2);
 }
 
 .php-email-form .error-message {

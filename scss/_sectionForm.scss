@@ -32,9 +32,18 @@
     }
 
     &#contactoRight {
-        background-color: winikStyleGuide.$c-winiksoftLight;
+        background: linear-gradient(160deg, winikStyleGuide.$c-winiksoftLight 0%, #c5f0ff 100%);
         padding: 50px;
         color: winikStyleGuide.$c-winiksoftLetterDark;
+
+        .form-control {
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+
+            &:focus {
+                border-color: winikStyleGuide.$c-winiksoftPower;
+                box-shadow: 0 0 0 0.2rem rgba(0, 164, 234, 0.2);
+            }
+        }
     }
 }
 

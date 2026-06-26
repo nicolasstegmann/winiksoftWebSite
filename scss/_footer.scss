@@ -1,7 +1,7 @@
 /*Footer*/
 .footerWinik {
     padding: 10px 0;
-    background-color: winikStyleGuide.$c-winiksoftMain;
+    background: linear-gradient(160deg, winikStyleGuide.$c-winiksoftMain 0%, winikStyleGuide.$c-winiksoftPower 100%);
     color: winikStyleGuide.$c-winiksoftWhite;
 
     img {

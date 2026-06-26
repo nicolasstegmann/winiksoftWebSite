@@ -1,6 +1,8 @@
 /* HEADER */
 .navbar {
-    background-color: winikStyleGuide.$c-winiksoftMain;
+    background: linear-gradient(135deg, winikStyleGuide.$c-winiksoftMain 0%, winikStyleGuide.$c-winiksoftPower 100%);
+    box-shadow: 0 2px 16px rgba(0, 164, 234, 0.22);
+    transition: box-shadow 0.3s ease;
 }
 
 .navbar-nav {

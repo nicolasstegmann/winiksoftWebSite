@@ -12,6 +12,7 @@ body {
     font-family: winikStyleGuide.$t-winiksoftMain;
     overflow-x: hidden;
     @include dimension(100vw);
+    line-height: 1.6;
 }
 
 a {
@@ -56,7 +57,7 @@ h3 {
 .heroWinik {
     grid-column: 1/2;
     padding-bottom: 150px;
-    background-color: winikStyleGuide.$c-heroTransparence;
+    background: linear-gradient(135deg, rgba(53, 74, 84, 0.65) 0%, rgba(0, 164, 234, 0.3) 100%);
     display: flex;
     @include dimension(100%);
     flex-direction: column;
@@ -67,7 +68,7 @@ h3 {
 .buttonWinik {
     border: 1px solid winikStyleGuide.$c-winikButton;
     @include dimension(fit-content);
-    padding: 10px 30px 10px 30px;
+    padding: 10px 30px;
     background-image: linear-gradient(to left, winikStyleGuide.$c-winiksoftLetterDark 50%, winikStyleGuide.$c-winikButton 50%);
     background-size: 200% 100%;
     text-transform: uppercase;
@@ -75,7 +76,10 @@ h3 {
     font-size: winikStyleGuide.$ts-winikL;
     border-radius: 50px;
     font-weight: bold;
-    transition: all 1s;
+    transition: background-position 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 4px 15px rgba(53, 74, 84, 0.25);
     z-index: 1;
 
     a {
@@ -84,13 +88,14 @@ h3 {
     }
 
     &:hover {
-        $buttonGrowMap: (name: buttonGrow, duration: 0.5s, iteration:1, fillMode: forwards);
-        @include animation($buttonGrowMap...);
+        background-position: -100% 0;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(53, 74, 84, 0.4);
     }
 
     &:active {
-        $buttonShineMap: (name: buttonShine, duration: 0.2s, iteration:1);
-        @include animation($buttonShineMap...);
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(53, 74, 84, 0.3);
     }
 }
 
@@ -103,22 +108,25 @@ h3 {
     overflow: hidden;
 
     h2 {
-        background-color: winikStyleGuide.$c-winiksoftPower;
-        font-size: winikStyleGuide.$ts-winikXXL;
+        background: linear-gradient(135deg, winikStyleGuide.$c-winiksoftPower 0%, #0080b8 100%);
+        font-size: clamp(22px, 4vw, 36px);
         font-weight: bold;
         color: winikStyleGuide.$c-winiksoftLetterLight;
-        line-height: 80px;
-        padding: 20px;
+        line-height: 1.2;
+        padding: clamp(16px, 3vw, 24px) 24px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
     }
 
     h3 {
         background-color: winikStyleGuide.$c-winiksoftWhite;
-        font-size: winikStyleGuide.$ts-winikXL;
-        font-weight: bold;
-        font-style: italic;
+        font-size: clamp(16px, 2.5vw, 24px);
+        font-weight: 500;
+        font-style: normal;
         color: winikStyleGuide.$c-winiksoftMain;
-        line-height: 40px;
-        padding: 20px;
+        line-height: 1.4;
+        padding: clamp(12px, 2vw, 18px) 24px;
+        letter-spacing: 0.5px;
     }
 }
 
