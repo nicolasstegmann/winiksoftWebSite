@@ -1,27 +1,6 @@
 /* HEADER */
 .navbar {
-    position: relative;
-    background: transparent;
-    padding-bottom: 22px;
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, winikStyleGuide.$c-winiksoftMain 0%, winikStyleGuide.$c-winiksoftPower 100%);
-        clip-path: polygon(0 0, 100% 0, 100% 48%, 0 100%);
-        z-index: -1;
-        filter: drop-shadow(0 6px 18px rgba(0, 164, 234, 0.32));
-    }
-
-    .navbar-collapse {
-        background: linear-gradient(135deg, winikStyleGuide.$c-winiksoftMain 0%, winikStyleGuide.$c-winiksoftPower 100%);
-        padding: 8px 0 12px;
-        border-radius: 0 0 10px 10px;
-    }
+    background-color: winikStyleGuide.$c-winiksoftMain;
 }
 
 .navbar-nav {
