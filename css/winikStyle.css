@@ -9,7 +9,8 @@
 /* HEADER */
 .navbar {
   background: linear-gradient(135deg, #4DC8F5 0%, #00A4EA 100%);
-  box-shadow: 0 2px 16px rgba(0, 164, 234, 0.22);
+  box-shadow: 0 4px 20px rgba(0, 164, 234, 0.25);
+  border-radius: 0 0 20px 20px;
   transition: box-shadow 0.3s ease;
 }
 
@@ -135,6 +136,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  border-radius: 0 0 32px 32px;
 }
 
 .buttonWinik {
@@ -173,6 +175,8 @@ h3 {
 
 .sectionHeader {
   overflow: hidden;
+  border-radius: 0 0 28px 28px;
+  box-shadow: 0 8px 24px rgba(0, 164, 234, 0.12);
 }
 .sectionHeader h2 {
   background: linear-gradient(135deg, #00A4EA 0%, #0080b8 100%);
@@ -507,7 +511,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 31s;
+  animation-duration: 35s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -524,7 +528,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 27s;
+  animation-duration: 9s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -541,7 +545,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 14s;
+  animation-duration: 6s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -558,7 +562,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 28s;
+  animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -575,7 +579,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 20s;
+  animation-duration: 6s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -592,7 +596,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 6s;
+  animation-duration: 13s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
