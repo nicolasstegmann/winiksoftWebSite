@@ -130,6 +130,7 @@ h3 {
   background: linear-gradient(135deg, rgba(53, 74, 84, 0.65) 0%, rgba(0, 164, 234, 0.3) 100%);
   display: flex;
   width: 100%;
+  min-height: 100vh;
   flex-direction: column;
   align-items: center;
   overflow: hidden;
@@ -165,6 +166,23 @@ h3 {
   box-shadow: 0 2px 8px rgba(53, 74, 84, 0.3);
 }
 
+@media (max-width: 768px) {
+  .heroWinik {
+    padding-bottom: 60px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .heroWinikText {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .heroWinikText p {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
 .callToAction {
   display: flex;
   justify-content: center;
@@ -271,6 +289,23 @@ h3 {
   font-size: clamp(48px, 7vw, 66px);
   font-weight: bolder;
   letter-spacing: 5px;
+}
+@media (max-width: 768px) {
+  .sectionImage {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+  }
+  .sectionImage p {
+    font-size: 16px;
+    padding: 80px 16px 16px;
+    width: 100%;
+  }
+  .sectionImage p::first-letter {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
 }
 
 .standList {
@@ -503,7 +538,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 11s;
+  animation-duration: 26s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -520,7 +555,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 19s;
+  animation-duration: 30s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -537,7 +572,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 31s;
+  animation-duration: 14s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -554,7 +589,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 14s;
+  animation-duration: 13s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -571,7 +606,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 23s;
+  animation-duration: 26s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -588,7 +623,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 30s;
+  animation-duration: 28s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -947,5 +982,3 @@ h3 {
     opacity: 1;
   }
 }
-
-/*# sourceMappingURL=winikStyle.css.map */

@@ -35,4 +35,22 @@
 
     }
 
+    @media (max-width: 768px) {
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center center;
+        overflow: hidden;
+
+        p {
+            font-size: 16px;
+            padding: 80px 16px 16px;
+            width: 100%;
+
+            &::first-letter {
+                font-size: 24px;
+                letter-spacing: 2px;
+            }
+        }
+    }
+
 }
