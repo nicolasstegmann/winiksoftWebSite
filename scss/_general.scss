@@ -101,26 +101,6 @@ h3 {
     }
 }
 
-@media (max-width: 768px) {
-    .heroWinik {
-        padding-bottom: 60px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .heroWinikText {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-        overflow: hidden;
-
-        p {
-            word-break: break-word;
-            overflow-wrap: break-word;
-        }
-    }
-}
-
 .callToAction {
     display: flex;
     justify-content: center;
