@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@200;600;700&family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Raleway:wght@700&family=Ubuntu:wght@400;700&display=swap");
 .asideImageBackground, .sectionImage {
   background-repeat: no-repeat;
   background-size: cover;
@@ -159,6 +159,7 @@ h3 {
   background-image: linear-gradient(to left, #455A64 50%, #354A54 50%);
   background-size: 200% 100%;
   text-transform: uppercase;
+  letter-spacing: 0.08em;
   font-family: "Lato", sans-serif;
   font-size: 20px;
   border-radius: 50px;
@@ -342,7 +343,7 @@ h3 {
   height: auto;
 }
 .sectionStands h4 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
 }
 .sectionStands p {
@@ -433,9 +434,9 @@ h3 {
 .teamCardHeader .teamCardRole {
   font-size: 14px;
   font-weight: bold;
-  color: #00A4EA;
+  color: #455A64;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.08em;
   margin: 0;
 }
 
@@ -619,7 +620,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 19s;
+  animation-duration: 18s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -636,7 +637,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 31s;
+  animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -653,7 +654,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 29s;
+  animation-duration: 32s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -670,7 +671,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 8s;
+  animation-duration: 11s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -687,7 +688,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 35s;
+  animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;

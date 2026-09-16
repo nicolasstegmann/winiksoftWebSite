@@ -22,7 +22,7 @@
     }
 
     h4 {
-        font-size: winikStyleGuide.$ts-winikM;
+        font-size: winikStyleGuide.$ts-winikL;
         font-weight: bold;
     }
 
@@ -121,9 +121,9 @@
     .teamCardRole {
         font-size: winikStyleGuide.$ts-winikS;
         font-weight: bold;
-        color: winikStyleGuide.$c-winiksoftPower;
+        color: winikStyleGuide.$c-winiksoftLetterDark;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.08em;
         margin: 0;
     }
 }
