@@ -50,14 +50,7 @@
     }
 
     .sectionImage p {
-        $hugeXXL: winikStyleGuide.$ts-winikXXL + 12;
-        font-size: $hugeXXL;
-
-        &::first-letter{
-            font-size: $hugeXXL + 30;
-        }
-
-
+        max-width: 640px;
     }
 
     .aside {
