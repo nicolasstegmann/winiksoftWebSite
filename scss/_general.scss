@@ -45,7 +45,7 @@ h3 {
     }
 
     .shape-fill {
-        fill: winikStyleGuide.$c-winiksoftMain;
+        fill: winikStyleGuide.$c-winikButton;
     }
 }
 
@@ -110,10 +110,10 @@ h3 {
     overflow: hidden;
 
     h2 {
-        background-color: winikStyleGuide.$c-winiksoftPower;
+        background-color: winikStyleGuide.$c-winiksoftDeep;
         font-size: winikStyleGuide.$ts-winikXXL;
         font-weight: bold;
-        color: winikStyleGuide.$c-winiksoftLetterLight;
+        color: winikStyleGuide.$c-totalWhite;
         line-height: 80px;
         padding: 20px;
         letter-spacing: -0.02em;
@@ -161,7 +161,7 @@ h3 {
 .hover-underline-animation {
     display: inline-block;
     position: relative;
-    color: #0087ca;
+    color: winikStyleGuide.$c-winikButton;
 }
 
 .hover-underline-animation:after {
@@ -172,7 +172,7 @@ h3 {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: winikStyleGuide.$c-winiksoftLetterLight;
+    background-color: winikStyleGuide.$c-winikButton;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 }
