@@ -1,5 +1,70 @@
 
 //Media queries
+
+// Mobile overrides (max-width: 799px)
+@media only screen and (max-width: 799px) {
+    // Button: smaller so it doesn't wrap on narrow screens
+    .buttonWinik {
+        font-size: winikStyleGuide.$ts-winikS;
+        padding: 8px 20px;
+    }
+
+    // Hero: less bottom padding — 150px leaves a huge empty zone on mobile
+    .heroWinik {
+        padding-bottom: 60px;
+    }
+
+    // Section headers: 80px line-height is designed for desktop; collapse for mobile
+    .sectionHeader h2 {
+        font-size: winikStyleGuide.$ts-winikXL;
+        line-height: 1.25;
+        padding: 14px 16px;
+    }
+
+    .sectionHeader h3 {
+        padding: 12px 16px 20px;
+    }
+
+    // Carousel controls: move to bottom of slide so they don't overlay long text
+    .carousel-control-prev,
+    .carousel-control-next {
+        top: auto;
+        bottom: 24px;
+        transform: none;
+        width: 40px;
+        height: 40px;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    // Aside article: fixed 300px width + 50px margins + 40px padding = 480px min
+    // → collapses to 375px viewport. Make it fluid on mobile.
+    .asideStory {
+        padding: 16px;
+    }
+
+    .asideArticle {
+        width: 100%;
+        max-width: 320px;
+        margin: 16px auto;
+    }
+
+    // Aside clip-paths: diagonal cuts designed for side-by-side layout;
+    // remove when images are stacked vertically on mobile
+    .asideLeft .asideImageBackground,
+    .asideRight .asideImageBackground {
+        clip-path: none;
+    }
+
+    // Aside image title: reposition for single-column
+    .asideImageTitle {
+        grid-column: 2/8;
+        grid-row: 6/9;
+    }
+}
+
 @media only screen and (min-width: 800px) {
     .teamGrid {
         li article {
