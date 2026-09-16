@@ -36,6 +36,10 @@
   color: #354A54;
 }
 
+.navbar-nav.ml-auto .nav-link {
+  padding: 14px 12px;
+}
+
 .navbar-brand:before {
   content: "";
   position: absolute;
@@ -185,6 +189,7 @@ h3 {
 .callToAction {
   display: flex;
   justify-content: center;
+  padding: 32px 0 48px;
 }
 
 .sectionHeader {
@@ -332,9 +337,13 @@ h3 {
   list-style: none;
 }
 
+.sectionStands .standList {
+  gap: 32px;
+}
 .sectionStands article {
   width: 300px;
-  margin: 50px;
+  margin: 0;
+  padding: 16px 12px;
 }
 .sectionStands img {
   width: 30%;
@@ -603,7 +612,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 14s;
+  animation-duration: 11s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -620,7 +629,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 18s;
+  animation-duration: 14s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -637,7 +646,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 12s;
+  animation-duration: 8s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -654,7 +663,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 32s;
+  animation-duration: 24s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -671,7 +680,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 11s;
+  animation-duration: 6s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -688,7 +697,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 12s;
+  animation-duration: 11s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
