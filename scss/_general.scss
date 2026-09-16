@@ -74,6 +74,7 @@ h3 {
     background-image: linear-gradient(to left, winikStyleGuide.$c-winiksoftLetterDark 50%, winikStyleGuide.$c-winikButton 50%);
     background-size: 200% 100%;
     text-transform: uppercase;
+    letter-spacing: 0.08em;
     font-family: winikStyleGuide.$t-winiksoftThird;
     font-size: winikStyleGuide.$ts-winikL;
     border-radius: 50px;
