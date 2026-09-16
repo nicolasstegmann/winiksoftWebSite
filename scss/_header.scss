@@ -34,6 +34,11 @@
     }
 }
 
+// Social icon links: increase tap target to 44px height (WCAG 2.5.5)
+.navbar-nav.ml-auto .nav-link {
+    padding: 14px 12px;
+}
+
 .navbar-brand:before {
     content: "";
     position: absolute;

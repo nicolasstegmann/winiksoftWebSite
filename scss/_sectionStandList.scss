@@ -10,9 +10,14 @@
 }
 
 .sectionStands {
+    .standList {
+        gap: 32px;
+    }
+
     article {
         @include dimension(300px);
-        margin: 50px;
+        margin: 0;
+        padding: 16px 12px;
     }
 
     img {
