@@ -5,6 +5,12 @@
     .sectionImage {
         height: 100vh;
         min-height: unset;
+        overflow: hidden;
+    }
+
+    // Keep button clear of carousel indicators (z-index: 15, ~30px tall at bottom)
+    .heroWinik {
+        padding-bottom: 70px;
     }
 }
 
