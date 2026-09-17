@@ -65,6 +65,27 @@
     }
 }
 
+// Respect prefers-reduced-motion: disable spatial AOS transforms, freeze
+// the navbar shimmer, and preserve opacity/color transitions (they still
+// carry meaning — only movement that causes vestibular discomfort is cut).
+@media (prefers-reduced-motion: reduce) {
+    [data-aos] {
+        transform: none !important;
+        opacity: 1 !important;
+        transition-duration: 0ms !important;
+        transition-delay: 0ms !important;
+        animation: none !important;
+    }
+
+    .navbar-brand:before {
+        animation: none;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
 @media only screen and (min-width: 800px) {
     .teamGrid {
         li article {
