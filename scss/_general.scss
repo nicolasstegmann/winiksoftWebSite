@@ -148,6 +148,19 @@ h3 {
     }
 }
 
+// Product name headings in the asidesSection (productos page).
+// These h3s are section dividers between products, not subtitles —
+// they need weight and color to stand out between the aside blocks.
+.asidesSection h3 {
+    font-size: winikStyleGuide.$ts-winikXL;
+    font-weight: bold;
+    color: winikStyleGuide.$c-winiksoftDeep;
+    padding: 40px 20px 12px;
+    line-height: 1.3;
+    border-bottom: 2px solid winikStyleGuide.$c-winiksoftMain;
+    margin-bottom: 8px;
+}
+
 .carousel-control-prev,
 .carousel-control-next {
     width: 48px;

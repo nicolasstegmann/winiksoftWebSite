@@ -230,6 +230,16 @@ h3 {
   padding: 16px 20px 28px;
 }
 
+.asidesSection h3 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #0090CC;
+  padding: 40px 20px 12px;
+  line-height: 1.3;
+  border-bottom: 2px solid #4DC8F5;
+  margin-bottom: 8px;
+}
+
 .carousel-control-prev,
 .carousel-control-next {
   width: 48px;
@@ -388,6 +398,24 @@ h3 {
 }
 .sectionStands p {
   font-size: 16px;
+}
+
+.sectionStands li:nth-child(even) article {
+  background-color: #00A4EA;
+  box-shadow: 0 8px 28px rgba(0, 164, 234, 0.22);
+}
+.sectionStands li:nth-child(even) article h4 {
+  color: #FFFFFF;
+}
+.sectionStands li:nth-child(even) article p {
+  color: #BFEBFB;
+}
+.sectionStands li:nth-child(even) article .standsSectionBullet li::before {
+  color: #BFEBFB;
+}
+.sectionStands li:nth-child(even) article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 164, 234, 0.38);
 }
 
 .teamGrid {
@@ -643,7 +671,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 13s;
+  animation-duration: 28s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -660,7 +688,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 13s;
+  animation-duration: 17s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -677,7 +705,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 27s;
+  animation-duration: 29s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -694,7 +722,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 18s;
+  animation-duration: 14s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -711,7 +739,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 32s;
+  animation-duration: 6s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -728,7 +756,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 35s;
+  animation-duration: 20s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
