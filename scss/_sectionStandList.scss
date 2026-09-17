@@ -240,6 +240,11 @@
             color: winikStyleGuide.$c-winiksoftLetterLight;
         }
 
+        // Cyan PNG icons become invisible on blue bg — invert to white
+        img {
+            filter: brightness(0) invert(1);
+        }
+
         &:hover {
             transform: translateY(-4px);
             box-shadow: 0 16px 40px rgba(0, 164, 234, 0.38);
