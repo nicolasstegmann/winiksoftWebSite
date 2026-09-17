@@ -381,7 +381,6 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  flex: 1;
   transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .sectionStands article:hover {
@@ -677,7 +676,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 17s;
+  animation-duration: 18s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -694,7 +693,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 17s;
+  animation-duration: 33s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -711,7 +710,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 14s;
+  animation-duration: 19s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -728,7 +727,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 8s;
+  animation-duration: 14s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -745,7 +744,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 18s;
+  animation-duration: 35s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -762,7 +761,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 21s;
+  animation-duration: 13s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -1177,10 +1176,18 @@ h3 {
 .carrouselWiniksoft .sectionImage {
   height: 100vh;
   min-height: unset;
-  overflow: hidden;
 }
 .carrouselWiniksoft .heroWinik {
-  padding-bottom: 70px;
+  height: 100%;
+  min-height: unset;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 80px;
+  justify-content: space-between;
+}
+.carrouselWiniksoft .sectionImage p {
+  font-size: clamp(18px, 2.2vw, 32px);
+  padding: 20px 40px;
 }
 
 .winikCarouselContainer {
