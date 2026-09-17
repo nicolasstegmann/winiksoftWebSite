@@ -1,3 +1,13 @@
+// Lock hero carousel slides to exactly 100vh so arrows stay in a fixed position
+// regardless of how much text each slide contains.
+.carrouselWiniksoft {
+    .carousel-item,
+    .sectionImage {
+        height: 100vh;
+        min-height: unset;
+    }
+}
+
 .winikCarouselContainer {
     overflow: hidden;
     padding: 20px;

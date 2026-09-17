@@ -131,6 +131,7 @@
     img {
         @include dimension(30%, auto);
         border-radius: 20px;
+        margin-bottom: 16px;
     }
 
     h4 {
@@ -142,7 +143,8 @@
         font-size: winikStyleGuide.$ts-winikM;
     }
 
-    a img {
-        @include dimension(20%);
+    .buttonWinik {
+        margin-top: auto;
+        padding-top: 20px;
     }
 }
