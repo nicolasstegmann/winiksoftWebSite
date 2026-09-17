@@ -100,9 +100,18 @@ h3 {
     box-shadow: 0 4px 15px rgba(53, 74, 84, 0.25);
     z-index: 1;
 
-    a {
+    a,
+    button {
         color: winikStyleGuide.$c-totalWhite;
         text-decoration: none;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        letter-spacing: inherit;
+        padding: 0;
     }
 
     &:hover {
