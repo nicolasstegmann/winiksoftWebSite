@@ -32,7 +32,7 @@
     }
 
     &#contactoRight {
-        background: linear-gradient(160deg, winikStyleGuide.$c-winiksoftLight 0%, #c5f0ff 100%);
+        background: linear-gradient(160deg, winikStyleGuide.$c-winiksoftLight 0%, winikStyleGuide.$c-winiksoftLetterLight 100%);
         padding: 50px;
         color: winikStyleGuide.$c-winiksoftLetterDark;
 
@@ -44,6 +44,37 @@
                 box-shadow: 0 0 0 0.2rem rgba(0, 164, 234, 0.2);
             }
         }
+    }
+}
+
+// Recruiting CTA: Bootstrap btn-primary aligned to brand
+#recruiting .btn.btn-primary {
+    background-color: winikStyleGuide.$c-winikButton;
+    border-color: winikStyleGuide.$c-winikButton;
+    color: winikStyleGuide.$c-totalWhite;
+    font-family: winikStyleGuide.$t-winiksoftThird;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-radius: 50px;
+    padding: 10px 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(53, 74, 84, 0.25);
+
+    &:hover {
+        background-color: winikStyleGuide.$c-winiksoftPower;
+        border-color: winikStyleGuide.$c-winiksoftPower;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(53, 74, 84, 0.4);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(53, 74, 84, 0.3);
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(0, 164, 234, 0.4);
     }
 }
 

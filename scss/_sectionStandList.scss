@@ -21,9 +21,7 @@
     }
 
     img {
-        @include dimension(30%, auto);        
-        width: 30%;
-        height: auto;
+        @include dimension(30%, auto);
     }
 
     h4 {
@@ -214,7 +212,7 @@
             content: "•";
             padding-right: 8px;
             flex-shrink: 0;
-            color: winikStyleGuide.$c-winiksoftPower;
+            color: winikStyleGuide.$c-winiksoftDeep;
         }
 
         p { margin: 0; }
