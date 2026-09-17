@@ -53,6 +53,30 @@
     }
 }
 
+// Alternating card colors — same pattern as #pilares.
+// #pilares li:nth-child(even) article (ID specificity) overrides these for pilares.
+.sectionStands li:nth-child(even) article {
+    background-color: winikStyleGuide.$c-winiksoftPower;
+    box-shadow: 0 8px 28px rgba(0, 164, 234, 0.22);
+
+    h4 {
+        color: winikStyleGuide.$c-totalWhite;
+    }
+
+    p {
+        color: winikStyleGuide.$c-winiksoftLetterLight;
+    }
+
+    .standsSectionBullet li::before {
+        color: winikStyleGuide.$c-winiksoftLetterLight;
+    }
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 40px rgba(0, 164, 234, 0.38);
+    }
+}
+
 .teamGrid {
     display: grid;
     grid-template-columns: 1fr;
