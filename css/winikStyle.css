@@ -413,6 +413,9 @@ h3 {
 .sectionStands li:nth-child(even) article .standsSectionBullet li::before {
   color: #BFEBFB;
 }
+.sectionStands li:nth-child(even) article img {
+  filter: brightness(0) invert(1);
+}
 .sectionStands li:nth-child(even) article:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 40px rgba(0, 164, 234, 0.38);
@@ -671,7 +674,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 28s;
+  animation-duration: 11s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -688,7 +691,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 17s;
+  animation-duration: 34s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -705,7 +708,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 29s;
+  animation-duration: 18s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -722,7 +725,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 14s;
+  animation-duration: 17s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -739,7 +742,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 6s;
+  animation-duration: 9s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -756,7 +759,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 20s;
+  animation-duration: 8s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
