@@ -676,7 +676,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 33s;
+  animation-duration: 18s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -693,7 +693,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 30s;
+  animation-duration: 21s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -727,7 +727,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 29s;
+  animation-duration: 26s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -744,7 +744,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 21s;
+  animation-duration: 24s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -761,7 +761,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 10s;
+  animation-duration: 30s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -858,10 +858,9 @@ h3 {
   letter-spacing: 0.03em;
 }
 .asideArticle .buttonWinik a {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 10px;
-  white-space: nowrap;
 }
 .asideArticle .buttonWinik img {
   width: 26px;
@@ -1183,7 +1182,10 @@ h3 {
   overflow: hidden;
   padding-top: 70px;
   padding-bottom: 80px;
-  justify-content: space-between;
+  justify-content: flex-start;
+}
+.carrouselWiniksoft .buttonWinik {
+  margin-top: clamp(32px, 5vh, 64px);
 }
 .carrouselWiniksoft .sectionImage p {
   font-size: clamp(24px, 3vw, 44px);

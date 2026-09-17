@@ -153,10 +153,9 @@
         letter-spacing: 0.03em;
 
         a {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 10px;
-            white-space: nowrap;
         }
 
         // Winik circle icon — show original colors, no filter
