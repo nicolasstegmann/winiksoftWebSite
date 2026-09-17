@@ -120,6 +120,8 @@
     margin: 50px;
     border-radius: 12px;
     padding: 32px;
+    display: flex;
+    flex-direction: column;
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
