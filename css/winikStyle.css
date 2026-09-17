@@ -171,6 +171,10 @@ h3 {
   border-radius: 0 0 32px 32px;
 }
 
+.heroWinikText {
+  width: 100%;
+}
+
 .buttonWinik {
   border: 1px solid #354A54;
   width: fit-content;
@@ -685,7 +689,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 29s;
+  animation-duration: 24s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -702,7 +706,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 28s;
+  animation-duration: 9s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -719,7 +723,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 29s;
+  animation-duration: 34s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -753,7 +757,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 25s;
+  animation-duration: 23s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -770,7 +774,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 21s;
+  animation-duration: 13s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -1192,9 +1196,6 @@ h3 {
   padding-top: 70px;
   padding-bottom: 200px;
   justify-content: space-between;
-}
-.carrouselWiniksoft .heroWinikText {
-  width: 100%;
 }
 .carrouselWiniksoft .sectionImage p {
   font-size: clamp(24px, 3vw, 44px);

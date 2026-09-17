@@ -82,6 +82,12 @@ h3 {
     border-radius: 0 0 32px 32px;
 }
 
+// Fills the full width of heroWinik so text doesn't grow to max-content
+// inside the align-items:center flex column and overflow the container.
+.heroWinikText {
+    width: 100%;
+}
+
 .buttonWinik {
     border: 1px solid winikStyleGuide.$c-winikButton;
     @include dimension(fit-content);
