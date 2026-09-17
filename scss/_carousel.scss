@@ -12,12 +12,8 @@
         min-height: unset;
         overflow: hidden;
         padding-top: 70px;
-        padding-bottom: 80px;
-        justify-content: flex-start;
-    }
-
-    .buttonWinik {
-        margin-top: clamp(32px, 5vh, 64px);
+        padding-bottom: 130px;
+        justify-content: space-between;
     }
 
     // Override the huge default padding so content fits within 100vh
