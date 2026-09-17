@@ -16,9 +16,9 @@
         justify-content: space-between;
     }
 
-    // Reduce the huge default padding/font on carousel slides so content fits within 100vh
+    // Override the huge default padding so content fits within 100vh
     .sectionImage p {
-        font-size: clamp(18px, 2.2vw, 32px);
+        font-size: clamp(24px, 3vw, 44px);
         padding: 20px 40px;
     }
 }
