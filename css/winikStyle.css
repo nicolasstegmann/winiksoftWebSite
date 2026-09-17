@@ -272,8 +272,8 @@ h3 {
 }
 
 .hover-grow-animation:hover {
-  transform: scale(1.5);
-  transition: transform 0.5s ease-out;
+  transform: scale(1.2);
+  transition: transform 0.2s ease-out;
 }
 
 /*Secciones imágenes*/
@@ -612,7 +612,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 11s;
+  animation-duration: 24s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -629,7 +629,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 14s;
+  animation-duration: 34s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -646,7 +646,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 8s;
+  animation-duration: 19s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -663,7 +663,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 24s;
+  animation-duration: 29s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -680,7 +680,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 6s;
+  animation-duration: 25s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -697,7 +697,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 11s;
+  animation-duration: 6s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -978,6 +978,21 @@ h3 {
   .asideImageTitle {
     grid-column: 2/8;
     grid-row: 6/9;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    transform: none !important;
+    opacity: 1 !important;
+    transition-duration: 0ms !important;
+    transition-delay: 0ms !important;
+    animation: none !important;
+  }
+  .navbar-brand:before {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
   }
 }
 @media only screen and (min-width: 800px) {
