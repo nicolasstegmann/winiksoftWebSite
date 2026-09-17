@@ -674,7 +674,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 27s;
+  animation-duration: 17s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -691,7 +691,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 20s;
+  animation-duration: 9s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -708,7 +708,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 9s;
+  animation-duration: 27s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -725,7 +725,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 23s;
+  animation-duration: 34s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -742,7 +742,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 29s;
+  animation-duration: 21s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -759,7 +759,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 32s;
+  animation-duration: 18s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -837,6 +837,7 @@ h3 {
   width: 30%;
   height: auto;
   border-radius: 20px;
+  margin-bottom: 16px;
 }
 .asideArticle h4 {
   font-weight: bolder;
@@ -845,8 +846,9 @@ h3 {
 .asideArticle p {
   font-size: 16px;
 }
-.asideArticle a img {
-  width: 20%;
+.asideArticle .buttonWinik {
+  margin-top: auto;
+  padding-top: 20px;
 }
 
 .dividerLeft {
@@ -1150,6 +1152,12 @@ h3 {
     grid-column: 1/2;
   }
 }
+.carrouselWiniksoft .carousel-item,
+.carrouselWiniksoft .sectionImage {
+  height: 100vh;
+  min-height: unset;
+}
+
 .winikCarouselContainer {
   overflow: hidden;
   padding: 20px;
