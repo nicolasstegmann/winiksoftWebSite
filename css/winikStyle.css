@@ -281,7 +281,7 @@ h3 {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #354A54;
+  background-color: currentColor;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -671,7 +671,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 31s;
+  animation-duration: 16s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -688,7 +688,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 10s;
+  animation-duration: 31s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -705,7 +705,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 26s;
+  animation-duration: 13s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -722,7 +722,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 22s;
+  animation-duration: 29s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -739,7 +739,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 33s;
+  animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
@@ -756,7 +756,7 @@ h3 {
   box-shadow: 20px 0 100px rgba(53, 74, 84, 0.5333333333), -20px 0 100px rgba(53, 74, 84, 0.5333333333);
   background-size: 110%;
   animation-name: lightBar;
-  animation-duration: 13s;
+  animation-duration: 27s;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-timing-function: ease-in-out;
