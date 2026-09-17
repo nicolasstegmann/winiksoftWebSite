@@ -8,6 +8,21 @@ html {
     scroll-behavior: smooth;
 }
 
+::selection {
+    background-color: winikStyleGuide.$c-winiksoftMain;
+    color: winikStyleGuide.$c-winikButton;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid winikStyleGuide.$c-winiksoftPower;
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
 body {
     font-family: winikStyleGuide.$t-winiksoftMain;
     overflow-x: hidden;
@@ -179,12 +194,14 @@ h3 {
     transition: transform 0.25s ease-out;
 }
 
-.hover-underline-animation:hover:after {
+.hover-underline-animation:hover:after,
+.hover-underline-animation:focus-visible:after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
 
-.hover-grow-animation:hover{
+.hover-grow-animation:hover,
+.hover-grow-animation:focus-visible {
     transform: scale(1.2);
     transition: transform 0.2s ease-out;
 }
