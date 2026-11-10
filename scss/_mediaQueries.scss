@@ -1,20 +1,18 @@
+@use "winikWebGuide" as winikStyleGuide;
 
-//Media queries
+/* Media Queries */
 
 // Mobile overrides (max-width: 799px)
 @media only screen and (max-width: 799px) {
-    // Button: smaller so it doesn't wrap on narrow screens
     .buttonWinik {
         font-size: winikStyleGuide.$ts-winikS;
         padding: 8px 20px;
     }
 
-    // Hero: less bottom padding — 150px leaves a huge empty zone on mobile
     .heroWinik {
         padding-bottom: 60px;
     }
 
-    // Section headers: 80px line-height is designed for desktop; collapse for mobile
     .sectionHeader h2 {
         font-size: winikStyleGuide.$ts-winikXL;
         line-height: 1.25;
@@ -25,7 +23,6 @@
         padding: 12px 16px 20px;
     }
 
-    // Carousel controls: move to bottom of slide so they don't overlay long text
     .carousel-control-prev,
     .carousel-control-next {
         top: auto;
@@ -34,13 +31,9 @@
         width: 40px;
         height: 40px;
 
-        &:hover {
-            transform: scale(1.1);
-        }
+        &:hover { transform: scale(1.1); }
     }
 
-    // Aside article: fixed 300px width + 50px margins + 40px padding = 480px min
-    // → collapses to 375px viewport. Make it fluid on mobile.
     .asideStory {
         padding: 16px;
     }
@@ -51,24 +44,27 @@
         margin: 16px auto;
     }
 
-    // Aside clip-paths: diagonal cuts designed for side-by-side layout;
-    // remove when images are stacked vertically on mobile
     .asideLeft .asideImageBackground,
     .asideRight .asideImageBackground {
         clip-path: none;
     }
 
-    // Aside image title: reposition for single-column
     .asideImageTitle {
         grid-column: 2/8;
         grid-row: 6/9;
     }
+
+    // Contact form: stack left panel text above form
+    .sectionContactoChild#contactoRight {
+        padding: 24px 16px;
+        border-left: none;
+        border-top: 1px solid winikStyleGuide.$c-glass-border;
+    }
 }
 
-// Respect prefers-reduced-motion: disable spatial AOS transforms, freeze
-// the navbar shimmer, and preserve opacity/color transitions (they still
-// carry meaning — only movement that causes vestibular discomfort is cut).
+// Respect prefers-reduced-motion
 @media (prefers-reduced-motion: reduce) {
+    // Disable AOS (kept for compatibility)
     [data-aos] {
         transform: none !important;
         opacity: 1 !important;
@@ -77,15 +73,28 @@
         animation: none !important;
     }
 
-    .navbar-brand:before {
-        animation: none;
+    // Disable GSAP initial hidden state
+    .gsap-reveal,
+    .gsap-reveal-left,
+    .gsap-reveal-right,
+    .gsap-reveal-scale {
+        opacity: 1 !important;
+        transform: none !important;
     }
 
-    html {
-        scroll-behavior: auto;
+    .navbar-brand:before,
+    body::before {
+        animation: none !important;
     }
+
+    .buttonWinik::after {
+        display: none;
+    }
+
+    html { scroll-behavior: auto; }
 }
 
+// Desktop layout (min-width: 800px)
 @media only screen and (min-width: 800px) {
     .teamGrid {
         li article {
@@ -124,7 +133,6 @@
         }
     }
 
-
     .sectionImage {
         grid-template-columns: 40% 60%;
         padding: 0px 40px 150px 40px;
@@ -155,23 +163,13 @@
 
     .aside {
         &.asideRight {
-            .asideImage {
-                grid-column: 1/2;
-            }
-
-            .asideStory {
-                grid-column: 2/3;
-            }
+            .asideImage  { grid-column: 1/2; }
+            .asideStory  { grid-column: 2/3; }
         }
 
         &.asideLeft {
-            .asideImage {
-                grid-column: 2/3;
-            }
-
-            .asideStory {
-                grid-column: 1/2;
-            }
+            .asideImage  { grid-column: 2/3; }
+            .asideStory  { grid-column: 1/2; }
         }
     }
 }

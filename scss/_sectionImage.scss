@@ -1,4 +1,8 @@
-/*Secciones imágenes*/
+@use "winikWebGuide" as winikStyleGuide;
+@use "mixins" as *;
+@use "extends";
+
+/* Sections with photo backgrounds */
 .sectionImage {
     border: 1px solid transparent;
     background-attachment: fixed;
@@ -9,11 +13,19 @@
     grid-template-columns: 1fr;
     justify-content: center;
 
-    $images: ("heroImg": "digitalTransformation", "heroImg2": "digitalTransformation2", "heroImg3": "digitalTransformation3", "equipoImg": "teamWork", "quienesSomosImg": "quienesSomos", "serviciosImg": "servicios", "productosImg": "productos");
+    $images: (
+        "heroImg":        "digitalTransformation",
+        "heroImg2":       "digitalTransformation2",
+        "heroImg3":       "digitalTransformation3",
+        "equipoImg":      "teamWork",
+        "quienesSomosImg":"quienesSomos",
+        "serviciosImg":   "servicios",
+        "productosImg":   "productos"
+    );
 
     @each $id, $image in $images {
         &##{$id} {
-            background-image: url("../img/#{$image}.jpg");    
+            background-image: url("../img/#{$image}.jpg");
         }
     }
 
@@ -21,10 +33,10 @@
         font-size: clamp(28px, 4.5vw, 52px);
         text-align: left;
         font-family: winikStyleGuide.$t-winiksoftSecond;
-        color: winikStyleGuide.$c-winiksoftWhite;
+        color: winikStyleGuide.$c-text;
         font-weight: 700;
         padding: clamp(100px, 15vw, 150px) 30px 30px;
-        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+        text-shadow: 0 2px 24px rgba(0, 0, 0, 0.8), 0 0 40px rgba(77, 200, 245, 0.2);
         letter-spacing: -0.01em;
         line-height: 1.2;
     }
@@ -34,5 +46,4 @@
         background-size: cover;
         background-position: center center;
     }
-
 }

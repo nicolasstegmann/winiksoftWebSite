@@ -1,12 +1,19 @@
-/*Footer*/
+@use "winikWebGuide" as winikStyleGuide;
+@use "mixins" as *;
+
+/* Footer — deep dark with cyan accents */
 .footerWinik {
-    padding: 10px 0;
-    background: linear-gradient(160deg, winikStyleGuide.$c-winiksoftLetterDark 0%, winikStyleGuide.$c-winikButton 100%);
-    color: winikStyleGuide.$c-winiksoftWhite;
+    padding: 24px 0 16px;
+    background: linear-gradient(160deg, winikStyleGuide.$c-bg-3 0%, winikStyleGuide.$c-bg 100%);
+    color: winikStyleGuide.$c-text;
+    border-top: 1px solid winikStyleGuide.$c-glass-border;
+    position: relative;
+    z-index: 1;
 
     img {
         @include dimension(50px, auto);
         margin: 25px;
+        filter: drop-shadow(0 0 10px rgba(77, 200, 245, 0.3));
     }
 
     h3 {
@@ -14,6 +21,7 @@
         margin-bottom: 12px;
         font-weight: bold;
         font-size: winikStyleGuide.$ts-winikM;
+        color: winikStyleGuide.$c-winiksoftMain;
     }
 
     ul {
@@ -22,11 +30,16 @@
         line-height: 1.6;
         font-size: winikStyleGuide.$ts-winikS;
         margin-bottom: 10px;
+        color: winikStyleGuide.$c-text-muted;
 
         a {
-            color: inherit;
+            color: winikStyleGuide.$c-text-muted;
             text-decoration: none;
+            transition: color 0.2s ease;
+
+            &:hover {
+                color: winikStyleGuide.$c-winiksoftMain;
+            }
         }
     }
 }
-

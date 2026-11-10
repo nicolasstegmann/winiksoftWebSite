@@ -1,5 +1,6 @@
-// Lock hero carousel slides to exactly 100vh so arrows stay in a fixed position
-// regardless of how much text each slide contains.
+@use "winikWebGuide" as winikStyleGuide;
+
+// Lock hero carousel slides to exactly 100vh
 .carrouselWiniksoft {
     .carousel-item,
     .sectionImage {
@@ -14,86 +15,118 @@
         padding-top: 70px;
         padding-bottom: 200px;
         justify-content: space-between;
+        // Deeper dark overlay so text reads against any photo
+        background: linear-gradient(
+            160deg,
+            rgba(8, 14, 26, 0.80) 0%,
+            rgba(0, 80, 160, 0.30) 60%,
+            rgba(8, 14, 26, 0.65) 100%
+        );
     }
 
-    // Override the huge default padding so content fits within 100vh
-    .sectionImage p {
+    .heroWinikText {
+        width: 100%;
+    }
+
+    // Hero headline: gradient text using brand palette
+    .heroWinikText p {
         font-size: clamp(24px, 3vw, 44px);
-        padding: 20px 40px;
+        padding: 20px 48px;
+        background: linear-gradient(
+            135deg,
+            winikStyleGuide.$c-text 0%,
+            winikStyleGuide.$c-winiksoftMain 55%,
+            winikStyleGuide.$c-winiksoftLight 100%
+        );
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradientText 6s ease infinite;
+        text-shadow: none;
+        filter: drop-shadow(0 2px 16px rgba(77, 200, 245, 0.25));
     }
 }
 
+// Carousel indicators: slim cyan dots
+.carousel-indicators li {
+    background-color: rgba(77, 200, 245, 0.4);
+    border-radius: 4px;
+    width: 24px;
+    height: 3px;
+    transition: background-color 0.3s ease, width 0.3s ease;
+    border: none;
+}
+
+.carousel-indicators .active {
+    background-color: winikStyleGuide.$c-winiksoftMain;
+    width: 36px;
+    box-shadow: winikStyleGuide.$c-glow-sm;
+}
+
+// ─── LOGO STRIP (infinite scroll) ────────────────────────────────────────
 .winikCarouselContainer {
     overflow: hidden;
-    padding: 20px;
-  
+    padding: 20px 0;
+    background: rgba(8, 14, 26, 0.6);
+    border-top: 1px solid rgba(77, 200, 245, 0.08);
+    border-bottom: 1px solid rgba(77, 200, 245, 0.08);
+
     .winikCarouselSlider {
-      animation: slidein 30s linear infinite;
-      display: flex;
-      white-space: nowrap;
-  
-      .winikCarouselLogos {
+        animation: slidein 30s linear infinite;
         display: flex;
-        flex-shrink: 0;
-        justify-content: space-around;
-        margin: 0;
+        white-space: nowrap;
 
-        .carousel-img {
-          width: calc(100% / 5);
-          max-width: 250px; // Limita el ancho máximo de las imágenes
-          max-height: 100px; // Limita la altura máxima para mantener un tamaño razonable
-          padding: 0 50px;
-          box-sizing: border-box;
-          object-fit: contain; // Asegura que las imágenes se adapten sin deformarse
-          animation: fade-in 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+        .winikCarouselLogos {
+            display: flex;
+            flex-shrink: 0;
+            justify-content: space-around;
+            margin: 0;
 
-          filter: grayscale(100%); // Aplicar escala de grises
-          transition: filter 0.3s ease, background-color 0.3s ease; // Transición suave
+            .carousel-img {
+                width: calc(100% / 5);
+                max-width: 250px;
+                max-height: 100px;
+                padding: 0 50px;
+                box-sizing: border-box;
+                object-fit: contain;
+                filter: grayscale(100%) brightness(1.8) opacity(0.5);
+                transition: filter 0.3s ease, transform 0.3s ease;
 
-          &:hover {
-            filter: none; // Quitar escala de grises en hover
-            background-color: none; // Eliminar el fondo en hover
-            transform: scale(1.1); // Agrandar un poco la imagen al hacer hover
-          }
+                &:hover {
+                    filter: grayscale(0%) brightness(1) opacity(1);
+                    transform: scale(1.05);
+                }
 
-          // Media queries
-          @media (max-width: 950px) {
-            width: calc(100% / 3); 
-            max-width: 200px;
-            max-height: 80px;
-            padding: 0 30px;
-          }
-          @media (max-width: 800px) {
-            width: calc(100% / 2);
-            max-width: 150px;
-            max-height: 70px;
-            padding: 0 15px;
-          }
-          @media (max-width: 600px) {
-            width: 100%;
-            max-width: 100px;
-            max-height: 60px;
-            padding: 0 10px;
-          }
+                @media (max-width: 950px) {
+                    width: calc(100% / 3);
+                    max-width: 200px;
+                    max-height: 80px;
+                    padding: 0 30px;
+                }
+                @media (max-width: 800px) {
+                    width: calc(100% / 2);
+                    max-width: 150px;
+                    max-height: 70px;
+                    padding: 0 15px;
+                }
+                @media (max-width: 600px) {
+                    width: 100%;
+                    max-width: 100px;
+                    max-height: 60px;
+                    padding: 0 10px;
+                }
+            }
         }
-      }
     }
 }
-  
+
 @keyframes slidein {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
+    from { transform: translateX(0); }
+    to   { transform: translateX(-100%); }
 }
 
 @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
 }

@@ -1,13 +1,15 @@
-//Formularios
+@use "winikWebGuide" as winikStyleGuide;
+@use "mixins" as *;
+
+/* Forms — dark glass treatment */
 .dividerLeft {
     overflow: hidden;
     position: relative;
 
     &::before {
         content: "";
-        font-family: "shape divider from ShapeDividers.com";
         position: absolute;
-        z-index: -1;
+        z-index: 0;
         pointer-events: none;
         background-repeat: no-repeat;
         bottom: -0.1vw;
@@ -16,85 +18,94 @@
         top: -0.1vw;
         background-size: 162px 123%;
         background-position: 100% 50%;
-        background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 77.25 381" preserveAspectRatio="none"><g fill="%239ee5ff"><path d="M68.78 381L34.92 0h42.33v381z"/><path d="M43.38 381L17.98 0h59.27v381z" opacity=".33"/><path d="M17.98 381L0 0h77.25v381z" opacity=".33"/></g></svg>');
+        // Cyan-tinted shape divider
+        background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 77.25 381" preserveAspectRatio="none"><g fill="%234DC8F5" fill-opacity="0.08"><path d="M68.78 381L34.92 0h42.33v381z"/><path d="M43.38 381L17.98 0h59.27v381z" opacity=".5"/><path d="M17.98 381L0 0h77.25v381z" opacity=".3"/></g></svg>');
     }
 }
 
 .sectionContacto {
     margin-top: 70px;
+    background-color: winikStyleGuide.$c-bg;
 }
 
 .sectionContactoChild {
     min-height: 82vh;
     @include dimension(auto, auto);
+
     &#contactoLeft {
-        color: winikStyleGuide.$c-winiksoftLetterDark;
+        color: winikStyleGuide.$c-text;
+        position: relative;
+        z-index: 1;
+
+        h1 { color: winikStyleGuide.$c-text; }
+        p  { color: winikStyleGuide.$c-text-muted; }
+        hr { border-color: winikStyleGuide.$c-glass-border; }
     }
 
     &#contactoRight {
-        background: linear-gradient(160deg, winikStyleGuide.$c-winiksoftLight 0%, winikStyleGuide.$c-winiksoftLetterLight 100%);
+        background: winikStyleGuide.$c-glass;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-left: 1px solid winikStyleGuide.$c-glass-border;
         padding: 50px;
-        color: winikStyleGuide.$c-winiksoftLetterDark;
+        color: winikStyleGuide.$c-text;
+        position: relative;
+        z-index: 1;
+
+        label { color: winikStyleGuide.$c-text-muted; }
+        small  { color: winikStyleGuide.$c-text-muted; }
 
         .form-control {
+            background: rgba(8, 14, 26, 0.6);
+            border: 1px solid winikStyleGuide.$c-glass-border;
+            color: winikStyleGuide.$c-text;
+            border-radius: 8px;
             transition: border-color 0.25s ease, box-shadow 0.25s ease;
 
+            &::placeholder { color: winikStyleGuide.$c-text-muted; }
+
             &:focus {
-                border-color: winikStyleGuide.$c-winiksoftPower;
-                box-shadow: 0 0 0 0.2rem rgba(0, 164, 234, 0.2);
+                background: rgba(8, 14, 26, 0.8);
+                border-color: winikStyleGuide.$c-winiksoftMain;
+                box-shadow: 0 0 0 0.2rem rgba(77, 200, 245, 0.18);
+                color: winikStyleGuide.$c-text;
             }
         }
+
+        select.form-control option {
+            background: winikStyleGuide.$c-bg-2;
+            color: winikStyleGuide.$c-text;
+        }
+
+        .form-check-label { color: winikStyleGuide.$c-text-muted; }
     }
 }
 
-// Recruiting CTA: Bootstrap btn-primary aligned to brand
-#recruiting .btn.btn-primary {
-    background-color: winikStyleGuide.$c-winikButton;
-    border-color: winikStyleGuide.$c-winikButton;
-    color: winikStyleGuide.$c-totalWhite;
-    font-family: winikStyleGuide.$t-winiksoftThird;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    border-radius: 50px;
-    padding: 10px 30px;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 15px rgba(53, 74, 84, 0.25);
+// Bootstrap form-text
+.form-text { color: winikStyleGuide.$c-text-muted !important; }
 
-    &:hover {
-        background-color: winikStyleGuide.$c-winiksoftPower;
-        border-color: winikStyleGuide.$c-winiksoftPower;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(53, 74, 84, 0.4);
-    }
-
-    &:active {
-        transform: translateY(0);
-        box-shadow: 0 2px 8px rgba(53, 74, 84, 0.3);
-    }
-
-    &:focus {
-        box-shadow: 0 0 0 0.2rem rgba(0, 164, 234, 0.4);
-    }
-}
+// Valid/invalid feedback
+.valid-feedback   { color: winikStyleGuide.$c-winiksoftSuccess; }
+.invalid-feedback { color: winikStyleGuide.$c-winiksoftError; }
 
 .php-email-form .error-message {
     display: none;
-    color: winikStyleGuide.$c-winiksoftWhite;;
+    color: winikStyleGuide.$c-totalWhite;
     background: winikStyleGuide.$c-winiksoftError;
     text-align: left;
     padding: 15px;
     font-weight: 600;
+    border-radius: 8px;
 }
 
 .php-email-form .sent-message {
     display: none;
-    color: winikStyleGuide.$c-winiksoftWhite;
+    color: winikStyleGuide.$c-totalWhite;
     background: winikStyleGuide.$c-winiksoftSuccess;
     text-align: center;
     padding: 15px;
     font-weight: 600;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .php-email-form .loading {
@@ -102,6 +113,7 @@
     background: transparent;
     text-align: center;
     padding: 15px;
+    color: winikStyleGuide.$c-text-muted;
 }
 
 .php-email-form .loading:before {
@@ -110,7 +122,7 @@
     border-radius: 50%;
     @include dimension(24px, 24px);
     margin: 0 10px -6px 0;
-    border: 3px solid  winikStyleGuide.$c-winiksoftPower;
+    border: 3px solid winikStyleGuide.$c-winiksoftPower;
     border-top-color: transparent;
     $loading: (name: animate-loading, duration: 1s, iteration: infinite, timing: linear);
     @include animation($loading...);

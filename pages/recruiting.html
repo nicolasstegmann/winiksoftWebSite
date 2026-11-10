@@ -1,26 +1,199 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Winiksoft - Recruiting</title>
+    <title>Winiksoft — Unite al equipo</title>
     <meta name="description" content="Trabajá con nosotros en Winiksoft y formá parte de un gran equipo de profesionales entusiastas.">
-    <meta name="keywords" content="software, transformación  digital, consultoría, automatización, tecnología, equipo, teamwork, colaboración, contacto, recruiting">
+    <meta name="keywords" content="software, transformación digital, consultoría, tecnología, equipo, recruiting, trabajo, empleos">
     <link rel="shortcut icon" href="../img/winikiconcircle.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/1954f46bc1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/winikStyle.css">
+    <style>
+        /* ── Recruiting page-specific overrides ── */
+        .recruitingHero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 20px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .recruitingHero::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background:
+                radial-gradient(ellipse 60% 50% at 15% 40%, rgba(0, 164, 234, 0.09) 0%, transparent 65%),
+                radial-gradient(ellipse 50% 40% at 80% 20%, rgba(130, 80, 255, 0.07) 0%, transparent 60%),
+                radial-gradient(ellipse 55% 45% at 50% 90%, rgba(0, 144, 204, 0.06) 0%, transparent 60%);
+        }
+
+        .recruitingLayout {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 56px;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (min-width: 992px) {
+            .recruitingLayout {
+                grid-template-columns: 1fr 1fr;
+                align-items: start;
+            }
+        }
+
+        /* Left side — manifesto */
+        .recruitingManifesto {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .recruitingEyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #4DC8F5;
+            margin-bottom: 4px;
+        }
+
+        .recruitingEyebrow::before {
+            content: '';
+            width: 32px;
+            height: 2px;
+            background: #4DC8F5;
+            border-radius: 2px;
+        }
+
+        .recruitingTitle {
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.025em;
+            color: #F0F6FF;
+        }
+
+        .recruitingTitle span {
+            background: linear-gradient(135deg, #4DC8F5, #00A4EA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .recruitingLead {
+            font-size: 1.1rem;
+            line-height: 1.65;
+            color: #94A3B8;
+            max-width: 480px;
+        }
+
+        .recruitingValues {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .recruitingValues li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 1rem;
+            color: #CBD5E1;
+            line-height: 1.5;
+        }
+
+        .recruitingValueIcon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(77, 200, 245, 0.12);
+            border: 1px solid rgba(77, 200, 245, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #4DC8F5;
+            font-size: 0.7rem;
+        }
+
+        .recruitingWhatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: rgba(37, 211, 102, 0.12);
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            border-radius: 50px;
+            color: #25D366;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.3s ease;
+            width: fit-content;
+        }
+
+        .recruitingWhatsapp:hover {
+            background: rgba(37, 211, 102, 0.2);
+            color: #25D366;
+            transform: translateY(-2px);
+        }
+
+        /* Right side — form */
+        .recruitingFormCard {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 48px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), 0 0 40px rgba(77, 200, 245, 0.06);
+        }
+
+        .recruitingFormTitle {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #F0F6FF;
+            margin-bottom: 8px;
+        }
+
+        .recruitingFormSubtitle {
+            font-size: 0.9rem;
+            color: #64748B;
+            margin-bottom: 32px;
+        }
+
+        @media (max-width: 576px) {
+            .recruitingFormCard {
+                padding: 32px 24px;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark default-color fixed-top">
-            <a class="navbar-brand" href="../index.html"><img src="../img/winiklogo.png" alt="Winiksoft Logo"
-                    height="50px"></a>
+            <a class="navbar-brand" href="../index.html"><img src="../img/winiklogo.png" alt="Winiksoft Logo" height="50px"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#winiksoftNavBar"
                 aria-controls="winiksoftNavBar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,38 +204,41 @@
                         <a class="nav-link hover-underline-animation" href="../index.html">Home</a>
                     </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link hover-underline-animation" href="./quienessomos.html">Quiénes somos</a>
+                        <a class="nav-link hover-underline-animation" href="../index.html#quienessomos">Quiénes somos</a>
                     </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link hover-underline-animation" href="./servicios.html">Servicios</a>
+                        <a class="nav-link hover-underline-animation" href="../index.html#servicios">Servicios</a>
                     </li>
                     <li class="nav-item px-3 dropdown">
                         <a class="nav-link dropdown-toggle hover-underline-animation" id="winiksoftDropDown" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Productos
                         </a>
                         <div class="dropdown-menu dropdown-default" aria-labelledby="winiksoftDropDown">
-                            <a class="dropdown-item" href="./productos.html">Todos</a>
+                            <a class="dropdown-item" href="../index.html#productos">Todos</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="./productos.html#winscada">Winscada</a>
-                            <a class="dropdown-item" href="./productos.html#winspatcher">Winspatcher</a>
-                            <a class="dropdown-item" href="./productos.html#wintegration">Wintegration</a>
-                            <a class="dropdown-item" href="./productos.html#jiraconn">Jiraconn</a>
-                            <a class="dropdown-item" href="./productos.html#wicash">wiCash</a>
+                            <a class="dropdown-item" href="../index.html#winscada">Winscada</a>
+                            <a class="dropdown-item" href="../index.html#winspatcher">Winspatcher</a>
+                            <a class="dropdown-item" href="../index.html#wintegration">Wintegration</a>
+                            <a class="dropdown-item" href="../index.html#jiraconn">Jiraconn</a>
+                            <a class="dropdown-item" href="../index.html#wicash">wiCash</a>
                         </div>
                     </li>
+                    <li class="nav-item px-3 active">
+                        <a class="nav-link hover-underline-animation" href="#">Sumate</a>
+                    </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link hover-underline-animation" href="./contacto.html">Contacto</a>
+                        <a class="nav-link hover-underline-animation" href="../index.html#contacto">Contacto</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto flex-row justify-content-around">
                     <li class="nav-item">
-                        <a class="nav-link hover-grow-animation" target="_blank" href="http://linkedin.com/winiksoft/"><i class="fa fa-linkedin"></i></a>
+                        <a class="nav-link hover-grow-animation" target="_blank" href="https://www.linkedin.com/company/winiksoft/"><i class="fa fa-linkedin"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link hover-grow-animation" target="_blank" href="http://facebook.com/winiksoft/"><i class="fa fa-facebook"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link hover-grow-animation" target="_blank" href="http://youtube.com/winiksoft/"><i class="fa fa-youtube"></i></a> 
+                        <a class="nav-link hover-grow-animation" target="_blank" href="http://youtube.com/winiksoft/"><i class="fa fa-youtube"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link hover-grow-animation" target="_blank" href="http://instagram.com/winiksoft/"><i class="fa fa-instagram"></i></a>
@@ -74,98 +250,102 @@
             </div>
         </nav>
     </header>
+
     <main class="principal">
-        <section class="sectionContacto" id="recruiting">
-            <div class="container-fluid">
-                <div class="row sectionContactoParent">
-                    <div class="col-md-12 col-lg-6 sectionContactoChild dividerLeft" id="contactoLeft">
-                        <div class="jumbotron text-left">
-                            <img src="../img/icons/recruiting.png" height="80px" alt="Ícono de reclutamiento">
-                            <h1 class="display-4">Unite a nuestro equipo</h1>
-                            <ul>
-                                <li>
-                                    <h4>Nos entusiasma lo que hacemos.</h4>
-                                </li>
-                                <li>
-                                    <h4>Disfrutamos de los Desafíos y el cambio permanente.</h4>
-                                </li>
-                                <li>
-                                    <h4>Nos gusta la Innovación.</h4>
-                                </li>
-                                <li>
-                                    <h4>Nos gusta pensar fuera de la caja.</h4>
-                                </li>
-                                <li>
-                                    <h4>Disfrutamos el trabajo en Equipo.</h4>
-                                </li>
-                                <li>
-                                    <h4>Confiamos en las estructuras chatas y los equipos multidisciplinarios.</h4>
-                                </li>
-                                <li>
-                                    <h4>Nos comprometemos.</h4>
-                                </li>
-                                <li>
-                                    <h4>Somos una organización basada en la empatía, el respeto y la confianza.</h4>
-                                </li>
-                                <li>
-                                    <h4>Hemos aprendido que somos más efectivos cuando dejamos de lado nuestro ego para
-                                        colaborar y apoyarnos mutuamente.</h4>
-                                </li>
-                            </ul>
-                            <hr class="my-4">
+        <section class="recruitingHero" id="recruiting">
+            <div class="recruitingLayout">
+
+                <!-- Left: Manifesto -->
+                <div class="recruitingManifesto">
+                    <span class="recruitingEyebrow">Unite al equipo</span>
+                    <h1 class="recruitingTitle">
+                        Sumate a quienes<br>
+                        <span>hacen que suceda</span>
+                    </h1>
+                    <p class="recruitingLead">
+                        Nuestra comunidad y cultura son los activos más importantes que tenemos. Buscamos personas que compartan nuestra filosofía.
+                    </p>
+
+                    <ul class="recruitingValues">
+                        <li>
+                            <span class="recruitingValueIcon"><i class="fa fa-check" aria-hidden="true"></i></span>
+                            <span>Nos entusiasma lo que hacemos y los desafíos que se presentan</span>
+                        </li>
+                        <li>
+                            <span class="recruitingValueIcon"><i class="fa fa-check" aria-hidden="true"></i></span>
+                            <span>Nos gusta la innovación y pensar fuera de la caja</span>
+                        </li>
+                        <li>
+                            <span class="recruitingValueIcon"><i class="fa fa-check" aria-hidden="true"></i></span>
+                            <span>Disfrutamos el trabajo en equipo y las estructuras chatas</span>
+                        </li>
+                        <li>
+                            <span class="recruitingValueIcon"><i class="fa fa-check" aria-hidden="true"></i></span>
+                            <span>Basados en empatía, respeto y confianza mutua</span>
+                        </li>
+                        <li>
+                            <span class="recruitingValueIcon"><i class="fa fa-check" aria-hidden="true"></i></span>
+                            <span>Creemos que somos más efectivos cuando dejamos de lado el ego para colaborar</span>
+                        </li>
+                    </ul>
+
+                    <a href="https://api.whatsapp.com/send?phone=5493816091736&text=Hola%2C%20estoy%20interesado%20en%20sumarme%20al%20equipo%20de%20Winiksoft"
+                        target="_blank" rel="noopener noreferrer" class="recruitingWhatsapp">
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                        ¿Podemos ayudarte a prosperar?
+                    </a>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="recruitingFormCard">
+                    <h2 class="recruitingFormTitle">Postulate ahora</h2>
+                    <p class="recruitingFormSubtitle">Completá el formulario y te contactamos en menos de 48 hs.</p>
+
+                    <form class="needs-validation php-email-form" id="formularioRecruiting" novalidate>
+                        <div class="form-group">
+                            <label for="formNombre">Nombre y apellido</label>
+                            <input type="text" class="form-control" id="formNombre" name="nombre"
+                                placeholder="Nombre y apellido" required>
+                            <div class="valid-feedback">OK</div>
+                            <div class="invalid-feedback">Campo obligatorio</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formEmail">E-mail</label>
+                            <input type="email" class="form-control" id="formEmail" name="email"
+                                aria-describedby="emailHelp" placeholder="tu@email.com" required>
+                            <small id="emailHelp" class="form-text">No compartiremos tu dirección de e-mail con nadie.</small>
+                            <div class="valid-feedback">OK</div>
+                            <div class="invalid-feedback">Campo obligatorio</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formLinkedin">LinkedIn / CV</label>
+                            <input type="url" class="form-control" id="formLinkedin" name="linkedin"
+                                placeholder="https://www.linkedin.com/in/tu-perfil" required>
+                            <small class="form-text"><strong>Preferentemente la URL de tu perfil de LinkedIn.</strong> También podés pegar un link a tu CV en Google Drive o Dropbox.</small>
+                            <div class="valid-feedback">OK</div>
+                            <div class="invalid-feedback">Campo obligatorio</div>
+                        </div>
+
+                        <div class="my-3 d-flex justify-content-end">
+                            <div class="loading">Enviando...</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Tu mensaje ha sido enviado. Muchas gracias por contactarse con Winiksoft.</div>
+                        </div>
+
+                        <div class="d-flex justify-content-end">
                             <div class="buttonWinik">
-                                <a href="https://api.whatsapp.com/send?phone=5493816091736&text=Hola%2C%20estoy%20interesado%20en%20sumarme%20al%20equipo%20de%20Winiksoft" target="_blank" rel="noopener noreferrer"><i class="fa fa-whatsapp" aria-hidden="true"></i> ¿Podemos ayudarte a prosperar?</a>
+                                <button type="submit">Enviar postulación</button>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-lg-6 text-left d-flex sectionContactoChild" id="contactoRight">
-                        <form class="needs-validation flex-fill align-self-center php-email-form" id="formularioRecruiting">
-                            <div class="form-group row">
-                                <label for="formNombre" class="col-lg-3 col-form-label">Nombre y apellido</label>
-                                <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="formNombre" name="nombre"
-                                        placeholder="Nombre y apellido" required>
-                                    <div class="valid-feedback">OK</div>
-                                    <div class="invalid-feedback">Campo obligatorio</div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="formEmail" class="col-lg-3 col-form-label">E-mail</label>
-                                <div class="col-lg-9">
-                                    <input type="email" class="form-control" id="formEmail" name="email" aria-describedby="emailHelp"
-                                        placeholder="E-mail" required>
-                                    <small id="emailHelp" class="form-text">No compartiremos con nadie tu dirección de e-mail.</small>
-                                    <div class="valid-feedback">OK</div>
-                                    <div class="invalid-feedback">Campo obligatorio</div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="formLinkedin" class="col-lg-3 col-form-label">LinkedIn / CV</label>
-                                <div class="col-lg-9">
-                                    <input type="url" class="form-control" id="formLinkedin" name="linkedin"
-                                        placeholder="https://www.linkedin.com/in/tu-perfil" required>
-                                    <small class="form-text"><strong>Preferentemente compartí la URL de tu perfil de LinkedIn.</strong> También podés pegar un link a tu CV en Google Drive o Dropbox.</small>
-                                    <div class="valid-feedback">OK</div>
-                                    <div class="invalid-feedback">Campo obligatorio</div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="my-3 d-flex justify-content-end">
-                                <div class="loading">Enviando...</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Tu mensaje ha sido enviado. Muchas gracias por contactarse con Winiksoft.</div>
-                            </div>
-                            <div class="d-flex justify-content-end">
-                                <div class="buttonWinik">
-                                    <button type="submit">Enviar</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    </form>
                 </div>
+
             </div>
         </section>
     </main>
+
     <footer class="footerWinik">
         <section class="dividerBotton">
             <div class="dividerBottonImage">
@@ -174,8 +354,8 @@
                     <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
                     <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
                 </svg>
-            </div>        
-        </section>        
+            </div>
+        </section>
         <div class="container-fluid">
             <div class="footerWinikContent row text-center">
                 <div class="footerWinikImg col-md-12 col-lg-3">
@@ -205,6 +385,7 @@
             </div>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
