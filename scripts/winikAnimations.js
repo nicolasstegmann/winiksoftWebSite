@@ -117,26 +117,35 @@ document.querySelectorAll('.sectionImage').forEach(el => {
 });
 
 // ── GSAP generic reveal classes ───────────────────────────────────────────────
-document.querySelectorAll('.gsap-reveal').forEach(el => {
-    gsap.from(el, {
-        opacity: 0, y: 32, duration: 0.8, ease: 'power2.out',
-        scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
-    });
-});
+// Use IntersectionObserver so reveals work regardless of how the section is reached
+(function setupRevealObserver() {
+    const revealMap = new Map([
+        ['.gsap-reveal',       { y: 32 }],
+        ['.gsap-reveal-left',  { x: -48 }],
+        ['.gsap-reveal-right', { x: 48 }],
+    ]);
 
-document.querySelectorAll('.gsap-reveal-left').forEach(el => {
-    gsap.from(el, {
-        opacity: 0, x: -48, duration: 0.8, ease: 'power2.out',
-        scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
-    });
-});
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            const fromVars = el._revealFrom || { y: 32 };
+            gsap.fromTo(el,
+                { opacity: 0, ...fromVars },
+                { opacity: 1, x: 0, y: 0, duration: 0.8, ease: 'power2.out' }
+            );
+            observer.unobserve(el);
+        });
+    }, { threshold: 0.08 });
 
-document.querySelectorAll('.gsap-reveal-right').forEach(el => {
-    gsap.from(el, {
-        opacity: 0, x: 48, duration: 0.8, ease: 'power2.out',
-        scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
+    revealMap.forEach((fromVars, selector) => {
+        document.querySelectorAll(selector).forEach(el => {
+            el._revealFrom = fromVars;
+            gsap.set(el, { opacity: 0, ...fromVars });
+            observer.observe(el);
+        });
     });
-});
+})();
 
 // ── particles.js hero background ─────────────────────────────────────────────
 if (document.getElementById('particles-js') && typeof particlesJS !== 'undefined') {
