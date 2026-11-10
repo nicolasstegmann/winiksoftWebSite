@@ -13,27 +13,34 @@ if (navbar) {
 }
 
 // ── Scroll spy for nav links ──────────────────────────────────────────────────
-const navSections = document.querySelectorAll('section[id]');
-const navLinks    = document.querySelectorAll('.navbar-nav .nav-link[href^="#"]');
+const navLinks = document.querySelectorAll('.navbar-nav .nav-link[href^="#"]');
 
 function setActiveNav(id) {
     navLinks.forEach(link => {
-        link.classList.remove('spy-active');
-        if (link.getAttribute('href') === '#' + id) {
-            link.classList.add('spy-active');
-        }
+        link.classList.toggle('spy-active', link.getAttribute('href') === '#' + id);
     });
 }
 
-navSections.forEach(section => {
-    ScrollTrigger.create({
-        trigger: section,
-        start:   'top 60%',
-        end:     'bottom 60%',
-        onEnter:     () => setActiveNav(section.id),
-        onEnterBack: () => setActiveNav(section.id),
-    });
-});
+// Build ordered list of [id, element] pairs matching nav hrefs
+const spySections = [...navLinks]
+    .map(l => l.getAttribute('href').replace('#', ''))
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
+
+function updateScrollSpy() {
+    // Find the last section whose top is above the viewport midpoint
+    const midY = window.scrollY + window.innerHeight * 0.45;
+    let current = spySections[0];
+    for (const el of spySections) {
+        if (el.getBoundingClientRect().top + window.scrollY <= midY) {
+            current = el;
+        }
+    }
+    if (current) setActiveNav(current.id);
+}
+
+window.addEventListener('scroll', updateScrollSpy, { passive: true });
+updateScrollSpy();
 
 // ── Hero entrance ─────────────────────────────────────────────────────────────
 const heroContent = document.querySelector('.heroFullContent');
@@ -145,6 +152,35 @@ document.querySelectorAll('.sectionImage').forEach(el => {
             observer.observe(el);
         });
     });
+})();
+
+// ── AI logo: W ⇄ AI morph ─────────────────────────────────────────────────────
+(function () {
+    const logo = document.getElementById('aiLogo');
+    if (!logo) return;
+
+    // svgOrigin = each bar's natural center; x/y move that center to the target shape
+    const bars = [
+        { el: '#aiBar1', origin: '118 180', W: { x: 34,   y: 6, rotation: -20 }, AI: { x: 35, y: -10, rotation: 26 } },
+        { el: '#aiBar2', origin: '232 180', W: { x: -15,  y: 6, rotation: 20 },  AI: { x: 5,  y: -10, rotation: -26 } },
+        { el: '#aiBar3', origin: '384 180', W: { x: -101, y: 6, rotation: -20 }, AI: { x: 5,  y: -10, rotation: 0 } },
+        { el: '#aiBar4', origin: '384 180', W: { x: -35,  y: 6, rotation: 20 },  AI: { x: 5,  y: -10, rotation: 0 } },
+    ];
+
+    bars.forEach(b => gsap.set(b.el, { svgOrigin: b.origin, ...b.W }));
+
+    const tl = gsap.timeline({ paused: true, repeat: -1, yoyo: true, repeatDelay: 2.4, delay: 0.6 });
+    bars.forEach((b, i) => {
+        tl.to(b.el, { ...b.AI, duration: 1.3, ease: 'expo.inOut' }, i * 0.08);
+    });
+
+    const obs = new IntersectionObserver((entries) => {
+        if (!entries[0].isIntersecting) return;
+        logo.classList.add('ai-animated');
+        tl.play();
+        obs.disconnect();
+    }, { threshold: 0.25 });
+    obs.observe(logo);
 })();
 
 // ── particles.js hero background ─────────────────────────────────────────────

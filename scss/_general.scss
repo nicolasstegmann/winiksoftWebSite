@@ -450,6 +450,63 @@ div[id] {
         flex-wrap: wrap;
     }
 
+    // ─── HERO STATEMENTS (cycling carousel) ──────────────────────────────────
+    .heroStatements {
+        position: relative;
+        min-height: 180px;
+        margin: 28px 0 32px;
+        max-width: 620px;
+    }
+
+    .heroStatement {
+        position: absolute;
+        inset: 0 0 32px;
+        opacity: 0;
+        transform: translateY(16px);
+        padding: 16px 20px;
+        border-left: 2px solid winikStyleGuide.$c-winiksoftMain;
+        background: rgba(77, 200, 245, 0.04);
+        border-radius: 0 8px 8px 0;
+        font-size: clamp(0.88rem, 1.4vw, 1rem);
+        color: winikStyleGuide.$c-text-muted;
+        line-height: 1.7;
+        animation: heroStatementCycle 20s ease-in-out infinite both;
+        box-shadow: inset 0 0 0 1px rgba(77, 200, 245, 0.08);
+
+        em { color: winikStyleGuide.$c-text; font-style: italic; }
+
+        &--1 { animation-delay: 0s; }
+        &--2 { animation-delay: 5s; }
+        &--3 { animation-delay: 10s; }
+        &--4 { animation-delay: 15s; }
+    }
+
+    .heroStatementDots {
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .heroStatementDot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: rgba(77, 200, 245, 0.2);
+        animation: heroStatementDotActive 20s linear infinite both;
+
+        &--1 { animation-delay: 0s; }
+        &--2 { animation-delay: 5s; }
+        &--3 { animation-delay: 10s; }
+        &--4 { animation-delay: 15s; }
+    }
+
+    @media (max-width: 768px) {
+        .heroStatements { min-height: 260px; }
+    }
+
     .heroCtaSecondary {
         color: winikStyleGuide.$c-text-muted;
         text-decoration: none;
@@ -579,46 +636,136 @@ div[id] {
     }
 }
 
-// ─── LOGO LIST (clients) ──────────────────────────────────────────────────
-.logoList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 40px 56px;
-    padding: 32px 20px 48px;
+// ─── LOGO MARQUEE (clients) ──────────────────────────────────────────────
+.logoMarquee {
+    overflow: hidden;
+    padding: 32px 0 48px;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
 
-    li {
-        list-style: none;
+.logoMarqueeTrack {
+    display: flex;
+    align-items: center;
+    gap: 72px;
+    width: max-content;
+    animation: marqueeScroll 22s linear infinite;
+
+    &:has(.logoMarqueeItem:hover) {
+        animation-play-state: paused;
+    }
+}
+
+.logoMarqueeItem {
+    max-height: 48px;
+    max-width: 160px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.4;
+    transition: filter 0.4s ease, opacity 0.4s ease, transform 0.3s ease;
+    cursor: default;
+    flex-shrink: 0;
+
+    &:hover {
+        filter: none;
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+// ─── CLIENT QUOTE (aside blockquote) ─────────────────────────────────────
+.clientQuote {
+    margin: 16px 0 0;
+    padding: 0;
+    border: none;
+
+    p {
+        font-style: italic;
+        color: winikStyleGuide.$c-text-muted;
+        line-height: 1.65;
+        font-size: winikStyleGuide.$ts-winikM;
+        margin-bottom: 12px;
     }
 
-    .logoCard {
-        background: transparent;
-        border: none;
-        padding: 0;
+    footer {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: transform 0.3s ease;
+        flex-direction: column;
+        gap: 2px;
 
-        img {
-            height: 44px;
-            width: auto;
-            max-width: 140px;
-            object-fit: contain;
-            filter: grayscale(1) brightness(1.4) contrast(0.8);
-            opacity: 0.5;
-            transition: filter 0.4s ease, opacity 0.4s ease, transform 0.3s ease;
+        strong {
+            color: winikStyleGuide.$c-text;
+            font-size: winikStyleGuide.$ts-winikS;
         }
 
-        &:hover {
-            transform: translateY(-3px);
-
-            img {
-                filter: grayscale(0) brightness(1) contrast(1);
-                opacity: 1;
-            }
+        span {
+            color: winikStyleGuide.$c-winiksoftMain;
+            font-size: winikStyleGuide.$ts-winikXS;
+            letter-spacing: 0.04em;
         }
+    }
+}
+
+// ─── CLIENT QUOTE CARD (standalone, e.g. Argentilemon) ───────────────────
+.clientQuoteCard {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.clientQuoteCardInner {
+    background: winikStyleGuide.$c-glass;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid winikStyleGuide.$c-glass-border;
+    border-radius: 16px;
+    padding: 36px 40px;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 16px;
+        border-top: 2px solid rgba(77, 200, 245, 0.35);
+        pointer-events: none;
+    }
+}
+
+.clientQuoteIcon {
+    width: 36px;
+    height: auto;
+    color: winikStyleGuide.$c-winiksoftMain;
+    opacity: 0.4;
+    margin-bottom: 20px;
+}
+
+.clientQuoteText {
+    font-style: italic;
+    color: winikStyleGuide.$c-text-muted;
+    line-height: 1.7;
+    font-size: winikStyleGuide.$ts-winikM;
+    margin-bottom: 20px;
+}
+
+.clientQuoteAttrib {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding-top: 16px;
+    border-top: 1px solid winikStyleGuide.$c-glass-border;
+
+    strong {
+        color: winikStyleGuide.$c-text;
+        font-size: winikStyleGuide.$ts-winikS;
+    }
+
+    span {
+        color: winikStyleGuide.$c-winiksoftMain;
+        font-size: winikStyleGuide.$ts-winikXS;
+        letter-spacing: 0.04em;
     }
 }
 
@@ -876,6 +1023,211 @@ div[id] {
         border-color: rgba(77, 200, 245, 0.4);
         color: winikStyleGuide.$c-winiksoftMain;
     }
+}
+
+// ─── AI SECTION ───────────────────────────────────────────────────────────
+#ia {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(ellipse 55% 70% at 25% 50%, rgba(77, 200, 245, 0.07) 0%, transparent 70%),
+            linear-gradient(rgba(77, 200, 245, 0.015) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(77, 200, 245, 0.015) 1px, transparent 1px);
+        background-size: auto, 56px 56px, 56px 56px;
+        pointer-events: none;
+    }
+}
+
+.aiSectionInner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+
+    @media (max-width: 900px) {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+}
+
+.aiLogoWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aiLogo {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    animation: aiLogoPulse 4s ease-in-out infinite;
+    transition: transform 0.4s ease;
+
+    &:hover {
+        transform: scale(1.04);
+    }
+
+    .aiShim { opacity: 0; }
+
+    &.ai-animated .aiShim { animation: aiShimMove 3.4s ease-in-out infinite; }
+    &.ai-animated #aiBar1 .aiShim { animation-delay: 2.2s; }
+    &.ai-animated #aiBar2 .aiShim { animation-delay: 1.4s; }
+    &.ai-animated #aiBar3 .aiShim { animation-delay: 1.8s; }
+}
+
+.aiContent {
+    .sectionLabel { margin-bottom: 24px; }
+
+    h2 {
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        font-weight: 700;
+        color: winikStyleGuide.$c-text;
+        line-height: 1.15;
+        margin-bottom: 20px;
+
+        em {
+            font-style: normal;
+            background: linear-gradient(135deg, winikStyleGuide.$c-winiksoftMain 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    }
+
+    p {
+        font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+        color: winikStyleGuide.$c-text-muted;
+        line-height: 1.7;
+        margin-bottom: 28px;
+        max-width: 480px;
+    }
+}
+
+.aiPoints {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 0.95rem;
+        color: winikStyleGuide.$c-text-muted;
+        line-height: 1.5;
+
+        &::before {
+            content: '';
+            flex-shrink: 0;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: winikStyleGuide.$c-winiksoftMain;
+            margin-top: 8px;
+        }
+    }
+}
+
+// ─── WIN TOGETHER SECTION ─────────────────────────────────────────────────
+#winTogether {
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0;
+    background: winikStyleGuide.$c-bg;
+    text-align: center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(ellipse 80% 60% at 50% 50%, rgba(77, 200, 245, 0.08) 0%, transparent 70%);
+        pointer-events: none;
+    }
+}
+
+.winTogetherInner {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.winTogetherEyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: winikStyleGuide.$c-winiksoftMain;
+    margin-bottom: 32px;
+    opacity: 0.85;
+}
+
+.winTogetherSlogan {
+    font-family: winikStyleGuide.$t-winiksoftMain;
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin: 0 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+    .winWord {
+        display: block;
+        color: winikStyleGuide.$c-text;
+        opacity: 0;
+        transform: translateY(40px);
+        animation: winWordReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+        &:nth-child(1) { animation-delay: 0.1s; }
+        &:nth-child(2) { animation-delay: 0.3s; }
+    }
+
+    .winWordAccent {
+        display: block;
+        background: linear-gradient(135deg, winikStyleGuide.$c-winiksoftMain 0%, #a78bfa 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+        animation: winWordReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+        filter: drop-shadow(0 0 32px rgba(77, 200, 245, 0.35));
+    }
+}
+
+.winTogetherRule {
+    width: 1px;
+    height: 64px;
+    background: linear-gradient(to bottom, transparent, winikStyleGuide.$c-winiksoftMain, transparent);
+    margin: 0 auto 40px;
+    opacity: 0.5;
+}
+
+.winTogetherSubline {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    color: winikStyleGuide.$c-text-muted;
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.65;
+}
+
+@keyframes winWordReveal {
+    to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @media (max-width: 768px) {

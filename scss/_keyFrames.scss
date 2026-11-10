@@ -1,3 +1,30 @@
+@keyframes aiLogoPulse {
+    0%, 100% { filter: drop-shadow(0 0 18px rgba(77,200,245,0.28)) drop-shadow(0 0 6px rgba(77,200,245,0.12)); }
+    50%       { filter: drop-shadow(0 0 42px rgba(77,200,245,0.55)) drop-shadow(0 0 16px rgba(77,200,245,0.28)); }
+}
+@keyframes aiShimMove {
+    0%   { transform: translateY(0px);    opacity: 0; }
+    5%   { opacity: 1; }
+    95%  { opacity: 1; }
+    100% { transform: translateY(-380px); opacity: 0; }
+}
+
+// Hero statement cycle: 20s total, 5s per statement
+// visible window = 5–21% → ≈ 1s fade-in, 2.2s hold, 1s fade-out
+@keyframes heroStatementCycle {
+    0%          { opacity: 0; transform: translateY(16px); }
+    5%          { opacity: 1; transform: translateY(0); }
+    21%         { opacity: 1; transform: translateY(0); }
+    26%, 100%   { opacity: 0; transform: translateY(-12px); }
+}
+
+@keyframes heroStatementDotActive {
+    0%, 2%      { background: rgba(77, 200, 245, 0.2); transform: scale(1); }
+    6%          { background: rgba(77, 200, 245, 1);   transform: scale(1.6); }
+    21%         { background: rgba(77, 200, 245, 1);   transform: scale(1.6); }
+    26%, 100%   { background: rgba(77, 200, 245, 0.2); transform: scale(1); }
+}
+
 @keyframes aurora {
     0%   { background-position: 0% 50%; }
     50%  { background-position: 100% 50%; }

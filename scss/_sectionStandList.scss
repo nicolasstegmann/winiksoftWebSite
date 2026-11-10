@@ -81,42 +81,6 @@
     background-position: center center;
 }
 
-// Per-service accent: distinct color top-border + icon glow
-#servicios li:nth-child(1) article {
-    border-top: 2px solid rgba(130, 80, 255, 0.5);
-
-    img {
-        filter: brightness(0) invert(1) sepia(0.3) hue-rotate(260deg) saturate(5) !important;
-        filter: drop-shadow(0 0 12px rgba(130, 80, 255, 0.6)) brightness(0) invert(1) sepia(0.3) hue-rotate(260deg) saturate(5) !important;
-    }
-
-    h4 { color: rgb(170, 130, 255); }
-}
-
-#servicios li:nth-child(2) article {
-    border-top: 2px solid rgba(0, 200, 245, 0.5);
-}
-
-#servicios li:nth-child(3) article {
-    border-top: 2px solid rgba(0, 220, 170, 0.5);
-
-    img {
-        filter: brightness(0) invert(1) sepia(0.3) hue-rotate(130deg) saturate(4) !important;
-    }
-
-    h4 { color: rgb(100, 230, 190); }
-}
-
-#servicios li:nth-child(4) article {
-    border-top: 2px solid rgba(255, 160, 50, 0.5);
-
-    img {
-        filter: brightness(0) invert(1) sepia(1) hue-rotate(0deg) saturate(5) !important;
-    }
-
-    h4 { color: rgb(255, 185, 90); }
-}
-
 // Bigger icons for services
 #servicios .sectionStands img {
     width: 72px;
