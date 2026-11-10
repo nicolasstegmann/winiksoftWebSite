@@ -1,4 +1,8 @@
-//Secciones de artículos al lado de fotos
+@use "winikWebGuide" as winikStyleGuide;
+@use "mixins" as *;
+@use "extends";
+
+/* Aside: photo + article card side by side */
 .aside {
     @include dimension(100%, auto);
     display: grid;
@@ -17,42 +21,29 @@
 }
 
 .asideImageBackground {
-
-    // position:absolute;
-    // top:0;
-    // left:0;
-    // width:100%;
-    // height:100%;
-
     $images: ("Gasnor": "gasnor_case", "Alsa": "alsa_case", "Scada": "winscadaimg", "Spatcher": "winspatcherimg", "Integrations": "wintegrationimg", "Jiraconn": "jiraconnimg");
 
-    @each $name,
-    $image in $images {
+    @each $name, $image in $images {
         $path: '../img';
-
         &#image#{$name} {
-            @if $name=='Gasnor'or $name=='Alsa' {
-                $path: $path + "/customers"
-            }
-
+            @if $name == 'Gasnor' or $name == 'Alsa' { $path: $path + "/customers" }
             background-image: url("#{$path}/#{$image}.jpg");
         }
     }
 
     grid-area: 1/1/9/9;
     @extend %winikCoverImages;
-    filter: brightness(50%);
-    
+    filter: brightness(40%);
     z-index: -1;
 
-    @each $name, $image in $images {
+    @each $name, $image in ("Gasnor": "gasnor_case", "Alsa": "alsa_case", "Scada": "winscadaimg", "Spatcher": "winspatcherimg", "Integrations": "wintegrationimg", "Jiraconn": "jiraconnimg") {
         &#image#{$name}::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             @include dimension(300px, 100%);
-            box-shadow: 20px 0 100px winikStyleGuide.$c-heroTransparence, -20px 0 100px winikStyleGuide.$c-heroTransparence;
+            box-shadow: 20px 0 100px rgba(8,14,26,0.9), -20px 0 100px rgba(8,14,26,0.9);
             background-size: 110%;
             $lightBarMap: (name: lightBar, duration: (random(30) + 5)+s, iteration: infinite, timing: ease-in-out, delay: 1s);
             @include animation($lightBarMap...);
@@ -69,21 +60,21 @@
         top: 0;
         left: 0;
         @include dimension(300px, 100%);
-        box-shadow: 20px 0 100px winikStyleGuide.$c-heroTransparence, -20px 0 100px winikStyleGuide.$c-heroTransparence;
+        box-shadow: 20px 0 100px rgba(8,14,26,0.9), -20px 0 100px rgba(8,14,26,0.9);
         background-size: 110%;
         $lightBarMap: (name: lightBar, duration: 18s, iteration: infinite, timing: ease-in-out, delay: 1s);
         @include animation($lightBarMap...);
     }
 }
 
-.asideLeft{
-    .asideImageBackground{
+.asideLeft {
+    .asideImageBackground {
         clip-path: polygon(14% 0, 100% 0, 100% 100%, 14% 100%, 0% 50%);
     }
 }
 
-.asideRight{
-    .asideImageBackground{
+.asideRight {
+    .asideImageBackground {
         clip-path: polygon(0% 0%, 86% 0, 100% 50%, 86% 100%, 0% 100%);
     }
 }
@@ -94,8 +85,8 @@
     letter-spacing: 2px;
     padding: 5px;
     filter: brightness(100%);
-    color: winikStyleGuide.$c-winiksoftWhite;
-    border: winikStyleGuide.$c-winiksoftWhite 3px solid;
+    color: winikStyleGuide.$c-winiksoftMain;
+    border: 1px solid winikStyleGuide.$c-glass-border;
     text-transform: uppercase;
     font-size: winikStyleGuide.$ts-winikXS;
     font-weight: bold;
@@ -104,6 +95,7 @@
     grid-row: 3/5;
     align-self: center;
     justify-self: center;
+    text-shadow: winikStyleGuide.$c-glow-sm;
 }
 
 .asideStory {
@@ -115,35 +107,47 @@
 }
 
 .asideArticle {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04);
+    background: winikStyleGuide.$c-glass;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid winikStyleGuide.$c-glass-border;
     @include dimension(300px);
     margin: 50px;
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 32px;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04);
+    transition:
+        transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 
     &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 36px rgba(0, 164, 234, 0.13), 0 4px 12px rgba(0, 0, 0, 0.07);
+        transform: translateY(-5px);
+        border-color: winikStyleGuide.$c-glass-border-hover;
+        box-shadow: 0 16px 48px rgba(0,0,0,0.4), 0 0 28px rgba(77,200,245,0.16);
     }
 
     img {
         @include dimension(30%, auto);
         border-radius: 20px;
         margin-bottom: 16px;
+        filter: drop-shadow(0 0 8px rgba(77,200,245,0.4));
     }
 
     h4 {
         font-weight: bolder;
+        color: winikStyleGuide.$c-text;
     }
 
     h4,
     p {
         font-size: winikStyleGuide.$ts-winikM;
+        color: winikStyleGuide.$c-text-muted;
     }
+
+    h4 { color: winikStyleGuide.$c-text; }
 
     .buttonWinik {
         margin-top: auto;
@@ -158,13 +162,14 @@
             gap: 10px;
         }
 
-        // Winik circle icon — show original colors, no filter
+        // Winik circle icon
         img {
             width: 26px;
             height: 26px;
             border-radius: 50%;
             margin-bottom: 0;
             flex-shrink: 0;
+            filter: none;
         }
     }
 }

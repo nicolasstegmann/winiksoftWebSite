@@ -1,4 +1,7 @@
-//Secciones de listas de articulos
+@use "winikWebGuide" as winikStyleGuide;
+@use "mixins" as *;
+
+/* Lists of cards */
 .standList {
     display: flex;
     flex-wrap: wrap;
@@ -22,66 +25,85 @@
     article {
         @include dimension(300px);
         margin: 0;
-        padding: 24px 20px;
-        background-color: winikStyleGuide.$c-winiksoftWhite;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+        padding: 28px 24px;
+        background: winikStyleGuide.$c-glass;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid winikStyleGuide.$c-glass-border;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.05);
         display: flex;
         flex-direction: column;
         gap: 12px;
-        transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                    box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition:
+            transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+            box-shadow 0.3s ease,
+            border-color 0.3s ease,
+            background 0.3s ease;
+        animation: borderGlow 4s ease-in-out infinite;
 
         &:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0, 164, 234, 0.14);
+            transform: translateY(-6px);
+            background: winikStyleGuide.$c-glass-hover;
+            border-color: winikStyleGuide.$c-glass-border-hover;
+            box-shadow:
+                0 16px 48px rgba(0, 0, 0, 0.4),
+                0 0 24px rgba(77, 200, 245, 0.18),
+                inset 0 1px 0 rgba(255,255,255,0.08);
+            animation: none;
         }
     }
 
     img {
         @include dimension(30%, auto);
+        // PNG icons get a cyan tint via filter to match dark theme
+        filter: brightness(0) invert(1) sepia(0.3) hue-rotate(170deg) saturate(2);
     }
 
     h4 {
         font-size: winikStyleGuide.$ts-winikL;
         font-weight: bold;
+        color: winikStyleGuide.$c-text;
     }
 
     p {
         font-size: winikStyleGuide.$ts-winikM;
+        color: winikStyleGuide.$c-text-muted;
     }
 }
 
-// Alternating card colors for servicios (#pilares has its own rule with ID specificity).
-// Scoped to #servicios to avoid bleeding into .teamGrid on quienessomos —
-// .sectionStands li:nth-child(even) article (0,2,2) would beat .teamGrid li article (0,1,2).
+// Alternating card accent: cyan glow on even cards
 #servicios li:nth-child(even) article {
-    background-color: winikStyleGuide.$c-winiksoftPower;
-    box-shadow: 0 8px 28px rgba(0, 164, 234, 0.22);
+    background: rgba(0, 164, 234, 0.08);
+    border-color: rgba(0, 164, 234, 0.22);
+    box-shadow: 0 8px 32px rgba(0, 164, 234, 0.12), inset 0 1px 0 rgba(255,255,255,0.05);
 
     h4 {
-        color: winikStyleGuide.$c-totalWhite;
+        color: winikStyleGuide.$c-winiksoftMain;
     }
 
     p {
-        color: winikStyleGuide.$c-winiksoftLetterLight;
+        color: winikStyleGuide.$c-text-muted;
     }
 
     .standsSectionBullet li::before {
-        color: winikStyleGuide.$c-winiksoftLetterLight;
+        color: winikStyleGuide.$c-winiksoftMain;
     }
 
-    // Icons are cyan PNGs — invert to white so they're visible on blue bg
     img {
-        filter: brightness(0) invert(1);
+        filter: brightness(0) invert(1) sepia(0.3) hue-rotate(170deg) saturate(3);
     }
 
     &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 16px 40px rgba(0, 164, 234, 0.38);
+        transform: translateY(-6px);
+        box-shadow:
+            0 16px 48px rgba(0, 164, 234, 0.25),
+            0 0 32px rgba(0, 164, 234, 0.20),
+            inset 0 1px 0 rgba(255,255,255,0.08);
     }
 }
 
+// ─── TEAM GRID ────────────────────────────────────────────────────────────
 .teamGrid {
     display: grid;
     grid-template-columns: 1fr;
@@ -96,17 +118,23 @@
         flex-direction: column;
         width: 100%;
         margin: 0;
-        background: winikStyleGuide.$c-totalWhite;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04);
+        background: winikStyleGuide.$c-glass;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid winikStyleGuide.$c-glass-border;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
         overflow: hidden;
         text-align: left;
-        transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                    box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition:
+            transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+            box-shadow 0.3s ease,
+            border-color 0.3s ease;
 
         &:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 164, 234, 0.14), 0 4px 12px rgba(0, 0, 0, 0.07);
+            border-color: winikStyleGuide.$c-glass-border-hover;
+            box-shadow: 0 16px 48px rgba(0,0,0,0.4), 0 0 24px rgba(77,200,245,0.15);
         }
     }
 
@@ -165,14 +193,14 @@
     h4 {
         font-size: winikStyleGuide.$ts-winikL;
         font-weight: bold;
-        color: winikStyleGuide.$c-winiksoftLetterDark;
+        color: winikStyleGuide.$c-text;
         margin-bottom: 4px;
     }
 
     .teamCardRole {
         font-size: winikStyleGuide.$ts-winikS;
         font-weight: bold;
-        color: winikStyleGuide.$c-winiksoftLetterDark;
+        color: winikStyleGuide.$c-winiksoftMain;
         text-transform: uppercase;
         letter-spacing: 0.08em;
         margin: 0;
@@ -181,8 +209,10 @@
 
 .teamCardBody {
     padding: 12px 24px 24px;
+    color: winikStyleGuide.$c-text-muted;
 }
 
+// ─── PILARES ──────────────────────────────────────────────────────────────
 #pilares {
     .standList {
         gap: 24px;
@@ -195,62 +225,64 @@
         width: 280px;
         margin: 0;
         padding: 28px 24px;
-        border-radius: 12px;
+        border-radius: 16px;
         display: flex;
         flex-direction: column;
         gap: 12px;
-        background-color: winikStyleGuide.$c-winiksoftWhite;
-        transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                    box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        background: winikStyleGuide.$c-glass;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid winikStyleGuide.$c-glass-border;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        transition:
+            transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+            box-shadow 0.3s ease,
+            border-color 0.3s ease;
 
         &:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0, 164, 234, 0.14);
+            border-color: winikStyleGuide.$c-glass-border-hover;
+            box-shadow: 0 16px 40px rgba(77, 200, 245, 0.18);
         }
 
         img {
             width: 48px;
             height: 48px;
             object-fit: contain;
+            filter: drop-shadow(0 0 8px rgba(77, 200, 245, 0.5));
         }
 
         h4 {
             font-size: winikStyleGuide.$ts-winikL;
-            color: winikStyleGuide.$c-winiksoftLetterDark;
+            color: winikStyleGuide.$c-text;
             margin-bottom: 4px;
         }
 
         p {
             font-size: winikStyleGuide.$ts-winikM;
-            color: winikStyleGuide.$c-winiksoftLetterDark;
+            color: winikStyleGuide.$c-text-muted;
             line-height: 1.6;
         }
     }
 
     li:nth-child(even) article {
-        background-color: winikStyleGuide.$c-winiksoftPower;
-        box-shadow: 0 8px 28px rgba(0, 164, 234, 0.22);
+        background: rgba(0, 164, 234, 0.08);
+        border-color: rgba(0, 164, 234, 0.22);
+        box-shadow: 0 8px 28px rgba(0, 164, 234, 0.14);
 
-        h4 {
-            color: winikStyleGuide.$c-totalWhite;
-        }
+        h4 { color: winikStyleGuide.$c-winiksoftMain; }
+        p  { color: winikStyleGuide.$c-text-muted; }
 
-        p {
-            color: winikStyleGuide.$c-winiksoftLetterLight;
-        }
-
-        // Cyan PNG icons become invisible on blue bg — invert to white
-        img {
-            filter: brightness(0) invert(1);
-        }
+        img { filter: drop-shadow(0 0 10px rgba(0, 164, 234, 0.6)); }
 
         &:hover {
             transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(0, 164, 234, 0.38);
+            box-shadow: 0 16px 40px rgba(0, 164, 234, 0.30);
         }
     }
 }
 
+// ─── BULLET LISTS ─────────────────────────────────────────────────────────
 .standsSectionBullet {
     list-style: none;
     padding: 0;
@@ -260,42 +292,40 @@
         display: flex;
         align-items: flex-start;
         padding-left: 0;
+        color: winikStyleGuide.$c-text-muted;
 
         &::before {
             content: "•";
             padding-right: 8px;
             flex-shrink: 0;
-            color: winikStyleGuide.$c-winiksoftDeep;
+            color: winikStyleGuide.$c-winiksoftMain;
         }
 
         p { margin: 0; }
     }
 }
 
+// ─── PICTURE SECTION ──────────────────────────────────────────────────────
 .picSection {
     img {
         @include dimension(300px, 380px);
         object-fit: cover;
         object-position: center top;
-        box-shadow: 0px -1px 17px silver;
+        box-shadow: 0 8px 40px rgba(0,0,0,0.5), 0 0 32px rgba(77,200,245,0.10);
         margin-bottom: 50px;
-        border-radius: 9px;
+        border-radius: 12px;
         opacity: 1;
         display: block;
         transition: 0.5s ease;
+        border: 1px solid winikStyleGuide.$c-glass-border;
     }
 
     .imgHoverContainer {
         position: relative;
         width: 300px;
         &:hover {
-            img {
-                opacity: 0.5;
-            }
-
-            .imgHover {
-                opacity: 1;
-            }
+            img { opacity: 0.5; }
+            .imgHover { opacity: 1; }
         }
     }
 

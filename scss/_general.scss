@@ -1,6 +1,10 @@
+@use "winikWebGuide" as winikStyleGuide;
+@use "mixins" as *;
+@use "extends";
+
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -10,7 +14,7 @@ html {
 
 ::selection {
     background-color: winikStyleGuide.$c-winiksoftMain;
-    color: winikStyleGuide.$c-winikButton;
+    color: winikStyleGuide.$c-bg;
 }
 
 a:focus-visible,
@@ -18,16 +22,41 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-    outline: 2px solid winikStyleGuide.$c-winiksoftPower;
+    outline: 2px solid winikStyleGuide.$c-winiksoftMain;
     outline-offset: 3px;
     border-radius: 2px;
 }
 
+// ─── BODY / AURORA BACKGROUND ─────────────────────────────────────────────
 body {
     font-family: winikStyleGuide.$t-winiksoftMain;
     overflow-x: hidden;
     @include dimension(100vw);
     line-height: 1.6;
+    background-color: winikStyleGuide.$c-bg;
+    color: winikStyleGuide.$c-text;
+    position: relative;
+
+    // Animated aurora orbs — pure CSS, no JS needed
+    &::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        background:
+            radial-gradient(ellipse 60% 50% at 20% 30%, rgba(0, 164, 234, 0.08) 0%, transparent 65%),
+            radial-gradient(ellipse 50% 40% at 80% 15%, rgba(77, 200, 245, 0.07) 0%, transparent 60%),
+            radial-gradient(ellipse 55% 45% at 55% 85%, rgba(0, 144, 204, 0.06) 0%, transparent 60%);
+        background-size: 200% 200%;
+        animation: aurora 18s ease-in-out infinite;
+    }
+}
+
+// Every section needs to sit above the fixed aurora layer
+main > * {
+    position: relative;
+    z-index: 1;
 }
 
 a {
@@ -39,40 +68,44 @@ h3 {
     margin: 0;
 }
 
-.dividerBotton {
-    position: relative;
-}
-
-.dividerBottonImage {
+// ─── FLOATING ORB ACCENTS ─────────────────────────────────────────────────
+.orbAccent {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    @include dimension(100%);
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(60px);
+    animation: floatOrb 10s ease-in-out infinite;
 
-    svg {
-        position: relative;
-        display: block;
-        @include dimension(calc(160% + 1.3px), 63px);
-        transform: rotateY(180deg);
+    &--1 {
+        width: 320px;
+        height: 320px;
+        background: radial-gradient(circle, rgba(77, 200, 245, 0.10) 0%, transparent 70%);
+        top: -80px;
+        right: -80px;
+        animation-delay: 0s;
     }
-
-    .shape-fill {
-        fill: winikStyleGuide.$c-winikButton;
+    &--2 {
+        width: 240px;
+        height: 240px;
+        background: radial-gradient(circle, rgba(0, 164, 234, 0.08) 0%, transparent 70%);
+        bottom: -60px;
+        left: -60px;
+        animation-delay: 5s;
     }
 }
 
+// ─── PRINCIPAL ────────────────────────────────────────────────────────────
 .principal {
     @include dimension(100%);
     text-align: center;
 }
 
+// ─── HERO ─────────────────────────────────────────────────────────────────
 .heroWinik {
     grid-column: 1/2;
     padding-bottom: 150px;
-    background: linear-gradient(135deg, rgba(53, 74, 84, 0.65) 0%, rgba(0, 164, 234, 0.3) 100%);
+    background: linear-gradient(135deg, rgba(8, 14, 26, 0.72) 0%, rgba(0, 100, 180, 0.28) 100%);
     display: flex;
     @include dimension(100%);
     min-height: 100vh;
@@ -82,17 +115,18 @@ h3 {
     border-radius: 0 0 32px 32px;
 }
 
-// Fills the full width of heroWinik so text doesn't grow to max-content
-// inside the align-items:center flex column and overflow the container.
 .heroWinikText {
     width: 100%;
 }
 
+// ─── BRAND BUTTON ─────────────────────────────────────────────────────────
 .buttonWinik {
-    border: 1px solid winikStyleGuide.$c-winikButton;
+    border: 1px solid winikStyleGuide.$c-winiksoftMain;
     @include dimension(fit-content);
-    padding: 10px 30px;
-    background-image: linear-gradient(to left, winikStyleGuide.$c-winiksoftLetterDark 50%, winikStyleGuide.$c-winikButton 50%);
+    padding: 11px 32px;
+    background-image: linear-gradient(to left,
+        winikStyleGuide.$c-bg-3 50%,
+        winikStyleGuide.$c-winiksoftPower 50%);
     background-size: 200% 100%;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -100,15 +134,31 @@ h3 {
     font-size: winikStyleGuide.$ts-winikL;
     border-radius: 50px;
     font-weight: bold;
-    transition: background-position 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    box-shadow: 0 4px 15px rgba(53, 74, 84, 0.25);
+    transition:
+        background-position 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 4px 20px rgba(0, 164, 234, 0.30), winikStyleGuide.$c-glow-sm;
     z-index: 1;
+    position: relative;
+    overflow: hidden;
+
+    // Shimmer sweep on hover
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+        transform: translateX(-150%) skewX(-20deg);
+        pointer-events: none;
+    }
 
     a,
     button {
-        color: winikStyleGuide.$c-totalWhite;
+        color: winikStyleGuide.$c-text;
         text-decoration: none;
         background: transparent;
         border: none;
@@ -122,34 +172,41 @@ h3 {
 
     &:hover {
         background-position: -100% 0;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(53, 74, 84, 0.4);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 32px rgba(0, 164, 234, 0.50), winikStyleGuide.$c-glow-md;
+
+        &::after {
+            animation: shimmerMove 0.6s ease forwards;
+        }
     }
 
     &:active {
         transform: translateY(0);
-        box-shadow: 0 2px 8px rgba(53, 74, 84, 0.3);
+        box-shadow: 0 2px 10px rgba(0, 164, 234, 0.30);
     }
 }
 
+// ─── CALL TO ACTION WRAPPER ───────────────────────────────────────────────
 .callToAction {
     display: flex;
     justify-content: center;
     padding: 32px 0 48px;
 }
 
+// ─── SECTION HEADER ───────────────────────────────────────────────────────
 .sectionHeader {
     overflow: hidden;
 
     h2 {
-        background-color: winikStyleGuide.$c-winiksoftDeep;
+        background-color: winikStyleGuide.$c-bg-3;
         font-size: winikStyleGuide.$ts-winikXXL;
         font-weight: bold;
-        color: winikStyleGuide.$c-totalWhite;
+        color: winikStyleGuide.$c-winiksoftMain;
         line-height: 80px;
         padding: 20px;
         letter-spacing: -0.02em;
         clip-path: polygon(0 0, 100% 0, 97% 100%, 0 100%);
+        text-shadow: winikStyleGuide.$c-glow-sm;
     }
 
     h3 {
@@ -157,40 +214,44 @@ h3 {
         font-size: winikStyleGuide.$ts-winikL;
         font-weight: 400;
         font-style: normal;
-        color: winikStyleGuide.$c-winiksoftLetterDark;
+        color: winikStyleGuide.$c-text-muted;
         line-height: 1.5;
         padding: 16px 20px 28px;
     }
 }
 
-// Product name headings in the asidesSection (productos page).
-// These h3s are section dividers between products, not subtitles —
-// they need weight and color to stand out between the aside blocks.
+// Product name headings in asidesSection
 .asidesSection h3 {
     font-size: winikStyleGuide.$ts-winikXL;
     font-weight: bold;
-    color: winikStyleGuide.$c-winiksoftDeep;
+    color: winikStyleGuide.$c-winiksoftMain;
     padding: 40px 20px 12px;
     line-height: 1.3;
-    border-bottom: 2px solid winikStyleGuide.$c-winiksoftMain;
+    border-bottom: 2px solid winikStyleGuide.$c-glass-border;
     margin-bottom: 8px;
+    text-shadow: winikStyleGuide.$c-glow-sm;
 }
 
+// ─── CAROUSEL ARROWS ──────────────────────────────────────────────────────
 .carousel-control-prev,
 .carousel-control-next {
     width: 48px;
     height: 48px;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(53, 74, 84, 0.65);
+    background-color: winikStyleGuide.$c-glass;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: 50%;
-    border: 2px solid rgba(191, 235, 251, 0.4);
+    border: 1px solid winikStyleGuide.$c-glass-border;
     opacity: 1;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 
     &:hover {
-        background-color: winikStyleGuide.$c-winiksoftPower;
+        background-color: winikStyleGuide.$c-glass-hover;
+        border-color: winikStyleGuide.$c-winiksoftMain;
         transform: translateY(-50%) scale(1.1);
+        box-shadow: winikStyleGuide.$c-glow-sm;
         opacity: 1;
     }
 }
@@ -198,15 +259,17 @@ h3 {
 .carousel-control-prev { left: 16px; }
 .carousel-control-next { right: 16px; }
 
+// ─── JUMBOTRON ────────────────────────────────────────────────────────────
 .jumbotron {
-    background-color: inherit;
+    background-color: transparent;
     color: inherit;
 }
 
+// ─── HOVER ANIMATIONS ─────────────────────────────────────────────────────
 .hover-underline-animation {
     display: inline-block;
     position: relative;
-    color: winikStyleGuide.$c-winikButton;
+    color: inherit;
 }
 
 .hover-underline-animation:after {
@@ -232,4 +295,62 @@ h3 {
 .hover-grow-animation:focus-visible {
     transform: scale(1.2);
     transition: transform 0.2s ease-out;
+}
+
+// ─── WAVE DIVIDER ─────────────────────────────────────────────────────────
+.dividerBotton {
+    position: relative;
+}
+
+.dividerBottonImage {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @include dimension(100%);
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+
+    svg {
+        position: relative;
+        display: block;
+        @include dimension(calc(160% + 1.3px), 63px);
+        transform: rotateY(180deg);
+    }
+
+    .shape-fill {
+        fill: winikStyleGuide.$c-bg;
+    }
+}
+
+// ─── GSAP REVEAL INITIAL STATES ───────────────────────────────────────────
+// Elements with these classes start hidden; GSAP animates them in.
+.gsap-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+}
+
+.gsap-reveal-left {
+    opacity: 0;
+    transform: translateX(-32px);
+}
+
+.gsap-reveal-right {
+    opacity: 0;
+    transform: translateX(32px);
+}
+
+.gsap-reveal-scale {
+    opacity: 0;
+    transform: scale(0.92);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gsap-reveal,
+    .gsap-reveal-left,
+    .gsap-reveal-right,
+    .gsap-reveal-scale {
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }

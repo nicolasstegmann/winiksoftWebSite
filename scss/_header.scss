@@ -1,30 +1,60 @@
-/* HEADER */
+@use "winikWebGuide" as winikStyleGuide;
+
+/* HEADER — glass navbar */
 .navbar {
-    background-color: winikStyleGuide.$c-winiksoftMain;
+    background: rgba(8, 14, 26, 0.80) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(77, 200, 245, 0.08);
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &.scrolled {
+        background: rgba(8, 14, 26, 0.96) !important;
+        border-bottom-color: rgba(77, 200, 245, 0.18);
+        box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
+    }
 }
 
 .navbar-nav {
     font-size: winikStyleGuide.$ts-winikM;
 
     li .dropdown-menu {
-        background-color: winikStyleGuide.$c-winiksoftMain;
+        background: rgba(8, 14, 26, 0.95);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(77, 200, 245, 0.12);
+        border-radius: 10px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+
+        a {
+            color: winikStyleGuide.$c-text;
+
+            &:hover {
+                background: rgba(77, 200, 245, 0.08);
+                color: winikStyleGuide.$c-winiksoftMain;
+            }
+        }
     }
 }
 
-// Social icon links: increase tap target to 44px height (WCAG 2.5.5)
+// Social icon links: 44px tap target (WCAG 2.5.5)
 .navbar-nav.ml-auto .nav-link {
     padding: 14px 12px;
 }
 
+// Logo shimmer sweep
 .navbar-brand:before {
     content: "";
     position: absolute;
     top: 0;
     left: -100px;
-    @include dimension(70px, 100%);
-    background: rgba(255, 255, 255, 0.3);
+    width: 70px;
+    height: 100%;
     transform: skewX(-30deg);
-    $slideMap: (name: slide, duration: 30s, iteration: infinite, timing: ease-in-out, delay: 0.3s, direction: alternate);
-    @include animation($slideMap...);
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.13) 77%, rgba(255, 255, 255, 0.5) 92%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right,
+        rgba(255,255,255,0.0) 0%,
+        rgba(255,255,255,0.08) 77%,
+        rgba(255,255,255,0.22) 92%,
+        rgba(255,255,255,0.0) 100%);
+    animation: slide 30s ease-in-out infinite alternate;
 }

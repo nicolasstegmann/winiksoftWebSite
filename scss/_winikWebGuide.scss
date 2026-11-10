@@ -1,4 +1,4 @@
-// WINIKSOFT COLOR PALETTE
+// WINIKSOFT COLOR PALETTE — brand tokens intactos
 $c-winiksoftMain: #4DC8F5;
 $c-winiksoftPower: #00A4EA;
 $c-winiksoftDeep: #0090CC;
@@ -11,6 +11,20 @@ $c-totalWhite: #FFFFFF;
 $c-winiksoftWhite: #EEFCFF;
 $c-winiksoftError: #FD7488;
 $c-winiksoftSuccess: #31B56E;
+
+// DARK BASE — redesign-v2
+$c-bg:                  #080E1A;
+$c-bg-2:                #0D1829;
+$c-bg-3:                #112036;
+$c-glass:               rgba(77, 200, 245, 0.05);
+$c-glass-hover:         rgba(77, 200, 245, 0.10);
+$c-glass-border:        rgba(77, 200, 245, 0.12);
+$c-glass-border-hover:  rgba(77, 200, 245, 0.32);
+$c-text:                #E8F4FD;
+$c-text-muted:          rgba(232, 244, 253, 0.60);
+$c-glow-sm:             0 0 12px rgba(77, 200, 245, 0.35);
+$c-glow-md:             0 0 28px rgba(77, 200, 245, 0.50);
+$c-glow-lg:             0 0 56px rgba(77, 200, 245, 0.28);
 
 // TYPOGRAPHY
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Raleway:wght@700&family=Ubuntu:wght@400;700&display=swap");
