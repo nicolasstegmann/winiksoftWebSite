@@ -166,6 +166,7 @@
                 margin-bottom: 0;
                 display: block;
                 opacity: 1;
+                filter: none !important;
                 transition: 0.5s ease;
             }
 
@@ -323,6 +324,7 @@
     .imgHoverContainer {
         position: relative;
         width: 300px;
+        img { filter: none !important; }
         &:hover {
             img { opacity: 0.5; }
             .imgHover { opacity: 1; }
