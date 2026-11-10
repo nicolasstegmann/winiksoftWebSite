@@ -1,13 +1,12 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Winiksoft — Consultoría e Innovación en Software</title>
-    <meta name="description" content="Winiksoft es una empresa de consultoría y desarrollo de software que brinda servicios a empresas.">
-    <meta name="keywords" content="software, transformación  digital, consultoría, automatización, tecnología">
+    <meta name="description" content="Winiksoft es una empresa de consultoría y desarrollo de software. Transformamos procesos de negocio con IA, automatización y desarrollo a medida.">
+    <meta name="keywords" content="software, transformación digital, consultoría, automatización, tecnología, IA, inteligencia artificial, SCADA, integración">
     <link rel="shortcut icon" href="./img/winikiconcircle.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
@@ -15,11 +14,11 @@
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/winikStyle.css">
 </head>
-
 <body>
+    <!-- ===== NAVBAR ===== -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark default-color fixed-top">
-            <a class="navbar-brand" href="#"><img src="./img/winiklogo.png" alt="Winiksoft Logo" height="50px"></a>
+            <a class="navbar-brand" href="#inicio"><img src="./img/winiklogo.png" alt="Winiksoft Logo" height="50px"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#winiksoftNavBar" aria-controls="winiksoftNavBar"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -28,41 +27,41 @@
             <div class="collapse navbar-collapse" id="winiksoftNavBar">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item active px-3">
-                        <a class="nav-link hover-underline-animation" href="#">Home</a>
+                        <a class="nav-link hover-underline-animation" href="#inicio">Home</a>
                     </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link hover-underline-animation" href="./pages/quienessomos.html">Quiénes somos</a>
+                        <a class="nav-link hover-underline-animation" href="#quienessomos">Quiénes somos</a>
                     </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link hover-underline-animation" href="./pages/servicios.html">Servicios</a>
+                        <a class="nav-link hover-underline-animation" href="#servicios">Servicios</a>
                     </li>
                     <li class="nav-item px-3 dropdown">
                         <a class="nav-link dropdown-toggle hover-underline-animation" id="winiksoftDropDown" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Productos
                         </a>
                         <div class="dropdown-menu dropdown-default" aria-labelledby="winiksoftDropDown">
-                            <a class="dropdown-item" href="./pages/productos.html">Todos</a>
+                            <a class="dropdown-item" href="#productos">Todos</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="./pages/productos.html#winscada">Winscada</a>
-                            <a class="dropdown-item" href="./pages/productos.html#winspatcher">Winspatcher</a>
-                            <a class="dropdown-item" href="./pages/productos.html#wintegration">Wintegration</a>
-                            <a class="dropdown-item" href="./pages/productos.html#jiraconn">Jiraconn</a>
-                            <a class="dropdown-item" href="./pages/productos.html#wicash">wiCash</a>
+                            <a class="dropdown-item" href="#winscada">Winscada</a>
+                            <a class="dropdown-item" href="#winspatcher">Winspatcher</a>
+                            <a class="dropdown-item" href="#wintegration">Wintegration</a>
+                            <a class="dropdown-item" href="#jiraconn">Jiraconn</a>
+                            <a class="dropdown-item" href="#wicash">wiCash</a>
                         </div>
                     </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link hover-underline-animation" href="./pages/contacto.html">Contacto</a>
+                        <a class="nav-link hover-underline-animation" href="#contacto">Contacto</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto flex-row justify-content-around">
                     <li class="nav-item">
-                        <a class="nav-link hover-grow-animation" target="_blank" href="http://linkedin.com/winiksoft/"><i class="fa fa-linkedin"></i></a>
+                        <a class="nav-link hover-grow-animation" target="_blank" href="https://www.linkedin.com/company/winiksoft/"><i class="fa fa-linkedin"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link hover-grow-animation" target="_blank" href="http://facebook.com/winiksoft/"><i class="fa fa-facebook"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link hover-grow-animation" target="_blank" href="http://youtube.com/winiksoft/"><i class="fa fa-youtube"></i></a> 
+                        <a class="nav-link hover-grow-animation" target="_blank" href="http://youtube.com/winiksoft/"><i class="fa fa-youtube"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link hover-grow-animation" target="_blank" href="http://instagram.com/winiksoft/"><i class="fa fa-instagram"></i></a>
@@ -74,225 +73,618 @@
             </div>
         </nav>
     </header>
+
     <main class="principal">
-        <section class="carrouselWiniksoft">
-            <div id="carrouselWiniksoft" class="carousel slide" data-ride="carousel" data-interval="12000">
-                <!-- Indicadores -->
-                <ul class="carousel-indicators">
-                <li data-target="#carrouselWiniksoft" data-slide-to="0" class="active"></li>
-                <li data-target="#carrouselWiniksoft" data-slide-to="1" class=""></li>
-                <li data-target="#carrouselWiniksoft" data-slide-to="2" class=""></li>
-                <li data-target="#carrouselWiniksoft" data-slide-to="3" class=""></li>
-                </ul>
-                <!-- Slides -->
-                <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="sectionImage" style="background-image: url('./img/AIWiniksoft.png');">
-                        <div class="heroWinik">
-                            <div class="heroWinikText">
-                                <p>En Winiksoft ya estamos montados en la ola de la Inteligencia Artificial. Integramos IA en cada solución para maximizar la eficiencia operativa, potenciar la toma de decisiones y llevar la transformación digital de tu empresa al siguiente nivel.</p>
-                            </div>
-                            <div class="buttonWinik">
-                                <a href="./pages/servicios.html">Conocé nuestros servicios</a>
-                            </div>
-                        </div>
+
+        <!-- ===== 01 · HERO ===== -->
+        <section id="inicio" class="heroFull">
+            <div id="particles-js"></div>
+            <div class="heroFullContent container">
+                <p class="heroEyebrow">Consultoría &amp; Innovación en Software</p>
+                <h1 class="heroTitle">
+                    Tecnología que<br>
+                    <span class="heroTitleAccent">hace que suceda</span>
+                </h1>
+                <p class="heroSubtitle">Transformamos procesos de negocio con IA, automatización y desarrollo a medida. Somos el equipo que convierte la estrategia en resultados concretos.</p>
+                <div class="heroCtaGroup">
+                    <div class="buttonWinik">
+                        <a href="#servicios">Nuestros servicios</a>
                     </div>
+                    <a class="heroCtaSecondary" href="#contacto">Hablemos <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
-                <div class="carousel-item">
-                    <div class="sectionImage" id="heroImg">
-                        <div class="heroWinik">
-                            <div class="heroWinikText">
-                                <p>En Winiksoft acompañamos a las empresas en el camino de mejorar y automatizar los
-                                    procesos a través de la tecnología.</p>
-                            </div>
-                            <div class="buttonWinik">
-                                <a href="./pages/productos.html">Conocé nuestros productos</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="sectionImage" id="heroImg2">
-                        <div class="heroWinik">
-                            <div class="heroWinikText">
-                                <p>Los clientes y consumidores ya han trasladado su presencia y la conversación al entorno digital, y las empresas tienen que escucharles e interactuar con ellos.</p>
-                            </div>
-                            <div class="buttonWinik">
-                                <a href="./pages/quienessomos.html">Conocé nuestro enfoque</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="sectionImage" id="heroImg3">
-                        <div class="heroWinik">
-                            <div class="heroWinikText">
-                                <p>La transformación digital no llega de la noche a la mañana. Hay que cambiar la comunicación con clientes y proveedores y la forma de pensar y actuar.<br>El mundo que viene todavía no tiene dueños.</p>
-                            </div>
-                            <div class="buttonWinik">
-                                <a href="./pages/contacto.html">Hablemos de tu proyecto</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <!-- Controles -->
-                <a class="carousel-control-prev" href="#carrouselWiniksoft" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#carrouselWiniksoft" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-                </a>
             </div>
-        </section> 
+            <div class="scrollIndicator" aria-hidden="true">
+                <span class="scrollLabel">Scroll</span>
+                <div class="scrollDot"></div>
+            </div>
+        </section>
+
+        <!-- ===== MARQUEE 1 ===== -->
+        <div class="marqueeTicker" aria-hidden="true">
+            <div class="marqueeTrack">
+                <span class="marqueeItem">Transformación Digital</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Inteligencia Artificial</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Automatización</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Gestión de Proyectos</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Desarrollo a Medida</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Integración de Sistemas</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">SCADA</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Transformación Digital</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Inteligencia Artificial</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Automatización</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Gestión de Proyectos</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Desarrollo a Medida</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Integración de Sistemas</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">SCADA</span>
+                <span class="marqueeSep">·</span>
+            </div>
+        </div>
+
+        <!-- ===== 02 · PILARES ===== -->
         <section class="sectionHeader sectionStands" id="pilares">
-            <h2>Nuestros pilares</h2>
-            <h3>Hacemos posible que nuestros clientes se muevan con rapidez
-                y confianza desde la estrategia hasta la ejecución.</h3>
+            <div class="sectionLabel"><span class="sectionNum">02</span> Nuestros pilares</div>
+            <h2>En qué nos apoyamos</h2>
+            <h3>Las bases sobre las que construimos cada proyecto y relación con nuestros clientes</h3>
             <ul class="standList">
                 <li>
-                    <article>
-                        <img src="./img/icons/mobile.png" alt="Mobile">
-                        <h4>Tecnología al servicio del negocio</h4>
-                        <p>Nuestras recomendaciones se integran a los Sistemas Legacy y otros Existentes en la
-                            organización, buscando tomar lo mejor de cada tecnología y otorgando a los mismos un alto
-                            nivel de flexibilidad para mantenerse al día con los desafíos que enfrenta el mundo
-                            empresarial moderno.</p>
+                    <article data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
+                        <img src="./img/icons/mobile.png" alt="Movilidad">
+                        <h4>Movilidad</h4>
+                        <ul class="standsSectionBullet">
+                            <li><p>Diseñamos soluciones pensadas para el mundo mobile-first.</p></li>
+                            <li><p>Acceso desde cualquier dispositivo, en cualquier lugar.</p></li>
+                        </ul>
                     </article>
                 </li>
                 <li>
-                    <article>
-                        <img src="./img/icons/cycle.png" alt="Cycle">
-                        <h4>Implementaciones ágiles</h4>
-                        <p>Planificamos el alcance y ejecución de los proyectos en ciclos de corta duración de manera de
-                            entregar resultados al negocio de forma iterativa e incremental como producto Mínimo Viable
-                            (MVP).</p>
+                    <article data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
+                        <img src="./img/icons/cycle.png" alt="Ciclo continuo">
+                        <h4>Mejora continua</h4>
+                        <ul class="standsSectionBullet">
+                            <li><p>Iteramos junto al cliente en ciclos cortos y de alto impacto.</p></li>
+                            <li><p>El producto evoluciona con el negocio, no contra él.</p></li>
+                        </ul>
                     </article>
                 </li>
                 <li>
-                    <article>
-                        <img src="./img/icons/progress.png" alt="Progress">
-                        <h4>Resultados concretos</h4>
-                        <p>Definimos, construimos y monitoreamos las métricas de éxito para garantizar los resultados
-                            esperados.</p>
+                    <article data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
+                        <img src="./img/icons/progress.png" alt="Progreso">
+                        <h4>Progreso medible</h4>
+                        <ul class="standsSectionBullet">
+                            <li><p>Cada iniciativa tiene métricas claras de éxito desde el inicio.</p></li>
+                            <li><p>Decisiones basadas en datos, no en suposiciones.</p></li>
+                        </ul>
                     </article>
                 </li>
                 <li>
-                    <article>
+                    <article data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
                         <img src="./img/icons/partnership.png" alt="Partnership">
-                        <h4>Comunidad de partners</h4>
-                        <p>Nuestro equipo se mantiene actualizado y fomenta el intercambio con partners especializados
-                            evaluando de forma continua plataformas específicas para procesos de negocio particulares.
-                        </p>
+                        <h4>Partnership real</h4>
+                        <ul class="standsSectionBullet">
+                            <li><p>Nos integramos al equipo del cliente como una parte más.</p></li>
+                            <li><p>El éxito del cliente es nuestro éxito.</p></li>
+                        </ul>
                     </article>
                 </li>
             </ul>
         </section>
 
-        <section class="sectionImage" id="equipoImg">
-            <div class="heroWinik">
+        <!-- ===== 03 · QUIÉNES SOMOS — VISUAL DIVIDER ===== -->
+        <section class="sectionImage" id="quienesSomosImg">
+            <div class="heroWinik" id="quienessomos">
                 <div class="heroWinikText">
-                    <p>Winiksoft es un lugar para desarrollarse profesionalmente, volcando la experiencia y creatividad
-                        a diario. Trabajando con un grupo de profesionales con un sólido recorrido en la industria de IT
-                        y gerenciamiento de empresas, con los cuales compartir y capitalizar conocimiento.</p>
+                    <p>Nuestra comunidad y cultura son los activos más importantes que tenemos. Buscamos personas que compartan nuestra filosofía.</p>
                 </div>
                 <div class="buttonWinik">
-                    <a href="./pages/quienessomos.html">Conocé nuestro equipo</a>
+                    <a href="#liderazgo">Nuestro equipo de liderazgo</a>
                 </div>
             </div>
         </section>
-        <section class="sectionHeader sectionAsides" id="clientes">
-            <h2>Quienes nos conocen</h2>
-            <h3>Nuestros clientes saben que nuestro objetivo es “hacer que
-                suceda”. Por ello trabajamos codo a codo con las empresas para resolver las dificultades.</h3>
-            <!-- Carrusel de clientes -->
-             <!-- Controles
-            <div class="winikCarouselContainer">
-                <div class="winikCarouselTrack">
-                    <div class="winikCarouselItem">
-                        <a><img src="./img/customers/alsa_logo.png" alt="Logo cliente Alsa" class="winikCarouselImg"></a>
-                    </div>
-                    <div class="winikCarouselItem">
-                        <a><img src="./img/customers/gasnor_logo.png" alt="Logo cliente Gasnor" class="winikCarouselImg"></a>
-                    </div>
-                    <div class="winikCarouselItem">
-                        <a><img src="./img/customers/gasnor_logo.png" alt="Logo cliente Gasnor" class="winikCarouselImg"></a>
-                    </div>
-                    <div class="winikCarouselItem">
-                        <a><img src="./img/customers/gasnor_logo.png" alt="Logo cliente Gasnor" class="winikCarouselImg"></a>
-                    </div>
-                    <div class="winikCarouselItem">
-                        <a><img src="./img/customers/gasnor_logo.png" alt="Logo cliente Gasnor" class="winikCarouselImg"></a>
-                    </div>
+
+        <!-- ===== LIDERAZGO ===== -->
+        <section class="sectionHeader sectionStands picSection" id="liderazgo">
+            <div class="sectionLabel"><span class="sectionNum">03</span> Quiénes somos</div>
+            <h2>Nuestro equipo de liderazgo</h2>
+            <h3>Jóvenes profesionales en el área de IT comprometidos en el desarrollo de soluciones de innovación</h3>
+            <ul class="standList teamGrid">
+                <li>
+                    <article data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.08">
+                        <div class="imgHoverContainer">
+                            <img src="./img/nstegmann.jpg" alt="Nicolás Stegmann">
+                            <div class="imgHover">
+                                <div class="imgHoverText">
+                                    <a target="_blank" href="https://www.linkedin.com/in/nicolas-stegmann/" aria-label="LinkedIn de Nicolás"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="teamCardHeader">
+                            <h4>Nicolás Stegmann</h4>
+                            <p class="teamCardRole">Founder - Director</p>
+                        </div>
+                        <div class="teamCardBody">
+                            <ul class="standsSectionBullet">
+                                <li><p>Ingeniero en informática.</p></li>
+                                <li><p>20 años de experiencia en empresas de servicios y producción.</p></li>
+                                <li><p>Especialista en integraciones y automatización de procesos.</p></li>
+                            </ul>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.08">
+                        <div class="imgHoverContainer">
+                            <img src="./img/mleiva.jpg" alt="Mario Leiva Savio">
+                            <div class="imgHover">
+                                <div class="imgHoverText">
+                                    <a target="_blank" href="https://www.linkedin.com/in/mario-gabriel-leiva-savio-5485a04a/" aria-label="LinkedIn de Mario"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="teamCardHeader">
+                            <h4>Mario Leiva Savio</h4>
+                            <p class="teamCardRole">Information Technology Director</p>
+                        </div>
+                        <div class="teamCardBody">
+                            <ul class="standsSectionBullet">
+                                <li><p>Ingeniero en informática.</p></li>
+                                <li><p>15 años de experiencia en empresas de servicios.</p></li>
+                                <li><p>Especialista en desarrollo de aplicaciones multiplataforma.</p></li>
+                            </ul>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.08">
+                        <div class="imgHoverContainer">
+                            <img src="./img/cmartin.jpg" alt="Cecilia Martín">
+                            <div class="imgHover">
+                                <div class="imgHoverText">
+                                    <a target="_blank" href="https://www.linkedin.com/in/mar%C3%ADa-cecilia-mart%C3%ADn-35177a105/" aria-label="LinkedIn de Cecilia"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="teamCardHeader">
+                            <h4>Cecilia Martín</h4>
+                            <p class="teamCardRole">Solutions Director</p>
+                        </div>
+                        <div class="teamCardBody">
+                            <ul class="standsSectionBullet">
+                                <li><p>Ingeniera en informática.</p></li>
+                                <li><p>20 años de experiencia en empresas de servicios y bancas.</p></li>
+                                <li><p>Especialista en gestión de cobranzas y mora.</p></li>
+                            </ul>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.08">
+                        <div class="imgHoverContainer">
+                            <img src="./img/rzerpa.jpg" alt="Roberto Zerpa">
+                            <div class="imgHover">
+                                <div class="imgHoverText">
+                                    <a target="_blank" href="https://www.linkedin.com/in/roberto-mauro-zerpa-mercado-35b57a20/" aria-label="LinkedIn de Roberto"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="teamCardHeader">
+                            <h4>Roberto Zerpa</h4>
+                            <p class="teamCardRole">Integrations Director</p>
+                        </div>
+                        <div class="teamCardBody">
+                            <ul class="standsSectionBullet">
+                                <li><p>Ingeniero en sistemas.</p></li>
+                                <li><p>20 años de experiencia en empresas de servicios.</p></li>
+                                <li><p>Especialista en comunicaciones e integraciones SCADA.</p></li>
+                            </ul>
+                        </div>
+                    </article>
+                </li>
+            </ul>
+            <div class="callToAction">
+                <div class="buttonWinik">
+                    <a href="./pages/recruiting.html">Unite a nuestro equipo</a>
                 </div>
-            </div> -->
-            <div class="winikCarouselContainer h-100">
-                <div class="row align-items-center h-100">
-                  <div class="container rounded">
-                    <div class="winikCarouselSlider">
-                      <div class="winikCarouselLogos">
-                        <img src="./img/customers/alsa_logo2.png" alt="Logo cliente Alsa" class="carousel-img">
-                        <img src="./img/customers/naturgy_logo.png" alt="Logo cliente Naturgy" class="carousel-img">
-                        <img src="./img/customers/albanesi_logo.png" alt="Logo cliente Albanesi" class="carousel-img">
-                        <img src="./img/customers/minetti_logo.png" alt="Logo cliente Minetti" class="carousel-img">
-                        <img src="./img/customers/budeger_logo.png" alt="Logo cliente Budeger" class="carousel-img">
-                      </div>
-                      <div class="winikCarouselLogos">
-                        <img src="./img/customers/alsa_logo2.png" alt="Logo cliente Alsa" class="carousel-img">
-                        <img src="./img/customers/naturgy_logo.png" alt="Logo cliente Naturgy" class="carousel-img">
-                        <img src="./img/customers/albanesi_logo.png" alt="Logo cliente Albanesi" class="carousel-img">
-                        <img src="./img/customers/minetti_logo.png" alt="Logo cliente Minetti" class="carousel-img">
-                        <img src="./img/customers/budeger_logo.png" alt="Logo cliente Budeger" class="carousel-img">
-                      </div>
-                    </div>
-                  </div>
+            </div>
+        </section>
+
+        <!-- ===== MARQUEE 2 ===== -->
+        <div class="marqueeTicker marqueeTicker--reverse" aria-hidden="true">
+            <div class="marqueeTrack">
+                <span class="marqueeItem">Inteligencia Artificial</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Transformación Digital</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Plataformas Tecnológicas</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Gestión de Proyectos</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">IA Generativa</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Análisis Predictivo</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Automatización Inteligente</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Inteligencia Artificial</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Transformación Digital</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Plataformas Tecnológicas</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Gestión de Proyectos</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">IA Generativa</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Análisis Predictivo</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Automatización Inteligente</span>
+                <span class="marqueeSep">·</span>
+            </div>
+        </div>
+
+        <!-- ===== 04 · SERVICIOS ===== -->
+        <section class="sectionHeader sectionStands" id="servicios">
+            <div class="sectionLabel"><span class="sectionNum">04</span> Nuestros servicios</div>
+            <h2>Lo que hacemos</h2>
+            <h3>Basados principalmente en el fin de complementar equipos de IT y de negocio generando la capacidad requerida por las iniciativas de innovación</h3>
+            <ul class="standList">
+                <li>
+                    <article data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
+                        <img src="./img/icons/AI.png" alt="Inteligencia Artificial">
+                        <h4>Inteligencia Artificial</h4>
+                        <ul class="standsSectionBullet">
+                            <li><p>Identificación e implementación de soluciones de IA adaptadas a cada proceso de negocio.</p></li>
+                            <li><p>Automatización inteligente de tareas para ganar eficiencia operativa y reducir errores.</p></li>
+                            <li><p>Integración de IA generativa en los flujos de trabajo existentes.</p></li>
+                        </ul>
+                    </article>
+                </li>
+                <li>
+                    <article data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
+                        <img src="./img/icons/magnifier.png" alt="Transformación Digital">
+                        <h4>Transformación Digital</h4>
+                        <ul class="standsSectionBullet">
+                            <li><p>Descubrir de manera conjunta Oportunidades de Mejora.</p></li>
+                            <li><p>Redefinir los Procesos Críticos.</p></li>
+                            <li><p>Fijar prioridades y crear una hoja de ruta (ROADMAP).</p></li>
+                        </ul>
+                    </article>
+                </li>
+                <li>
+                    <article data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
+                        <img src="./img/icons/monitor.png" alt="Plataformas Tecnológicas">
+                        <h4>Plataformas Tecnológicas</h4>
+                        <ul class="standsSectionBullet">
+                            <li><p>Nuestros productos para soluciones Scada, de recaudación y multi integración.</p></li>
+                            <li><p>Desarrollos de software a medida.</p></li>
+                            <li><p>Implementación de soluciones y plataformas existentes.</p></li>
+                        </ul>
+                    </article>
+                </li>
+                <li>
+                    <article data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.12">
+                        <img src="./img/icons/convergeArrows.png" alt="Gestión de Proyectos">
+                        <h4>Gestión de Proyectos</h4>
+                        <ul class="standsSectionBullet">
+                            <li><p>Nos sumamos a los equipos de las empresas para gestionar de manera conjunta los proyectos.</p></li>
+                            <li><p>La clave es <strong>"QUE SUCEDA"</strong>.</p></li>
+                        </ul>
+                    </article>
+                </li>
+            </ul>
+            <div class="callToAction">
+                <div class="buttonWinik">
+                    <a href="#productos">Conocé nuestros productos</a>
                 </div>
-              </div>
-              
-            <!-- Contenido adicional -->
+            </div>
+        </section>
+
+        <!-- ===== PRODUCTOS — VISUAL DIVIDER ===== -->
+        <section class="sectionImage" id="productosImg">
+            <div class="heroWinik">
+                <div class="heroWinikText">
+                    <p>Nuestra experiencia en distintas áreas de empresas de servicios quedaron plasmados en nuestras herramientas comercializables y aplicables en distintas verticales.</p>
+                </div>
+                <div class="buttonWinik">
+                    <a href="#productos">Conocé nuestros productos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 05 · PRODUCTOS ===== -->
+        <section class="sectionHeader asidesSection" id="productos">
+            <div class="sectionLabel"><span class="sectionNum">05</span> Nuestros productos</div>
+            <h2>Soluciones probadas</h2>
+
+            <h3 id="winscada">Winscada</h3>
             <div class="aside asideRight">
                 <div class="asideImage">
-                    <div class="asideImageBackground" id="imageGasnor"></div>
-                    <div class="asideImageTitle">Oficina virtual miGasnor</div>
+                    <div class="asideImageBackground" id="imageScada"></div>
+                    <div class="asideImageTitle">Control de procesos a distancia</div>
                 </div>
                 <div class="asideStory">
                     <article class="asideArticle">
-                        <img src="./img/customers/gasnor_referent.jpg" alt="Cliente Gasnor"><br>
-                        <h4>Carlos Amin - CIO - Gasnor S.A.</h4>
-                        <p>
-                            "Con Winiksoft como nuestro aliado estratégico en el proceso de digitalización de clientes,
-                            no solo hemos logrado alcanzar nuestras metas y objetivos sino que hemos transformado por
-                            completo la mentalidad de toda la empresa, con la tecnología como soporte principal de
-                            cualquiera de nuestros procesos."<br>
-                            <a href="https://www.gasnor.com" target="blank"><img src="./img/customers/gasnor_logo.png"
-                                    alt="Logo cliente Gasnor"></a>
-                        </p>
+                        <img src="./img/winscadalogo.png" alt="Logo Winscada">
+                        <p>El control y gestión de los fluidos a lo largo de una red de distribución es fundamental para la operatividad y seguridad de las empresas de servicios. <strong>Winscada</strong> se convierte en una solución estándar pero a su vez 100% customizable que garantiza la retroalimentación "real time" de todos los dispositivos presentes en el campo. Con el partnership de empresas de renombre como <strong>Mercury</strong> e <strong>iFix</strong> entre muchas otras, este producto se posiciona entre los mejores en su rubro.</p>
+                        <div class="buttonWinik">
+                            <a href="#contacto"><img src="./img/winikiconcircle.png" alt="" aria-hidden="true"> Consultá sobre este producto</a>
+                        </div>
                     </article>
                 </div>
             </div>
+
+            <h3 id="winspatcher">Winspatcher</h3>
             <div class="aside asideLeft">
                 <div class="asideImage">
-                    <div class="asideImageBackground" id="imageAlsa"></div>
-                    <div class="asideImageTitle">Trazabilidad ganadera RFID</div>
+                    <div class="asideImageBackground" id="imageSpatcher"></div>
+                    <div class="asideImageTitle">Imputación y conciliación de cobranzas</div>
                 </div>
                 <div class="asideStory">
                     <article class="asideArticle">
-                        <img src="./img/customers/alsa_referent.jpg" alt="Cliente Alsa"><br>
-                        <h4>Florencia Bulacio - Director - Argentilemon</h4>
-                        <p>
-                            "Destaco el compromiso y profesionalismo de Winiksoft. Hemos trabajado en los últimos 2 años
-                            a la par, innovando con diferentes tecnologías móviles para el control de asistencia en
-                            fincas, tanto del personal propio como de contratistas de cosecha y labores, con el objetivo
-                            de cuidar los derechos de los trabajadores y la eliminación del trabajo infantil."<br>
-                            <a href="https://www.argentilemon.com" target="blank"><img
-                                    src="./img/customers/alsa_logo.png" alt="Logo cliente Alsa"></a>
-                        </p>
+                        <img src="./img/winspatcherlogo.png" alt="Logo Winspatcher">
+                        <p>Una solución integral que abarca y centraliza en una sola herramienta las distintas etapas y elementos necesarios para que las empresas se aseguren el 100% de sus cobranzas conciliables. Con <strong>Winspatcher</strong> podrá desde generar elementos de cobranza como barras y QRs, servicios online de exposición de deuda, imputación, afectación en cuentas corrientes y conciliación una vez que se procesen las órdenes de pago de los distintos recaudadores.</p>
+                        <div class="buttonWinik">
+                            <a href="#contacto"><img src="./img/winikiconcircle.png" alt="" aria-hidden="true"> Consultá sobre este producto</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <h3 id="wintegration">Wintegration</h3>
+            <div class="aside asideRight">
+                <div class="asideImage">
+                    <div class="asideImageBackground" id="imageIntegrations"></div>
+                    <div class="asideImageTitle">Integración de sistemas legacy a REST APIs</div>
+                </div>
+                <div class="asideStory">
+                    <article class="asideArticle">
+                        <img src="./img/wintegrationlogo.png" alt="Logo Wintegration">
+                        <p>Esta era de transformación digital plena en la mayoría de las verticales de negocio, hace que los cambios deban ser necesariamente disruptivos. <strong>Wintegration</strong> es la solución necesaria para empresas que cuentan con sistemas legacy que necesiten acoplarse a la vertiginosa aventura de la digitalización de procesos. <em>"Es concebir a un legacy expuesto en una API y un mundo entero de APIs consumidas por un legacy"</em></p>
+                        <div class="buttonWinik">
+                            <a href="#contacto"><img src="./img/winikiconcircle.png" alt="" aria-hidden="true"> Consultá sobre este producto</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <h3 id="jiraconn">Jiraconn for Avaya ®</h3>
+            <div class="aside asideLeft">
+                <div class="asideImage">
+                    <div class="asideImageBackground" id="imageJiraconn"></div>
+                    <div class="asideImageTitle">Integración de Avaya ACCS y Jira Software / Jira Service Desk</div>
+                </div>
+                <div class="asideStory">
+                    <article class="asideArticle">
+                        <img src="./img/jiraconnlogo.png" alt="Logo Jiraconn">
+                        <p>Con <strong>Jiraconn</strong>, una herramienta a medida de desarrollo propio, es posible integrar un Contact Center que utilice tecnología de <strong>Avaya ACCS</strong> con la herramienta líder en gestión de tickets como lo es <strong>Jira de Atlassian</strong>. De esta manera toda la potencia de Jira es automáticamente alcanzada ante cada llamada o contacto que reciba, permitiendo el seguimiento de los casos con los mejores estándares de la industria.</p>
+                        <div class="buttonWinik">
+                            <a href="#contacto"><img src="./img/winikiconcircle.png" alt="" aria-hidden="true"> Consultá sobre este producto</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <h3 id="wicash">wiCash</h3>
+            <div class="aside asideRight">
+                <div class="asideImage">
+                    <div class="asideImageBackground" id="imageWicash"></div>
+                    <div class="asideImageTitle">Tus finanzas, claras y bajo control</div>
+                </div>
+                <div class="asideStory">
+                    <article class="asideArticle">
+                        <a href="https://wicash.winiksoft.com" target="_blank"><img src="./img/wicash-logo.png" alt="Logo wiCash"></a>
+                        <p><strong>wiCash</strong> es la aplicación para llevar tus finanzas al día sin planillas: registrás ingresos, gastos, transferencias, deudas e inversiones en múltiples cuentas y monedas, con reportes claros y en tiempo real. Suma inteligencia con IA —importa los resúmenes de tarjeta y detecta tus movimientos recurrentes— y funciona en la web y el celular. Multiespacio y multiusuario, pensada tanto para una persona como para un equipo o pyme.</p>
+                        <div class="buttonWinik">
+                            <a href="#contacto"><img src="./img/winikiconcircle.png" alt="" aria-hidden="true"> Consultá sobre este producto</a>
+                        </div>
                     </article>
                 </div>
             </div>
         </section>
-                
+
+        <!-- ===== MARQUEE 3 ===== -->
+        <div class="marqueeTicker" aria-hidden="true">
+            <div class="marqueeTrack">
+                <span class="marqueeItem">Alsa</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Naturgy</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Albanesi</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Minetti</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Budeger</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Gasnor</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Alsa</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Naturgy</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Albanesi</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Minetti</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Budeger</span>
+                <span class="marqueeSep">·</span>
+                <span class="marqueeItem">Gasnor</span>
+                <span class="marqueeSep">·</span>
+            </div>
+        </div>
+
+        <!-- ===== 06 · CLIENTES ===== -->
+        <section class="sectionHeader sectionAsides" id="clientes">
+            <div class="sectionLabel"><span class="sectionNum">06</span> Nuestros clientes</div>
+            <h2>Quienes nos conocen</h2>
+            <h3>Empresas líderes que confiaron en Winiksoft para transformar sus procesos</h3>
+            <ul class="standList logoList">
+                <li><article class="logoCard"><img src="./img/logos/alsa.png" alt="Alsa"></article></li>
+                <li><article class="logoCard"><img src="./img/logos/naturgy.png" alt="Naturgy"></article></li>
+                <li><article class="logoCard"><img src="./img/logos/albanesi.png" alt="Albanesi"></article></li>
+                <li><article class="logoCard"><img src="./img/logos/minetti.png" alt="Minetti"></article></li>
+                <li><article class="logoCard"><img src="./img/logos/budeger.png" alt="Budeger"></article></li>
+            </ul>
+
+            <!-- Gasnor testimony aside -->
+            <div class="aside asideRight gsap-reveal" style="margin-top: 48px;">
+                <div class="asideImage">
+                    <div class="asideImageBackground" id="imageGasnor"></div>
+                    <div class="asideImageTitle">Gasnor — Distribución de Gas Natural</div>
+                </div>
+                <div class="asideStory">
+                    <article class="asideArticle">
+                        <img src="./img/logos/gasnor.png" alt="Gasnor Logo">
+                        <p>Empresa de servicios públicos líder en la distribución de gas natural del norte argentino. Confiaron en Winiksoft para la implementación y evolución de sus sistemas de control SCADA, logrando mayor eficiencia operativa y visibilidad en tiempo real de toda su red de distribución.</p>
+                        <div class="buttonWinik">
+                            <a href="#contacto">Contactanos</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Alsa testimony aside -->
+            <div class="aside asideLeft gsap-reveal" style="margin-top: 48px;">
+                <div class="asideImage">
+                    <div class="asideImageBackground" id="imageAlsa"></div>
+                    <div class="asideImageTitle">Alsa — Transporte y Logística</div>
+                </div>
+                <div class="asideStory">
+                    <article class="asideArticle">
+                        <img src="./img/logos/alsa.png" alt="Alsa Logo">
+                        <p>Empresa internacional de transporte de pasajeros presente en múltiples países. Winiksoft acompañó su proceso de transformación digital, desarrollando soluciones de gestión e integración que potenciaron su capacidad operativa y mejoraron la experiencia de sus pasajeros.</p>
+                        <div class="buttonWinik">
+                            <a href="#contacto">Contactanos</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 07 · CONTACTO ===== -->
+        <section class="sectionContacto" id="contacto">
+            <div class="sectionLabel sectionLabel--light"><span class="sectionNum">07</span> Contacto</div>
+            <div class="container-fluid">
+                <div class="row sectionContactoParent">
+                    <div class="col-md-12 col-lg-4 sectionContactoChild dividerLeft" id="contactoLeft">
+                        <div class="jumbotron text-left">
+                            <img src="./img/icons/email.png" height="50px" alt="e-mail">
+                            <h1 class="display-4">Contactanos</h1>
+                            <p class="lead">Siempre estamos abiertos a escuchar problemáticas y debatir ideas en busca de soluciones.</p>
+                            <p class="lead">Nos gustan los desafíos y el pensar juntos.</p>
+                            <hr class="my-4">
+                            <div class="buttonWinik">
+                                <a href="https://api.whatsapp.com/send?phone=5493816091736&text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20Winiksoft" target="_blank" rel="noopener noreferrer"><i class="fa fa-whatsapp" aria-hidden="true"></i> ¡Hablemos!</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-8 text-left d-flex sectionContactoChild" id="contactoRight">
+                        <form class="needs-validation flex-fill align-self-center php-email-form" id="formulario">
+                            <div class="form-group row">
+                                <label for="formNombre" class="col-lg-3 col-form-label">Nombre y apellido</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="formNombre" name="nombre" placeholder="Nombre y apellido" required>
+                                    <div class="valid-feedback">OK</div>
+                                    <div class="invalid-feedback">Campo obligatorio</div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formEmail" class="col-lg-3 col-form-label">E-mail</label>
+                                <div class="col-lg-9">
+                                    <input type="email" class="form-control" id="formEmail" name="email" aria-describedby="emailHelp" placeholder="E-mail" required>
+                                    <small id="emailHelp" class="form-text">No compartiremos con nadie tu dirección de e-mail.</small>
+                                    <div class="valid-feedback">OK</div>
+                                    <div class="invalid-feedback">Campo obligatorio</div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formTelefono" class="col-lg-3 col-form-label">Teléfono</label>
+                                <div class="col-lg-9">
+                                    <input type="tel" class="form-control" id="formTelefono" name="telefono" aria-describedby="telHelp" placeholder="Teléfono" required>
+                                    <small id="telHelp" class="form-text">No compartiremos con nadie tu teléfono.</small>
+                                    <div class="valid-feedback">OK</div>
+                                    <div class="invalid-feedback">Campo obligatorio</div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formMedioContacto" class="col-lg-3 col-form-label">¿Como preferís que te contactemos?</label>
+                                <div class="col-lg-9">
+                                    <select class="form-control" id="formMedioContacto" name="medioContacto">
+                                        <option selected>Elegí...</option>
+                                        <option value="indistinto">Indistinto</option>
+                                        <option value="email">E-mail</option>
+                                        <option value="telefono">Teléfono</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formEmpresa" class="col-lg-3 col-form-label">Empresa</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="formEmpresa" name="empresa" placeholder="Empresa" required>
+                                    <div class="valid-feedback">OK</div>
+                                    <div class="invalid-feedback">Campo obligatorio</div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formTamEmpresa" class="col-lg-3 col-form-label">Tamaño de la empresa</label>
+                                <div class="col-lg-9">
+                                    <select class="form-control" id="formTamEmpresa" name="tamEmpresa" required>
+                                        <option selected>Elegí...</option>
+                                        <option value="1">1 a 10 empleados</option>
+                                        <option value="10">10 a 50 empleados</option>
+                                        <option value="50">50 a 250 empleados</option>
+                                        <option value="250">Más de 250 empleados</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formCargo" class="col-lg-3 col-form-label">Cargo</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="formCargo" name="cargo" placeholder="Cargo" required>
+                                    <div class="valid-feedback">OK</div>
+                                    <div class="invalid-feedback">Campo obligatorio</div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formMensaje" class="col-lg-3 col-form-label">Mensaje</label>
+                                <div class="col-lg-9">
+                                    <textarea class="form-control" id="formMensaje" name="mensaje" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="formNewsletter" name="newsletter" value="Sí">
+                                <label class="form-check-label" for="formNewsletter">Deseo suscribirme al newsletter</label>
+                            </div>
+                            <div class="my-3 d-flex justify-content-end">
+                                <div class="loading">Enviando...</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Tu mensaje ha sido enviado. Muchas gracias por contactarse con Winiksoft.</div>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <div class="buttonWinik">
+                                    <button type="submit">Enviar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
+
+    <!-- ===== FOOTER ===== -->
     <footer class="footerWinik">
         <section class="dividerBotton">
             <div class="dividerBottonImage">
@@ -301,7 +693,7 @@
                     <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
                     <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
                 </svg>
-            </div>        
+            </div>
         </section>
         <div class="container-fluid">
             <div class="footerWinikContent row text-center">
@@ -332,9 +724,18 @@
             </div>
         </div>
     </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <!-- GSAP -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="./scripts/winikAnimations.js" defer></script>
+    <!-- particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- vanilla-tilt.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <!-- Site animations -->
+    <script src="./scripts/winikAnimations.js"></script>
+    <!-- Bootstrap deps -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -344,5 +745,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
         integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
     </script>
+    <!-- emailjs + contact form -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="./scripts/sendMail.js"></script>
 </body>
 </html>

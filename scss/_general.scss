@@ -354,3 +354,293 @@ h3 {
         transform: none !important;
     }
 }
+
+// ─── SCROLL ANCHOR OFFSET (fixed navbar) ──────────────────────────────────
+section[id],
+div[id] {
+    scroll-margin-top: 72px;
+}
+
+// ─── FULLSCREEN HERO ──────────────────────────────────────────────────────
+.heroFull {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(160deg, #030a14 0%, winikStyleGuide.$c-bg 60%);
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 180px;
+        background: linear-gradient(to top, winikStyleGuide.$c-bg, transparent);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    #particles-js {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+    }
+
+    .heroFullContent {
+        position: relative;
+        z-index: 2;
+        padding: 120px 0 100px;
+        text-align: left;
+    }
+
+    .heroEyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 0.8rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: winikStyleGuide.$c-winiksoftMain;
+        font-weight: 600;
+        margin-bottom: 28px;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 28px;
+            height: 1px;
+            background: winikStyleGuide.$c-winiksoftMain;
+            flex-shrink: 0;
+        }
+    }
+
+    .heroTitle {
+        font-size: clamp(2.8rem, 7vw, 5.5rem);
+        font-weight: 900;
+        color: winikStyleGuide.$c-text;
+        line-height: 1.0;
+        margin-bottom: 32px;
+        max-width: 820px;
+        letter-spacing: -0.02em;
+    }
+
+    .heroTitleAccent {
+        background: linear-gradient(135deg, winikStyleGuide.$c-winiksoftMain 0%, winikStyleGuide.$c-winiksoftPower 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        background-size: 200%;
+        animation: gradientText 5s ease infinite;
+    }
+
+    .heroSubtitle {
+        font-size: clamp(1rem, 1.8vw, 1.2rem);
+        color: winikStyleGuide.$c-text-muted;
+        max-width: 560px;
+        line-height: 1.65;
+        margin-bottom: 48px;
+    }
+
+    .heroCtaGroup {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        flex-wrap: wrap;
+    }
+
+    .heroCtaSecondary {
+        color: winikStyleGuide.$c-text-muted;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        transition: color 0.2s ease;
+
+        i { margin-left: 6px; transition: transform 0.2s ease; }
+
+        &:hover, &:focus {
+            color: winikStyleGuide.$c-winiksoftMain;
+            text-decoration: none;
+            i { transform: translateX(4px); }
+        }
+    }
+}
+
+// ─── SCROLL INDICATOR ─────────────────────────────────────────────────────
+.scrollIndicator {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    .scrollLabel {
+        font-size: 0.65rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: winikStyleGuide.$c-text-muted;
+        opacity: 0.6;
+    }
+
+    .scrollDot {
+        width: 1px;
+        height: 44px;
+        background: linear-gradient(to bottom, winikStyleGuide.$c-winiksoftMain, transparent);
+        animation: scrollBounce 1.8s ease-in-out infinite;
+    }
+}
+
+@keyframes scrollBounce {
+    0%, 100% { opacity: 0.4; transform: scaleY(0.75) translateY(-4px); }
+    50%       { opacity: 1;   transform: scaleY(1)    translateY(0); }
+}
+
+// ─── MARQUEE TICKER ───────────────────────────────────────────────────────
+.marqueeTicker {
+    overflow: hidden;
+    padding: 18px 0;
+    background: rgba(77, 200, 245, 0.04);
+    border-top: 1px solid rgba(77, 200, 245, 0.1);
+    border-bottom: 1px solid rgba(77, 200, 245, 0.1);
+    position: relative;
+    z-index: 1;
+    user-select: none;
+
+    .marqueeTrack {
+        display: flex;
+        gap: 32px;
+        white-space: nowrap;
+        width: max-content;
+        animation: marqueeScroll 40s linear infinite;
+    }
+
+    &.marqueeTicker--reverse .marqueeTrack {
+        animation-direction: reverse;
+    }
+
+    .marqueeItem {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(77, 200, 245, 0.55);
+        flex-shrink: 0;
+    }
+
+    .marqueeSep {
+        color: rgba(77, 200, 245, 0.3);
+        font-size: 0.75rem;
+        flex-shrink: 0;
+    }
+}
+
+@keyframes marqueeScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+// ─── SECTION LABEL ────────────────────────────────────────────────────────
+.sectionLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: winikStyleGuide.$c-winiksoftMain;
+    font-weight: 700;
+    margin: 0 20px 8px;
+    padding-top: 48px;
+
+    .sectionNum {
+        font-size: 0.65rem;
+        opacity: 0.6;
+        font-variant-numeric: tabular-nums;
+    }
+
+    &::after {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 1px;
+        background: winikStyleGuide.$c-winiksoftMain;
+        opacity: 0.6;
+    }
+
+    &.sectionLabel--light {
+        color: winikStyleGuide.$c-text;
+        &::after { background: winikStyleGuide.$c-text; }
+    }
+}
+
+// ─── LOGO LIST (clients) ──────────────────────────────────────────────────
+.logoList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    padding: 32px 20px;
+
+    li {
+        list-style: none;
+    }
+
+    .logoCard {
+        background: winikStyleGuide.$c-glass;
+        border: 1px solid winikStyleGuide.$c-glass-border;
+        border-radius: 12px;
+        padding: 20px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 140px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        backdrop-filter: blur(8px);
+
+        img {
+            height: 36px;
+            width: auto;
+            filter: grayscale(1) brightness(1.2) contrast(0.9);
+            opacity: 0.7;
+            transition: filter 0.3s ease, opacity 0.3s ease;
+        }
+
+        &:hover {
+            border-color: winikStyleGuide.$c-glass-border-hover;
+            box-shadow: winikStyleGuide.$c-glow-sm;
+            transform: translateY(-3px);
+
+            img {
+                filter: grayscale(0) brightness(1);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+// ─── NAV SCROLL SPY ACTIVE ────────────────────────────────────────────────
+.navbar-nav .nav-link.spy-active {
+    color: winikStyleGuide.$c-winiksoftMain !important;
+
+    &::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroFull {
+        .heroTitle { font-size: clamp(2.2rem, 10vw, 3rem); }
+        .heroCtaGroup { flex-direction: column; align-items: flex-start; gap: 20px; }
+    }
+
+    .marqueeTicker .marqueeTrack {
+        animation-duration: 25s;
+    }
+}
