@@ -584,40 +584,38 @@ div[id] {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 24px;
-    padding: 32px 20px;
+    align-items: center;
+    gap: 40px 56px;
+    padding: 32px 20px 48px;
 
     li {
         list-style: none;
     }
 
     .logoCard {
-        background: winikStyleGuide.$c-glass;
-        border: 1px solid winikStyleGuide.$c-glass-border;
-        border-radius: 12px;
-        padding: 20px 32px;
+        background: transparent;
+        border: none;
+        padding: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        min-width: 140px;
-        transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-        backdrop-filter: blur(8px);
+        transition: transform 0.3s ease;
 
         img {
-            height: 36px;
+            height: 44px;
             width: auto;
-            filter: grayscale(1) brightness(1.2) contrast(0.9);
-            opacity: 0.7;
-            transition: filter 0.3s ease, opacity 0.3s ease;
+            max-width: 140px;
+            object-fit: contain;
+            filter: grayscale(1) brightness(1.4) contrast(0.8);
+            opacity: 0.5;
+            transition: filter 0.4s ease, opacity 0.4s ease, transform 0.3s ease;
         }
 
         &:hover {
-            border-color: winikStyleGuide.$c-glass-border-hover;
-            box-shadow: winikStyleGuide.$c-glow-sm;
             transform: translateY(-3px);
 
             img {
-                filter: grayscale(0) brightness(1);
+                filter: grayscale(0) brightness(1) contrast(1);
                 opacity: 1;
             }
         }
@@ -637,6 +635,249 @@ div[id] {
     }
 }
 
+// ─── CLIENT STATS BAR ─────────────────────────────────────────────────────
+.clientsStats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+    margin: 48px 0 32px;
+    padding: 0 20px;
+}
+
+.clientStat {
+    flex: 1;
+    min-width: 160px;
+    max-width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 24px;
+    position: relative;
+
+    &:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 20%;
+        height: 60%;
+        width: 1px;
+        background: winikStyleGuide.$c-glass-border;
+    }
+}
+
+.clientStatNum {
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(135deg, #fff 20%, winikStyleGuide.$c-winiksoftMain 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: winikStyleGuide.$t-winiksoftMain;
+    letter-spacing: -0.02em;
+}
+
+.clientStatSup {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: winikStyleGuide.$c-winiksoftMain;
+    align-self: flex-start;
+    margin-top: 4px;
+    line-height: 1;
+}
+
+.clientStatLabel {
+    font-size: winikStyleGuide.$ts-winikS;
+    color: winikStyleGuide.$c-text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-align: center;
+    margin-top: 8px;
+}
+
+// ─── SUMATE AL EQUIPO SECTION ──────────────────────────────────────────────
+.sectionSumate {
+    padding: 120px 20px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(ellipse 70% 60% at 20% 50%, rgba(77, 200, 245, 0.07) 0%, transparent 65%),
+            radial-gradient(ellipse 50% 40% at 85% 40%, rgba(130, 80, 255, 0.05) 0%, transparent 60%);
+        pointer-events: none;
+    }
+}
+
+.sumateLayout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    @media (min-width: 900px) {
+        grid-template-columns: 1fr 400px;
+        align-items: center;
+    }
+}
+
+.sumateLeft {
+    .sectionLabel { margin-bottom: 24px; }
+}
+
+.sumateTitle {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    color: winikStyleGuide.$c-text;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+
+    span { color: winikStyleGuide.$c-winiksoftMain; }
+}
+
+.sumateSubtitle {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    color: winikStyleGuide.$c-text-muted;
+    line-height: 1.65;
+    margin-bottom: 32px;
+    max-width: 540px;
+}
+
+.sumateValues {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: winikStyleGuide.$ts-winikM;
+        color: winikStyleGuide.$c-text-muted;
+    }
+}
+
+.sumateValueIcon {
+    color: winikStyleGuide.$c-winiksoftMain;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.sumateCard {
+    background: winikStyleGuide.$c-glass;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid winikStyleGuide.$c-glass-border;
+    border-radius: 20px;
+    padding: 48px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 40px rgba(77, 200, 245, 0.08);
+    max-width: 400px;
+    margin: 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 28px 72px rgba(0,0,0,0.4), 0 0 50px rgba(77, 200, 245, 0.15);
+    }
+}
+
+.sumateCardIcon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(77, 200, 245, 0.2), rgba(0, 164, 234, 0.1));
+    border: 1px solid rgba(77, 200, 245, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: winikStyleGuide.$c-winiksoftMain;
+}
+
+.sumateCard h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: winikStyleGuide.$c-text;
+}
+
+.sumateCard p {
+    font-size: winikStyleGuide.$ts-winikM;
+    color: winikStyleGuide.$c-text-muted;
+    line-height: 1.6;
+}
+
+// ─── PRODUCT HEADERS (numero + title + tags) ──────────────────────────────
+.productHeader {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 56px 40px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.productNum {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 900;
+    color: rgba(77, 200, 245, 0.12);
+    line-height: 1;
+    font-family: winikStyleGuide.$t-winiksoftMain;
+    letter-spacing: -0.04em;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+.productHeaderText {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h3 {
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+        font-weight: 700;
+        color: winikStyleGuide.$c-text;
+        margin: 0;
+    }
+}
+
+.productTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.productTag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(77, 200, 245, 0.08);
+    border: 1px solid rgba(77, 200, 245, 0.2);
+    color: winikStyleGuide.$c-text-muted;
+
+    &--highlight {
+        background: rgba(77, 200, 245, 0.15);
+        border-color: rgba(77, 200, 245, 0.4);
+        color: winikStyleGuide.$c-winiksoftMain;
+    }
+}
+
 @media (max-width: 768px) {
     .heroFull {
         .heroTitle { font-size: clamp(2.2rem, 10vw, 3rem); }
@@ -646,4 +887,15 @@ div[id] {
     .marqueeTicker .marqueeTrack {
         animation-duration: 25s;
     }
+
+    .clientStat:not(:last-child)::after { display: none; }
+
+    .sumateLayout { gap: 36px; }
+
+    .productHeader {
+        padding: 40px 20px 16px;
+        gap: 16px;
+    }
+
+    .productNum { font-size: 2.5rem; }
 }
