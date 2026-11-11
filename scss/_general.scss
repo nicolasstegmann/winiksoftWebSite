@@ -860,6 +860,173 @@ div[id] {
     }
 }
 
+// ─── KRAKTEAM BY WINIKSOFT ──────────────────────────────────────────────────
+$krak-navy: #2F5597;
+$krak-cyan: #00A4EA;
+$krak-cyan-light: #4DC8F5;
+$krak-font: 'Sora', winikStyleGuide.$t-winiksoftMain, sans-serif;
+
+.krakHero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto 120px;
+    text-align: center;
+
+    @media (min-width: 900px) {
+        grid-template-columns: 400px 1fr;
+        gap: 64px;
+        text-align: left;
+    }
+}
+
+.krakLogoWrap {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+.krakGlow {
+    position: absolute;
+    inset: 8% 8% 4%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 164, 234, 0.35) 0%, rgba(47, 85, 151, 0.15) 45%, transparent 70%);
+    filter: blur(24px);
+    animation: krakGlowPulse 4.5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.krakLogo {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    filter: drop-shadow(0 10px 30px rgba(0, 164, 234, 0.25));
+}
+
+.krakTent {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+}
+
+.krakCopy {
+    @media (min-width: 900px) {
+        border-left: 1px solid rgba(77, 200, 245, 0.25);
+        padding-left: 56px;
+    }
+}
+
+.krakEyebrow {
+    display: inline-block;
+    font-family: $krak-font;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: $krak-cyan-light;
+    margin-bottom: 14px;
+}
+
+.krakWordmark {
+    font-family: $krak-font;
+    font-weight: 800;
+    font-size: clamp(3rem, 8vw, 5.6rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin: 0;
+
+    .krakWord { display: inline-block; }
+    .krakWord--krak { color: #fff; }
+    .krakWord--team { color: $krak-cyan; }
+    .krakChar { display: inline-block; will-change: transform; }
+    // gradient per letter: background-clip:text does not paint through transformed children
+    .krakWord--team .krakChar {
+        background: linear-gradient(160deg, $krak-cyan-light 0%, $krak-cyan 70%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.krakBy {
+    display: block;
+    font-family: $krak-font;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 1.4vw, 1rem);
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: winikStyleGuide.$c-text-muted;
+    margin: 12px 0 36px;
+}
+
+.krakManifesto {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    li {
+        font-family: $krak-font;
+        font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+        font-weight: 600;
+        line-height: 1.3;
+        color: winikStyleGuide.$c-text;
+    }
+
+    .krakManifesto--hl {
+        font-weight: 800;
+        background: linear-gradient(90deg, #fff 0%, $krak-cyan-light 50%, $krak-cyan 100%);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: krakShine 6s linear infinite;
+    }
+}
+
+.krakTagline {
+    position: relative;
+    display: inline-block;
+    font-family: $krak-font;
+    font-style: italic;
+    font-weight: 800;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: #fff;
+    margin: 0;
+    padding-bottom: 12px;
+}
+
+.krakSwoosh {
+    position: absolute;
+    left: 30%;
+    right: -4%;
+    bottom: 0;
+    width: 74%;
+    height: 14px;
+
+    path { stroke-dasharray: 1; stroke-dashoffset: 0; }
+}
+
+@keyframes krakGlowPulse {
+    0%, 100% { opacity: 0.7; transform: scale(0.96); }
+    50%      { opacity: 1;   transform: scale(1.04); }
+}
+
+@keyframes krakShine {
+    from { background-position: 200% 0; }
+    to   { background-position: 0% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .krakGlow, .krakManifesto .krakManifesto--hl { animation: none; }
+}
+
 .sumateLayout {
     display: grid;
     grid-template-columns: 1fr;
