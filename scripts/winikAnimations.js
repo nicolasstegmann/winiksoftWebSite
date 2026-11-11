@@ -183,6 +183,70 @@ document.querySelectorAll('.sectionImage').forEach(el => {
     obs.observe(logo);
 })();
 
+// ── KrakTeam: kraken reveal + idle life ──────────────────────────────────────
+(function () {
+    const hero = document.getElementById('krakHero');
+    if (!hero) return;
+
+    hero.querySelectorAll('.krakWord').forEach(word => {
+        word.innerHTML = [...word.textContent].map(c => `<span class="krakChar">${c}</span>`).join('');
+    });
+
+    const q = sel => hero.querySelectorAll(sel);
+    const tents = q('.krakTent');
+    const eyes = q('.krakEye');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+
+    gsap.set(q('.krakHead'), { y: -50, opacity: 0 });
+    gsap.set(tents, { strokeDashoffset: 1 });
+    gsap.set(eyes, { scaleY: 0, transformOrigin: '50% 50%' });
+    gsap.set(q('.krakChar'), { yPercent: 80, opacity: 0 });
+    gsap.set(q('.krakEyebrow, .krakBy, .krakTagline'), { opacity: 0, y: 16 });
+    gsap.set(q('.krakManifesto li'), { opacity: 0, y: 24, filter: 'blur(8px)' });
+    gsap.set(q('.krakSwoosh path'), { strokeDashoffset: 1 });
+    gsap.set(q('.krakGlow'), { opacity: 0 });
+
+    function startIdle() {
+        gsap.to(q('.krakHead'), { y: -6, duration: 2.6, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+        tents.forEach((t, i) => {
+            gsap.to(t, {
+                rotation: i % 2 ? 5 : -5,
+                svgOrigin: t.dataset.origin,
+                duration: 2.2 + i * 0.25,
+                ease: 'sine.inOut',
+                yoyo: true,
+                repeat: -1,
+            });
+        });
+        gsap.timeline({ repeat: -1, repeatDelay: 3.6 })
+            .to(eyes, { scaleY: 0.1, duration: 0.08, ease: 'power2.in', yoyo: true, repeat: 1 });
+    }
+
+    const tl = gsap.timeline({ paused: true, onComplete: startIdle });
+    tl.to(q('.krakGlow'), { opacity: 1, duration: 1 }, 0)
+      .to(q('.krakHead'), { y: 0, opacity: 1, duration: 0.8, ease: 'back.out(1.6)' }, 0)
+      .to(tents, { strokeDashoffset: 0, duration: 1.1, ease: 'power2.out', stagger: { each: 0.08, from: 'end' } }, 0.45)
+      .to(eyes, { scaleY: 1, duration: 0.3, ease: 'power4.out' }, 1.1)
+      .to(q('.krakEyebrow'), { opacity: 1, y: 0, duration: 0.5 }, 0.3)
+      .to(q('.krakChar'), { yPercent: 0, opacity: 1, duration: 0.6, ease: 'back.out(2)', stagger: 0.04 }, 0.4)
+      .to(q('.krakBy'), { opacity: 1, y: 0, duration: 0.5 }, 0.9)
+      .to(q('.krakManifesto li'), { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.7, ease: 'power3.out', stagger: 0.3 }, 1.1)
+      .to(q('.krakTagline'), { opacity: 1, y: 0, duration: 0.5 }, 2.1)
+      .to(q('.krakSwoosh path'), { strokeDashoffset: 0, duration: 0.6, ease: 'power2.inOut' }, 2.4);
+
+    const logo = hero.querySelector('.krakLogo');
+    logo.addEventListener('mouseenter', () => gsap.to(q('.krakTentacles'), { scale: 1.06, svgOrigin: '150 180', duration: 0.4, ease: 'back.out(2)' }));
+    logo.addEventListener('mouseleave', () => gsap.to(q('.krakTentacles'), { scale: 1, svgOrigin: '150 180', duration: 0.5, ease: 'power2.out' }));
+
+    const obs = new IntersectionObserver((entries) => {
+        if (!entries[0].isIntersecting) return;
+        tl.play();
+        obs.disconnect();
+    }, { threshold: 0.3 });
+    obs.observe(hero);
+})();
+
 // ── particles.js hero background ─────────────────────────────────────────────
 if (document.getElementById('particles-js') && typeof particlesJS !== 'undefined') {
     particlesJS('particles-js', {

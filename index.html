@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/1954f46bc1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/winikStyle.css">
 </head>
@@ -756,6 +759,68 @@
         <!-- ===== 07 · SUMATE AL EQUIPO ===== -->
         <section class="sectionSumate" id="sumate">
             <div class="container">
+
+                <!-- KrakTeam by Winiksoft -->
+                <div class="krakHero" id="krakHero">
+                    <div class="krakLogoWrap">
+                        <div class="krakGlow" aria-hidden="true"></div>
+                        <svg class="krakLogo" id="krakLogo" viewBox="0 0 300 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Isologo KrakTeam">
+                            <defs>
+                                <radialGradient id="krakHeadG" cx="38%" cy="30%" r="75%">
+                                    <stop offset="0%"   stop-color="#4E86E8"/>
+                                    <stop offset="45%"  stop-color="#2F5597"/>
+                                    <stop offset="100%" stop-color="#132C68"/>
+                                </radialGradient>
+                                <linearGradient id="krakTentG" x1="0" y1="170" x2="0" y2="270" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%"   stop-color="#00A4EA"/>
+                                    <stop offset="100%" stop-color="#4DC8F5"/>
+                                </linearGradient>
+                                <linearGradient id="krakTentBackG" x1="0" y1="170" x2="0" y2="270" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%"   stop-color="#0078C8"/>
+                                    <stop offset="100%" stop-color="#00A4EA"/>
+                                </linearGradient>
+                            </defs>
+
+                            <g class="krakTentacles" fill="none" stroke-linecap="round" stroke-width="15">
+                                <path class="krakTent" data-origin="134 180" pathLength="1" stroke="url(#krakTentBackG)" d="M134 180 C 118 205, 92 214, 98 240 C 103 262, 131 260, 128 243 C 126 233, 113 236, 116 246"/>
+                                <path class="krakTent" data-origin="166 180" pathLength="1" stroke="url(#krakTentBackG)" d="M166 180 C 182 205, 208 214, 202 240 C 197 262, 169 260, 172 243 C 174 233, 187 236, 184 246"/>
+                                <path class="krakTent" data-origin="120 172" pathLength="1" stroke="url(#krakTentG)" d="M120 172 C 90 185, 55 180, 48 205 C 42 228, 70 238, 78 222 C 84 210, 68 205, 64 214"/>
+                                <path class="krakTent" data-origin="180 172" pathLength="1" stroke="url(#krakTentG)" d="M180 172 C 210 185, 245 180, 252 205 C 258 228, 230 238, 222 222 C 216 210, 232 205, 236 214"/>
+                                <path class="krakTent" data-origin="146 184" pathLength="1" stroke="url(#krakTentG)" d="M146 184 C 150 210, 170 222, 166 248 C 163 266, 142 266, 144 252 C 145 243, 156 245, 154 254"/>
+                                <path class="krakTent" data-origin="154 184" pathLength="1" stroke="url(#krakTentG)" d="M154 184 C 150 210, 130 222, 134 248 C 137 266, 158 266, 156 252 C 155 243, 144 245, 146 254"/>
+                            </g>
+
+                            <g class="krakHead">
+                                <path fill="url(#krakHeadG)" d="M150 14 C 172 52, 214 78, 214 126 A 64 64 0 0 1 86 126 C 86 78, 128 52, 150 14 Z"/>
+                                <ellipse cx="124" cy="92" rx="14" ry="22" fill="#fff" opacity="0.14" transform="rotate(28 124 92)"/>
+                                <path class="krakEye" fill="#fff" d="M108 116 L141 130 Q 138 143 123 142 Q 109 140 108 116 Z"/>
+                                <path class="krakEye" fill="#fff" d="M192 116 L159 130 Q 162 143 177 142 Q 191 140 192 116 Z"/>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="krakCopy">
+                        <span class="krakEyebrow">El talento se multiplica</span>
+                        <h2 class="krakWordmark" aria-label="KrakTeam">
+                            <span class="krakWord krakWord--krak" aria-hidden="true">Krak</span><span class="krakWord krakWord--team" aria-hidden="true">Team</span>
+                        </h2>
+                        <span class="krakBy">by Winiksoft</span>
+
+                        <ul class="krakManifesto">
+                            <li>Un crack resuelve.</li>
+                            <li>Un Kraken no suelta.</li>
+                            <li class="krakManifesto--hl">Un KrakTeam hace que suceda.</li>
+                        </ul>
+
+                        <p class="krakTagline">
+                            Liberen al KrakTeam.
+                            <svg class="krakSwoosh" viewBox="0 0 220 16" preserveAspectRatio="none" aria-hidden="true">
+                                <path pathLength="1" d="M4 12 C 60 4, 150 2, 216 8" fill="none" stroke="#00A4EA" stroke-width="4" stroke-linecap="round"/>
+                            </svg>
+                        </p>
+                    </div>
+                </div>
+
                 <div class="sumateLayout">
                     <div class="sumateLeft gsap-reveal-left">
                         <div class="sectionLabel"><span class="sectionNum">07</span> Unite a Winiksoft</div>
@@ -772,7 +837,7 @@
                     <div class="sumateRight gsap-reveal-right">
                         <div class="sumateCard">
                             <div class="sumateCardIcon"><i class="fa fa-users" aria-hidden="true"></i></div>
-                            <h3>Unite al equipo</h3>
+                            <h3>Sumate al KrakTeam</h3>
                             <p>Completá el formulario de postulación y te contactamos en menos de 48 horas.</p>
                             <div class="buttonWinik">
                                 <a href="./pages/recruiting.html" target="_blank" rel="noopener">Ver oportunidades <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
