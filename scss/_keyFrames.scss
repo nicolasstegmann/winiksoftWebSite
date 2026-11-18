@@ -1,3 +1,8 @@
+@keyframes heroShine {
+    0%, 72% { background-position: 100% 0; }
+    100%    { background-position: 0% 0; }
+}
+
 @keyframes aiLogoPulse {
     0%, 100% { filter: drop-shadow(0 0 18px rgba(77,200,245,0.28)) drop-shadow(0 0 6px rgba(77,200,245,0.12)); }
     50%       { filter: drop-shadow(0 0 42px rgba(77,200,245,0.55)) drop-shadow(0 0 16px rgba(77,200,245,0.28)); }
