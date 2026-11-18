@@ -204,6 +204,49 @@ html.lenis, html.lenis body { height: auto; }
     }
 }
 
+// ─── WIN TOGETHER · PIECES COME TOGETHER ──────────────────────────────────
+.wtBars {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    display: none;
+}
+
+.wtMarkSlot { display: none; }
+
+#winTogether.is-scene {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 70px 0;
+
+    .wtBars { display: block; }
+    .wtMarkSlot {
+        display: block;
+        width: 140px;
+        height: 110px;
+        margin: 0 auto 12px;
+    }
+
+    .winTogetherSlogan {
+        font-size: clamp(3.5rem, 8vw, 6.5rem);
+        margin-bottom: 28px;
+    }
+    .winTogetherRule {
+        height: 44px;
+        margin-bottom: 28px;
+        transform-origin: top center;
+    }
+
+    // the scroll timeline drives these instead of the load-time keyframes
+    .winWord, .winWordAccent {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
 // ─── AI · LIGHT BEAMS ─────────────────────────────────────────────────────
 .aiBeams {
     position: absolute;
