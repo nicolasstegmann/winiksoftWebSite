@@ -42,15 +42,76 @@ function updateScrollSpy() {
 window.addEventListener('scroll', updateScrollSpy, { passive: true });
 updateScrollSpy();
 
-// ── Hero entrance ─────────────────────────────────────────────────────────────
+// ── Hero entrance: slam + decode + impact ─────────────────────────────────────
 const heroContent = document.querySelector('.heroFullContent');
 if (heroContent) {
+    const line1 = heroContent.querySelector('.heroLine--1');
+    const accent = heroContent.querySelector('.heroTitleAccent');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // line 1: words (masks) > chars (slide up inside the mask)
+    line1.innerHTML = line1.textContent.trim().split(' ')
+        .map(w => '<span class="heroWord">' + [...w].map(c => '<span class="heroChar">' + c + '</span>').join('') + '</span>')
+        .join(' ');
+
+    // accent: plain inline chars so the gradient keeps painting through them
+    const finalText = accent.textContent;
+    accent.innerHTML = [...finalText].map(c => '<span>' + c + '</span>').join('');
+    const accentChars = [...accent.children];
+
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-    tl.from('.heroEyebrow',      { opacity: 0, y: 20, duration: 0.7 })
-      .from('.heroTitle',        { opacity: 0, y: 32, duration: 0.8 }, '-=0.4')
-      .from('.heroSubtitle',     { opacity: 0, y: 24, duration: 0.7 }, '-=0.5')
-      .from('.heroCtaGroup',     { opacity: 0, y: 20, duration: 0.6 }, '-=0.4')
-      .from('.scrollIndicator',  { opacity: 0, duration: 0.8 },        '-=0.2');
+    tl.from('.heroEyebrow', { opacity: 0, y: 20, duration: 0.7 });
+
+    if (reduceMotion) {
+        tl.from('.heroTitle', { opacity: 0, duration: 0.6 }, '-=0.4');
+        accent.classList.add('is-lit');
+    } else {
+        const glyphs = 'ABCDEFGHKMNPRSTUVXYZ0123456789#%&<>/';
+        const decodeDur = 1.1;
+        const perChar = 0.06;
+        const settle = 0.28;
+
+        tl.from(line1.querySelectorAll('.heroChar'), {
+            yPercent: 115, rotate: 12, opacity: 0,
+            duration: 0.9, ease: 'expo.out', stagger: 0.035,
+        }, '-=0.45');
+
+        // decode: a wipe reveals the line while each char cycles random glyphs, then settles
+        const decode = { t: 0 };
+        tl.fromTo(accent,
+            { clipPath: 'inset(-25% 100% -25% 0)' },
+            { clipPath: 'inset(-25% 0% -25% 0)', duration: decodeDur, ease: 'power2.inOut' }, '-=0.35')
+          .to(decode, {
+              t: accentChars.length * perChar + settle,
+              duration: accentChars.length * perChar + settle,
+              ease: 'none',
+              onUpdate() {
+                  accentChars.forEach((el, i) => {
+                      const real = finalText[i];
+                      if (real === ' ') return;
+                      el.textContent = decode.t >= i * perChar + settle
+                          ? real
+                          : glyphs[(Math.random() * glyphs.length) | 0];
+                  });
+              },
+              onComplete() { accentChars.forEach((el, i) => { el.textContent = finalText[i]; }); },
+          }, '<');
+
+        // impact: punch + cyan flash
+        tl.to(accent, { scale: 1.07, duration: 0.12, ease: 'power2.out' })
+          .to(accent, { scale: 1, duration: 0.9, ease: 'elastic.out(1, 0.35)' })
+          .fromTo(accent,
+              { filter: 'drop-shadow(0 0 0px rgba(77, 200, 245, 0))' },
+              { filter: 'drop-shadow(0 0 26px rgba(77, 200, 245, 0.95))', duration: 0.12, ease: 'power2.out' }, '<-0.12')
+          .to(accent, {
+              filter: 'drop-shadow(0 0 0px rgba(77, 200, 245, 0))', duration: 1, ease: 'power2.out',
+              onComplete() { accent.style.filter = ''; accent.classList.add('is-lit'); },
+          }, '>-0.1');
+    }
+
+    tl.from('.heroSubtitle',    { opacity: 0, y: 24, duration: 0.7 }, '-=1.2')
+      .from('.heroCtaGroup',    { opacity: 0, y: 20, duration: 0.6 }, '-=0.5')
+      .from('.scrollIndicator', { opacity: 0, duration: 0.8 },        '-=0.2');
 }
 
 // ── Section label reveals ─────────────────────────────────────────────────────

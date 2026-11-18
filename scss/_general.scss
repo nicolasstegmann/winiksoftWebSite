@@ -426,13 +426,43 @@ div[id] {
         letter-spacing: -0.02em;
     }
 
+    .heroLine { display: block; }
+
+    .heroWord {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        vertical-align: top;
+        // room for descenders (g) inside the mask
+        padding-bottom: 0.14em;
+        margin-bottom: -0.14em;
+    }
+
+    .heroChar {
+        display: inline-block;
+        will-change: transform;
+    }
+
+    // the accent's chars stay plain inline spans: background-clip:text
+    // does not paint through transformed/inline-block children
     .heroTitleAccent {
-        background: linear-gradient(135deg, winikStyleGuide.$c-winiksoftMain 0%, winikStyleGuide.$c-winiksoftPower 100%);
+        display: inline-block;
+        transform-origin: left center;
+        background: linear-gradient(110deg,
+            winikStyleGuide.$c-winiksoftPower 0%,
+            winikStyleGuide.$c-winiksoftMain 20%,
+            winikStyleGuide.$c-winiksoftPower 38%,
+            #ffffff 50%,
+            winikStyleGuide.$c-winiksoftPower 62%,
+            winikStyleGuide.$c-winiksoftMain 80%,
+            winikStyleGuide.$c-winiksoftPower 100%);
+        background-size: 250% 100%;
+        background-position: 100% 0;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        background-size: 200%;
-        animation: gradientText 5s ease infinite;
+
+        &.is-lit { animation: heroShine 7s ease-in-out 2s infinite; }
     }
 
     .heroSubtitle {
