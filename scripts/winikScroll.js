@@ -4,6 +4,9 @@
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const NAV_OFFSET = -72;
+    // each pin pushes everything below it, so pins must be measured top to bottom
+    // (higher priority = measured first), whatever order they were created in
+    const PRIORITY = { hero: 30, services: 20, winTogether: 10 };
 
     // ── Smooth scroll ─────────────────────────────────────────────────────────
     let lenis = null;
@@ -116,7 +119,7 @@
                 pin: true,
                 scrub: 0.8,
                 invalidateOnRefresh: true,
-                anticipatePin: 1,
+                refreshPriority: PRIORITY.hero,
             },
         });
 
@@ -188,6 +191,7 @@
                     pin: true,
                     scrub: 0.6,
                     invalidateOnRefresh: true,
+                    refreshPriority: PRIORITY.services,
                 },
             })
                 .to(list, { x: () => -distance(), ease: 'none' }, 0)
@@ -365,7 +369,7 @@
                 pin: true,
                 scrub: 0.8,
                 invalidateOnRefresh: true,
-                anticipatePin: 1,
+                refreshPriority: PRIORITY.winTogether,
             },
         });
 
@@ -386,9 +390,10 @@
         });
         tl.fromTo(eyebrow, { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.1 }, 0.82)
           .fromTo(win, { autoAlpha: 0, yPercent: 60 }, { autoAlpha: 1, yPercent: 0, duration: 0.14, ease: 'power3.out' }, 0.8)
+          // generous negative insets so the word's glow is never cut into a visible box
           .fromTo(together,
-              { clipPath: 'inset(-20% 100% -20% 0)', scale: 1.08 },
-              { clipPath: 'inset(-20% 0% -20% 0)', scale: 1, duration: 0.18, ease: 'power2.inOut' }, 0.86)
+              { clipPath: 'inset(-60% 110% -60% -15%)', scale: 1.08 },
+              { clipPath: 'inset(-60% -15% -60% -15%)', scale: 1, duration: 0.18, ease: 'power2.inOut' }, 0.86)
           .fromTo(rule, { scaleY: 0 }, { scaleY: 1, duration: 0.08 }, 0.96)
           .fromTo(subline, { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.12 }, 0.98);
 
@@ -398,7 +403,21 @@
         };
     }
 
-    // pins add spacing: order every trigger by page position and recompute
     ScrollTrigger.sort();
     ScrollTrigger.refresh();
+
+    // fonts and late images change the page height after the first measure: re-measure every pin
+    let lastHeight = document.documentElement.scrollHeight;
+    let refreshTimer = 0;
+    const remeasure = () => {
+        ScrollTrigger.refresh();
+        if (lenis) lenis.resize();
+        lastHeight = document.documentElement.scrollHeight;
+    };
+    new ResizeObserver(() => {
+        if (Math.abs(document.documentElement.scrollHeight - lastHeight) < 2) return;
+        clearTimeout(refreshTimer);
+        refreshTimer = setTimeout(remeasure, 200);
+    }).observe(document.body);
+    if (document.fonts) document.fonts.ready.then(remeasure);
 })();
