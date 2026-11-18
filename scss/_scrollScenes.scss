@@ -1,0 +1,217 @@
+@use "./winikWebGuide" as winikStyleGuide;
+
+// ─── LENIS (smooth scroll) ────────────────────────────────────────────────
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+// ─── HERO · GLASS W BARS ──────────────────────────────────────────────────
+// JS positions every bar (x/y/size/rotation); CSS only paints the glass.
+.heroBars {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    display: none;
+
+    @media (min-width: 1000px) { display: block; }
+}
+
+// second hero scene, revealed when the glass curtain opens (desktop only)
+.heroReveal {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 6vw;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+
+    @media (min-width: 1000px) { display: flex; }
+
+    span {
+        font-size: 0.8rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: winikStyleGuide.$c-winiksoftMain;
+        margin-bottom: 28px;
+    }
+
+    p {
+        margin: 0;
+        max-width: 15ch;
+        font-size: clamp(3rem, 6.4vw, 6.4rem);
+        font-weight: 300;
+        line-height: 1.02;
+        color: winikStyleGuide.$c-text;
+
+        em {
+            font-style: normal;
+            font-weight: 700;
+            color: winikStyleGuide.$c-winiksoftMain;
+        }
+    }
+}
+
+.heroBar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    will-change: transform, width, height;
+}
+
+.heroBarInner {
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    overflow: hidden;
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background:
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 0.16) 0%,
+            rgba(255, 255, 255, 0.02) 22%,
+            rgba(255, 255, 255, 0.00) 60%,
+            rgba(255, 255, 255, 0.10) 100%),
+        linear-gradient(180deg, rgba(77, 200, 245, 0.10) 0%, rgba(8, 14, 26, 0.10) 100%);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.25),
+        0 30px 60px rgba(0, 0, 0, 0.35);
+
+    // moving specular streak
+    &::after {
+        content: '';
+        position: absolute;
+        left: 18%;
+        width: 14%;
+        top: -30%;
+        height: 30%;
+        border-radius: 999px;
+        background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+        filter: blur(2px);
+        animation: heroBarStreak 5.5s ease-in-out infinite;
+        animation-delay: var(--streak-delay, 0s);
+    }
+}
+
+// the four bars that draw the W keep the brand colours
+.heroBar--w .heroBarInner {
+    border-color: rgba(158, 229, 255, 0.35);
+    background:
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 0.30) 0%,
+            rgba(255, 255, 255, 0.04) 25%,
+            rgba(255, 255, 255, 0.00) 65%,
+            rgba(255, 255, 255, 0.16) 100%),
+        linear-gradient(180deg, rgba(120, 239, 255, 0.55) 0%, rgba(0, 164, 234, 0.45) 55%, rgba(16, 80, 168, 0.55) 100%);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.35),
+        0 0 40px rgba(77, 200, 245, 0.25),
+        0 30px 60px rgba(0, 0, 0, 0.35);
+}
+
+.heroBar--w:nth-child(even) .heroBarInner {
+    background:
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 0.22) 0%,
+            rgba(255, 255, 255, 0.03) 25%,
+            rgba(255, 255, 255, 0.00) 65%,
+            rgba(255, 255, 255, 0.12) 100%),
+        linear-gradient(180deg, rgba(46, 140, 240, 0.55) 0%, rgba(26, 106, 204, 0.5) 50%, rgba(14, 76, 164, 0.6) 100%);
+}
+
+@keyframes heroBarStreak {
+    0%, 35%  { top: -30%; }
+    85%, 100% { top: 110%; }
+}
+
+// ─── SERVICES · HORIZONTAL PINNED TRACK ───────────────────────────────────
+#servicios.is-hscroll {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 90px;
+    padding-bottom: 40px;
+
+    .hscrollIntro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 460px;
+        flex-shrink: 0;
+        text-align: left;
+
+        h2 { margin: 0 0 20px; text-align: left; }
+        h3 {
+            margin: 0;
+            text-align: left;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: winikStyleGuide.$c-text-muted;
+        }
+        .callToAction {
+            margin: 32px 0 0;
+            text-align: left;
+            justify-content: flex-start;
+        }
+    }
+
+    .standList {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        width: max-content;
+        gap: 32px;
+        padding: 32px max(40px, calc((100vw - 1100px) / 2));
+        will-change: transform;
+    }
+
+    .standList > li > article {
+        width: 380px;
+        min-height: 340px;
+        height: auto;
+    }
+}
+
+.hscrollProgress {
+    display: none;
+
+    #servicios.is-hscroll & {
+        display: block;
+        width: min(1100px, calc(100vw - 80px));
+        height: 2px;
+        margin: 0 auto 8px;
+        background: rgba(77, 200, 245, 0.12);
+        border-radius: 2px;
+        overflow: hidden;
+    }
+
+    span {
+        display: block;
+        height: 100%;
+        width: 100%;
+        transform-origin: left center;
+        transform: scaleX(0);
+        background: linear-gradient(90deg, winikStyleGuide.$c-winiksoftPower, winikStyleGuide.$c-winiksoftMain);
+    }
+}
+
+// ─── AI · LIGHT BEAMS ─────────────────────────────────────────────────────
+.aiBeams {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#ia .aiSectionInner { position: relative; z-index: 1; }
