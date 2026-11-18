@@ -288,6 +288,116 @@
         }).observe(section);
     }
 
+    // ── Win Together: scattered bars come together into the W ────────────────
+    const winSection = document.getElementById('winTogether');
+    const winHost = winSection && winSection.querySelector('.wtBars');
+    if (winSection && winHost && !reduceMotion) {
+        mm.add('(min-width: 1000px) and (min-height: 650px)', () => buildWinTogether(winSection, winHost));
+    }
+
+    function buildWinTogether(section, host) {
+        // fixed "random" scatter so a refresh never reshuffles the pieces: [x, y, rotation, scale]
+        const SCATTER = [
+            [0.08, 0.22, -62, 0.55], [0.22, 0.78, 38, 0.45], [0.36, 0.12, 74, 0.5], [0.12, 0.55, 15, 0.6],
+            [0.88, 0.18, -28, 0.5], [0.72, 0.85, 58, 0.55], [0.93, 0.62, -80, 0.45], [0.62, 0.08, 22, 0.4],
+            [0.46, 0.92, -45, 0.5], [0.28, 0.4, 88, 0.42], [0.78, 0.42, -12, 0.48], [0.55, 0.7, 66, 0.38],
+        ];
+        const bars = SCATTER.map((s, i) => {
+            const k = i % 4;
+            const isAnchor = i < 4;
+            const el = document.createElement('div');
+            el.className = 'heroBar' + (isAnchor ? ' heroBar--w' : '');
+            el.style.setProperty('--streak-delay', ((i * 0.71) % 5).toFixed(2) + 's');
+            el.innerHTML = '<div class="heroBarInner"></div>';
+            host.appendChild(el);
+            return { el, k, isAnchor, s };
+        });
+
+        section.classList.add('is-scene');
+        const slot = section.querySelector('.wtMarkSlot');
+        const eyebrow = section.querySelector('.winTogetherEyebrow');
+        const win = section.querySelector('.winWord');
+        const together = section.querySelector('.winWordAccent');
+        const rule = section.querySelector('.winTogetherRule');
+        const subline = section.querySelector('.winTogetherSubline');
+
+        const size = () => ({ w: section.clientWidth, h: section.clientHeight });
+        const wGeom = (b, cx, cy, len) => ({
+            x: cx + (b.k - 1.5) * len * 0.252,
+            y: cy,
+            width: len * 0.2615,
+            height: len,
+            rotation: b.k % 2 ? 20 : -20,
+        });
+        const scatter = (b) => {
+            const { w, h } = size();
+            const len = Math.min(h * 0.6, w * 0.34) * b.s[3];
+            return { x: b.s[0] * w, y: b.s[1] * h, width: len * 0.2615, height: len, rotation: b.s[2] };
+        };
+        const bigW = (b) => {
+            const { w, h } = size();
+            return wGeom(b, w / 2, h * 0.5, Math.min(h * 0.6, w * 0.34));
+        };
+        // small emblem in the slot above the eyebrow
+        const markW = (b) => {
+            const r = slot.getBoundingClientRect();
+            const s = section.getBoundingClientRect();
+            const len = r.height * 0.95;
+            return wGeom(b, r.left - s.left + r.width / 2, r.top - s.top + r.height / 2, len);
+        };
+        const live = (stateFn, b, extra) => {
+            const o = {};
+            ['x', 'y', 'width', 'height', 'rotation'].forEach(key => { o[key] = () => stateFn(b)[key]; });
+            return Object.assign(o, extra);
+        };
+
+        gsap.set(bars.map(b => b.el), { xPercent: -50, yPercent: -50 });
+        bars.forEach((b, i) => {
+            gsap.to(b.el.firstChild, { y: i % 2 ? 12 : -12, duration: 2.4 + (i % 5) * 0.3, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+        });
+
+        const tl = gsap.timeline({
+            defaults: { ease: 'none' },
+            scrollTrigger: {
+                trigger: section,
+                start: 'top top',
+                end: '+=160%',
+                pin: true,
+                scrub: 0.8,
+                invalidateOnRefresh: true,
+                anticipatePin: 1,
+            },
+        });
+
+        // 1 · the loose pieces converge and stack into one big W
+        bars.forEach((b, i) => {
+            tl.fromTo(b.el,
+                live(scatter, b, { opacity: b.isAnchor ? 1 : 0.7 }),
+                live(bigW, b, { opacity: b.isAnchor ? 1 : 0.55, duration: 0.42, ease: 'power3.inOut' }),
+                i * 0.012);
+        });
+        // 2 · it lands: a punch
+        tl.to(host, { scale: 1.06, transformOrigin: '50% 50%', duration: 0.05, ease: 'power2.out' }, 0.56)
+          .to(host, { scale: 1, duration: 0.1, ease: 'power2.inOut' }, 0.61);
+
+        // 3 · the W becomes the emblem; the slogan rises around it
+        bars.forEach(b => {
+            tl.to(b.el, live(markW, b, { opacity: b.isAnchor ? 1 : 0, duration: 0.24, ease: 'power2.inOut' }), 0.7);
+        });
+        tl.fromTo(eyebrow, { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.1 }, 0.82)
+          .fromTo(win, { autoAlpha: 0, yPercent: 60 }, { autoAlpha: 1, yPercent: 0, duration: 0.14, ease: 'power3.out' }, 0.8)
+          .fromTo(together,
+              { clipPath: 'inset(-20% 100% -20% 0)', scale: 1.08 },
+              { clipPath: 'inset(-20% 0% -20% 0)', scale: 1, duration: 0.18, ease: 'power2.inOut' }, 0.86)
+          .fromTo(rule, { scaleY: 0 }, { scaleY: 1, duration: 0.08 }, 0.96)
+          .fromTo(subline, { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.12 }, 0.98);
+
+        return () => {
+            section.classList.remove('is-scene');
+            host.innerHTML = '';
+        };
+    }
+
     // pins add spacing: order every trigger by page position and recompute
     ScrollTrigger.sort();
     ScrollTrigger.refresh();
